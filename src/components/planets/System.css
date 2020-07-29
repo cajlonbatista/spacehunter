@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Ubuntu&display=swap');
+
+.planets{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #f5f5f5;
+}
+.planets div img{
+    animation: spin 5s infinite linear;
+}
+.system{
+    overflow: auto;
+    height: 90vh;
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+.planets div{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: all 0.4s;
+    max-width: 230px;
+    cursor: pointer;
+    border: 1px solid #161418;
+    margin: 20px auto;
+    background-color: #161418;
+    align-items: center;
+    border-radius: 5px;
+}
+.planets div:hover{
+    border: 1px solid #61dafb;
+    background-color: #181818;
+}
+.system-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.system-title img{
+    width: 100px;
+}
+.title{
+    font-size: 23px;
+    text-align: center;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(360deg);
+    }
+}
+.mercury{
+    text-align: center;
+}
+.more{
+    background-color: #61dafb;
+    color: #181818;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
