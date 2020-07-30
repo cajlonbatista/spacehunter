@@ -4,12 +4,26 @@
     height: 90vh;
     width: 100vw;
     overflow: auto;
+    animation: bounce 1s linear;
+}
+@keyframes bounce{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+figure{
+    text-align: center;
 }
 .loading{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 90vh;
     align-items: center;
+    background-size: 80%;
 }
 .logo{
     margin: 10px auto;
@@ -36,20 +50,18 @@
 }
 .description{
     text-align: justify;
-
     margin: 20px;
 }
 .main{
-    margin: 30px auto;
+    margin: 10px auto;
     width: 90%;
     max-width: 600px;
 }
 .tempy{
     width: 90vw;
     max-width: 540px;
-    margin: 50px auto;
+    margin: 20px auto;
     text-align: center;
-    height: 55vh;
 }
 .tempy img{
     width: 100%;

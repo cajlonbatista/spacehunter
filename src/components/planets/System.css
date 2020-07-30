@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .planets{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #f5f5f5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    animation: bounce 2s linear;
 }
 .planets div img{
     animation: spin 5s infinite linear;
@@ -14,49 +14,115 @@
     height: 90vh;
     margin-top: 30px;
     padding-bottom: 20px;
-}
-.planets div{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    transition: all 0.4s;
-    max-width: 230px;
-    cursor: pointer;
-    border: 1px solid #161418;
-    margin: 20px auto;
-    background-color: #161418;
-    align-items: center;
-    border-radius: 5px;
-}
-.planets div:hover{
-    border: 1px solid #61dafb;
-    background-color: #181818;
+    animation: bounce 3s linear;
+
 }
 .system-title{
     display: flex;
-    flex-direction: column;
     align-items: center;
-
+    font-family: "Roboto", sans-serif;
+}
+.system-title h3{
+    color: #FAAD14;
 }
 .system-title img{
-    width: 100px;
+
+    filter: saturate(3);
+    margin: 10px;
 }
 .title{
     font-size: 23px;
-    text-align: center;
 }
 @keyframes spin{
     0%{
         transform: rotate(360deg);
     }
 }
-.mercury{
-    text-align: center;
+.status{
+    margin: 20px auto;
+    border: 1px solid #FAAD14;
+    border-radius: 5px;
+    padding: 10px;
+}
+strong{
+    color: #FAAD14;
 }
 .more{
-    background-color: #61dafb;
+    background-color: #FAAD14;
     color: #181818;
     padding: 10px 20px;
     border-radius: 5px;
+    transition: all 0.5s;
+}
+.more:hover{
+    opacity: 0.9;
+    color: white;
+}
+.planets .mary{
+    width: 100%;
+    margin: 10px;
+    cursor: pointer;
+    background: url("https://media.giphy.com/media/RHIKETUlUINYvV7CAO/giphy.gif");
+    max-width: 150px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: #FAAD14;
+    align-items: center;
+    border: 1px solid #202020;
+    transition: all 0.5s;
+    border-radius: 5px;
+}
+.planets .mary img{
+    transition: all 0.5;
+
+    animation: bright 5s infinite linear;
+}
+
+@keyframes bright{
+    0%{
+        filter: saturate(4);
+        transform: rotate(360deg);
+    }
+    25%{
+        filter: saturate(1);
+    }
+    50%{
+        filter: saturate(2);
+    }
+    100%{
+        filter: saturate(3);
+    }
+}
+.planets .mary:hover{
+    transform: scale(1.1);
+    background-color: #191919;
+    border: 1px solid #61dafb;
+}
+@keyframes bounce{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@media(max-width: 425px){
+    .planets{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+    }
+    .system-title{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+@media(max-width: 320px){
+    .planets {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

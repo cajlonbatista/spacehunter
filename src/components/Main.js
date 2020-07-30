@@ -2,7 +2,8 @@ import React from "react";
 import rocket from "./rocket.svg";
 import wallp from "./wallpaper.jpg";
 import notfound from "./404.svg";
-import { Layout, Typography, Spin } from "antd";
+import { Layout, Typography } from "antd";
+import Loader from "./loader/Loader";
 import "./Main.css";
 import "./Main.less";
 const { Content } = Layout;
@@ -39,21 +40,18 @@ export default class Main extends React.Component {
         if (this.state.loader) {
             return (
                 <div className="loading">
-                    <div className="logo">
-                        <img src={rocket} width="200px" />
-                    </div>
-                    <Spin tip="Loading..." size="large">
+                    <Loader>
 
-                    </Spin>
+                    </Loader>
                 </div>
             );
         } else {
             if (this.state.status) {
                 return (
-                    <div className="content">
+                    <div className="content" >
                         <div className="logo">
                             <img src={rocket} width="80px" />
-                            <h1 level={2} >Space Hunter</h1>
+                            <h1>Space Hunter</h1>
                         </div>
                         <Content className="apod">
                             <img src={this.state.main.url} className="day" ></img>
@@ -73,7 +71,6 @@ export default class Main extends React.Component {
                             <Title type="warning" level={4}>A checklist of what you can find here 🤓: </Title>
                         </section>
                     </div>
-
                 );
             } else {
                 return (
