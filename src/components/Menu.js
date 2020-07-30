@@ -3,7 +3,7 @@ import React from "react";
 import "./Menu.css";
 import { Menu } from 'antd';
 import { HomeOutlined, SettingFilled, NodeExpandOutlined } from '@ant-design/icons';
-import { Link } from "react-router-dom";
+import { Link , Button} from "react-router-dom";
 const { SubMenu } = Menu;
 
 export default class App extends React.Component {
@@ -18,7 +18,8 @@ export default class App extends React.Component {
     const { current } = this.state;
     return (
       <div>
-        <Menu className="menu" onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
+        <Menu 
+          className="menu" selectedKeys={[current]} mode="horizontal">
           <Menu.Item key="home" icon={<HomeOutlined />}>
             <Link to="/">Home</Link>
           </Menu.Item>

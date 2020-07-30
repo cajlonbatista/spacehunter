@@ -34,7 +34,7 @@ export default class Universe extends React.Component {
                 <Link className="mary">
                     <img src="https://image.flaticon.com/icons/svg/3061/3061828.svg" width="40px">
                     </img>
-                    <span>Comets</span>
+                    <span>Constellations</span>
                 </Link>
                 <Link className="mary">
                     <img src="https://image.flaticon.com/icons/svg/1396/1396329.svg" width="40px"></img>

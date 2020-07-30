@@ -54,15 +54,40 @@
     background-color: #191919;
     border: 1px solid #61dafb;
 }
-@media(max-width: 425px){
+
+@media(max-width: 645px){
+    .universe{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+@media(max-width: 489px){
+    .universe{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+@media(max-width: 484px){
     .universe{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(8, 1fr);
+        grid-template-rows: repeat(4, 1fr);
     }
 }
-@media(max-width: 320px){
-    .universe .mary{
-        max-width: 140px;
+@media(max-width: 346px){
+    .universe{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media(min-width: 768px){
+    .universe{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(12, 1fr);
     }
 }
