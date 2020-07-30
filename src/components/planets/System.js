@@ -224,24 +224,25 @@ export default class Main extends React.Component {
                     </div>
                         <Drawer
                         title="Saturn"
-                        placement="right"
+                        placement="left"
                         closable={false}
                         className="planet"
                         onClose={this.onCloseSaturn}
                         visible={this.state.saturn}
                     >
                         <figure>
-                            <img src="https://solarsystem.nasa.gov/system/resources/detail_files/2486_stsci-h-p1936a_1800.jpg" width="100%" />
-                            <figcaption>Hubble's New Portrait of Jupiter</figcaption>
+                            <img src="https://solarsystem.nasa.gov/system/resources/detail_files/2490_stsci-h-p1943a-f_1200.jpg" width="100%" />
+                            <figcaption>Saturn's Rings Shine in Hubble Portrait</figcaption>
                         </figure>
                         <div className="status">
-                            <strong>Atmospheric pressure: </strong>20-200 KPa<br></br>
-                            <strong>Orbital period: </strong>4 331,572<br />
-                            <strong>Equatorial diameter:</strong> 142 984 ± 8 km<br />
-                            <strong>Gravity: </strong>3,711 m/s²<br />
+                            <strong>Radius: </strong>58232 km<br></br>
+                            <strong>Orbital period: </strong>29 years<br />
+                            <strong>Surface area: </strong>4,27 × 10^10 km²<br />
+                            <strong>Gravity: </strong>10,44 m/s²<br />
                             <strong>Mass: </strong>318 Earths<br />
-                            <strong>Planet Type:</strong> Gas Giant<br />
-                            <strong>Moons: </strong>53 confirmed | 26 provisional (79 total)<br></br>
+                            <strong>Planet Type: </strong> Gas Giant<br />
+                            <strong>Day: </strong>0d 10h 42m<br></br>
+                            <strong>Moons: </strong>53 confirmed | 29 provisional<br></br>
                         </div>
                         <Link className="more" to="">More</Link>
                     </Drawer>
