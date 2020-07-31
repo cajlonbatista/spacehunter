@@ -67,11 +67,15 @@ figure{
     width: 100%;
     border-radius: 5px;
 }
-@media(max-width: 425px){
+@media(max-width: 526px){
     .apod{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .apod img{
+        width: 100%;
+        margin-top: 20px;
     }
 }
 .notfound{

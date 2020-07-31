@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Layout, Typography, Spin, Drawer } from "antd";
+import { Layout, Typography, Spin, Drawer, Tooltip } from "antd";
 import "./System.css";
 const { Content } = Layout;
 const { Text, Title } = Typography;
-export default class Main extends React.Component {
+export default class System extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -14,6 +14,8 @@ export default class Main extends React.Component {
             mars: false,
             jupiter: false,
             saturn: false,
+            uranus: false,
+            neptune: false
         }
     }
 
@@ -77,6 +79,26 @@ export default class Main extends React.Component {
             saturn: true,
         })
     }
+    onCloseUranus = () => {
+        this.setState({
+            uranus: false,
+        });
+    }
+    onShowUranus = () => {
+        this.setState({
+            uranus: true,
+        })
+    }
+    onCloseNeptune = () => {
+        this.setState({
+            neptune: false,
+        });
+    }
+    onShowNeptune = () => {
+        this.setState({
+            neptune: true,
+        })
+    }
     render() {
         return (
             <div className="system">
@@ -84,11 +106,14 @@ export default class Main extends React.Component {
                     <img src="https://image.flaticon.com/icons/svg/885/885807.svg" width="75px"></img>
                     <h3 className="title">Solar System</h3>
                 </div>
+
                 <div className="planets">
-                    <div title="Come visit me! with a click" onClick={this.onShowMercury} className="mary">
-                        <img src="https://image.flaticon.com/icons/svg/2590/2590482.svg" width="50px"></img>
+                    <Tooltip title="Come visit me! with a click">
+                        <div onClick={this.onShowMercury} className="mary">
+                            <img src="https://image.flaticon.com/icons/svg/2590/2590482.svg" width="50px"></img>
                             Mercury
                         </div>
+                    </Tooltip>
                     <Drawer
                         title="Mercury"
                         placement="right"
@@ -109,12 +134,15 @@ export default class Main extends React.Component {
                             <strong>Mass: </strong>3,285 × 10 ^ 23 kg <br />
                             <strong>Planet Type:</strong> Terrestrial<br />
                         </div>
-                        <Link className="more" to="">More</Link>
+                        <Link className="more" to="/universe/solarsystem/mercury">More</Link>
                     </Drawer>
-                    <div onClick={this.onShowVenus} title="Come visit me! with a click" className="mary">
-                        <img src="https://image.flaticon.com/icons/svg/361/361756.svg" width="50px" />
+                    <Tooltip title="Come visit me! with a click">
+
+                        <div onClick={this.onShowVenus}  className="mary">
+                            <img src="https://image.flaticon.com/icons/svg/361/361756.svg" width="50px" />
                             Venus
                     </div>
+                    </Tooltip>
                     <Drawer
                         title="Venus"
                         placement="left"
@@ -135,12 +163,15 @@ export default class Main extends React.Component {
                             <strong>Gravity:</strong> 8,87 m/s²<br></br>
                             <strong>Mass:</strong> 4,867 × 10^24 kg<br></br>
                         </div>
-                        <Link className="more" to="">More</Link>
+                        <Link className="more" to="/universe/solarsystem/venus">More</Link>
                     </Drawer>
-                    <div title="Come visit me! with a click" className="mary" onClick={this.onShowEarth}>
-                        <img src="https://image.flaticon.com/icons/svg/2909/2909523.svg" width="50px" />
+                    <Tooltip title="Come visit me! with a click">
+
+                        <div className="mary" onClick={this.onShowEarth}>
+                            <img src="https://image.flaticon.com/icons/svg/2909/2909523.svg" width="50px" />
                             Earth
                         </div>
+                    </Tooltip>
                     <Drawer
                         title="Earth"
                         placement="right"
@@ -162,12 +193,15 @@ export default class Main extends React.Component {
                             <strong>Planet Type:</strong> Terrestrial<br />
                             <strong>Moon: </strong> 1<br></br>
                         </div>
-                        <Link className="more" to="">More</Link>
+                        <Link className="more" to="/universe/solarsystem/earth">More</Link>
                     </Drawer>
-                    <div title="Come visit me! with a click" className="mary" onClick={this.onShowMars}>
-                        <img src="https://image.flaticon.com/icons/svg/124/124582.svg" width="50px" />
+                    <Tooltip title="Come visit me! with a click">
+
+                       <div className="mary" onClick={this.onShowMars}>
+                            <img src="https://image.flaticon.com/icons/svg/124/124582.svg" width="50px" />
                             Mars
-                    </div>
+                        </div>
+                    </Tooltip>
                     <Drawer
                         title="Mars"
                         placement="left"
@@ -191,10 +225,12 @@ export default class Main extends React.Component {
                         </div>
                         <Link className="more" to="">More</Link>
                     </Drawer>
-                    <div title="Come visit me! with a click" className="mary" onClick={this.onShowJupiter}>
+                    <Tooltip title="Come visit me! with a click">
+                    <div className="mary" onClick={this.onShowJupiter}>
                         <img src="https://image.flaticon.com/icons/svg/1266/1266581.svg" width="50px" />
                             Jupiter
                     </div>
+                    </Tooltip>
                     <Drawer
                         title="Mars"
                         placement="right"
@@ -218,11 +254,13 @@ export default class Main extends React.Component {
                         </div>
                         <Link className="more" to="">More</Link>
                     </Drawer>
-                    <div title="Come visit me! with a click" onClick={this.onShowSaturn} className="mary">
+                    <Tooltip title="Come visit me! with a click">
+                    <div  onClick={this.onShowSaturn} className="mary">
                         <img src="https://image.flaticon.com/icons/svg/2949/2949024.svg" width="50px" />
                         Saturn
                     </div>
-                        <Drawer
+                    </Tooltip>
+                    <Drawer
                         title="Saturn"
                         placement="left"
                         closable={false}
@@ -246,16 +284,68 @@ export default class Main extends React.Component {
                         </div>
                         <Link className="more" to="">More</Link>
                     </Drawer>
-                    <div title="Come visit me! with a click" className="mary">
+                    <Tooltip title="Come visit me! with a click">
+                    <div  onClick={this.onShowUranus} className="mary">
                         <img src="https://image.flaticon.com/icons/svg/2531/2531049.svg" width="50px" />
-                            Urano
-                        </div >
-                    <div title="Come visit me! with a click" className="mary">
-                        <img src="https://image.flaticon.com/icons/svg/1086/1086088.svg" width="40px" />
-                            Netuno
+                            Uranus
+                    </div >
+                    </Tooltip>
+                    <Drawer
+                        title="Uranus"
+                        placement="right"
+                        closable={false}
+                        className="planet"
+                        onClose={this.onCloseUranus}
+                        visible={this.state.uranus}
+                    >
+                        <figure>
+                            <img src="https://solarsystem.nasa.gov/system/resources/detail_files/599_PIA18182.jpg" width="100%" />
+                            <figcaption>Uranus as seen by NASA's Voyager 2</figcaption>
+                        </figure>
+                        <div className="status">
+                            <strong>Radius: </strong>25362 km<br></br>
+                            <strong>Orbital period: </strong>84 years<br />
+                            <strong>Surface area: </strong>8,083 × 10^9 km²<br />
+                            <strong>Gravity: </strong>8,69 m/s²<br />
+                            <strong>Mass: </strong>14,5 Terras<br />
+                            <strong>Planet Type: </strong>Ice Giant<br />
+                            <strong>Day: </strong>0d 10h 42m<br></br>
+                            <strong>Moons: </strong>27<br></br>
                         </div>
+                        <Link className="more" to="">More</Link>
+                    </Drawer>
+                    <Tooltip title="Come visit me! with a click">
+                    <div className="mary" onClick={this.onShowNeptune}>
+                        <img src="https://image.flaticon.com/icons/svg/1086/1086088.svg" width="40px" />
+                            Neptune
+                    </div>
+                    </Tooltip>
+                    <Drawer
+                        title="Neptune"
+                        placement="right"
+                        closable={false}
+                        className="planet"
+                        onClose={this.onCloseNeptune}
+                        visible={this.state.neptune}
+                    >
+                        <figure>
+                            <img src="https://solarsystem.nasa.gov/system/resources/detail_files/611_PIA01492.jpg" width="100%" />
+                            <figcaption>Neptune Full Disk View</figcaption>
+                        </figure>
+                        <div className="status">
+                            <strong>Radius: </strong>24622 km<br></br>
+                            <strong>Orbital period: </strong>165 years<br />
+                            <strong>Surface area: </strong>7,6183×109 km²<br />
+                            <strong>Gravity: </strong>	11,15 m/s²<br />
+                            <strong>Mass: </strong>1,0243×1026kg<br />
+                            <strong>Planet Type: </strong>Ice Giant<br />
+                            <strong>Day: </strong>0d 16h<br></br>
+                            <strong>Moons: </strong>14<br></br>
+                        </div>
+                        <Link className="more" to="">More</Link>
+                    </Drawer>
                 </div>
-            </div>
+            </div >
         );
     }
 }

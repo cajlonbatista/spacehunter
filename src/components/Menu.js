@@ -1,9 +1,10 @@
-import "./App.less";
+
 import React from "react";
 import "./Menu.css";
-import { Menu } from 'antd';
+import "./App.less";
+import { Menu, Switch } from 'antd';
 import { HomeOutlined, SettingFilled, NodeExpandOutlined } from '@ant-design/icons';
-import { Link , Button} from "react-router-dom";
+import { Link, Button } from "react-router-dom";
 const { SubMenu } = Menu;
 
 export default class App extends React.Component {
@@ -13,12 +14,14 @@ export default class App extends React.Component {
   handleClick = e => {
     this.setState({ current: e.key });
   };
-
+  mode = e => {
+    console.log(e);
+  }
   render() {
     const { current } = this.state;
     return (
       <div>
-        <Menu 
+        <Menu
           className="menu" selectedKeys={[current]} mode="horizontal">
           <Menu.Item key="home" icon={<HomeOutlined />}>
             <Link to="/">Home</Link>

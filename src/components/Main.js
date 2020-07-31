@@ -1,8 +1,9 @@
 import React from "react";
 import rocket from "./rocket.svg";
 import wallp from "./wallpaper.jpg";
+import Carrousel from "./Currousel";
 import notfound from "./404.svg";
-import { Layout, Typography } from "antd";
+import { Layout, Divider, Typography } from "antd";
 import Loader from "./loader/Loader";
 import "./Main.css";
 import "./Main.less";
@@ -34,6 +35,12 @@ export default class Main extends React.Component {
                             })
                         }
                     })
+                    .catch((err) => {
+                        this.setState({
+                            loader: false,
+                            status: false,
+                        })
+                    })
             })
     }
     render() {
@@ -50,26 +57,24 @@ export default class Main extends React.Component {
                 return (
                     <div className="content" >
                         <div className="logo">
+                            
                             <img src={rocket} width="80px" />
                             <h1>Space Hunter</h1>
                         </div>
-                        <Content className="apod">
+                        <Divider />
+                        <div className="apod">
                             <img src={this.state.main.url} className="day" ></img>
                             <div style={{ margin: "20px" }} className="info">
                                 <Text type="secondary"> Astronomy Picture of the Day : {this.state.main.title}</Text><br></br>
                                 <Text type="warning">{this.state.main.copyright}</Text>
                             </div>
-                        </Content>
+                        </div>
                         <div className="description">
                             <Text type="secondary">{this.state.main.explanation}</Text>
                         </div>
-                        <div className="tempy">
-                            <img src={wallp}></img>
-                            <Text type="primary">Let's explore this universe and everything that we are not looking at.</Text>
-                        </div>
-                        <section className="main">
-                            <Title type="warning" level={4}>A checklist of what you can find here 🤓: </Title>
-                        </section>
+                        <Divider />
+                        <Carrousel className="tempy">
+                        </Carrousel>
                     </div>
                 );
             } else {
@@ -80,16 +85,8 @@ export default class Main extends React.Component {
                             <h1 level={2} >Space Hunter</h1>
                         </div>
                         <div className="notfound">
-                            <Text type="warning">We were unable to load the Astronomy Picture of the Day</Text>
                             <img src={notfound} width="140px"></img>
                         </div>
-                        <div className="tempy">
-                            <img src={wallp}></img>
-                            <Text type="secondary" >Let's explore this universe and everything that we are not looking at.</Text>
-                        </div>
-                        <section className="main">
-                            <Title level={4}>A checklist of what you can find here 🤓: </Title>
-                        </section>
                     </div>
                 );
             }
