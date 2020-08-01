@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Layout, Typography, Spin, Drawer, Tooltip } from "antd";
+import { Card, Typography, Alert, Drawer, Tooltip, Collapse } from "antd";
 import "./System.css";
-const { Content } = Layout;
-const { Text, Title } = Typography;
+const { Panel } = Collapse;
+const { Text } = Typography;
 export default class System extends React.Component {
     constructor() {
         super();
@@ -106,7 +106,6 @@ export default class System extends React.Component {
                     <img src="https://image.flaticon.com/icons/svg/885/885807.svg" width="75px"></img>
                     <h3 className="title">Solar System</h3>
                 </div>
-
                 <div className="planets">
                     <Tooltip title="Come visit me! with a click">
                         <div onClick={this.onShowMercury} className="mary">
@@ -138,7 +137,7 @@ export default class System extends React.Component {
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
 
-                        <div onClick={this.onShowVenus}  className="mary">
+                        <div onClick={this.onShowVenus} className="mary">
                             <img src="https://image.flaticon.com/icons/svg/361/361756.svg" width="50px" />
                             Venus
                     </div>
@@ -197,7 +196,7 @@ export default class System extends React.Component {
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
 
-                       <div className="mary" onClick={this.onShowMars}>
+                        <div className="mary" onClick={this.onShowMars}>
                             <img src="https://image.flaticon.com/icons/svg/124/124582.svg" width="50px" />
                             Mars
                         </div>
@@ -226,8 +225,8 @@ export default class System extends React.Component {
                         <Link className="more" to="">More</Link>
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
-                    <div className="mary" onClick={this.onShowJupiter}>
-                        <img src="https://image.flaticon.com/icons/svg/1266/1266581.svg" width="50px" />
+                        <div className="mary" onClick={this.onShowJupiter}>
+                            <img src="https://image.flaticon.com/icons/svg/1266/1266581.svg" width="50px" />
                             Jupiter
                     </div>
                     </Tooltip>
@@ -255,8 +254,8 @@ export default class System extends React.Component {
                         <Link className="more" to="">More</Link>
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
-                    <div  onClick={this.onShowSaturn} className="mary">
-                        <img src="https://image.flaticon.com/icons/svg/2949/2949024.svg" width="50px" />
+                        <div onClick={this.onShowSaturn} className="mary">
+                            <img src="https://image.flaticon.com/icons/svg/2949/2949024.svg" width="50px" />
                         Saturn
                     </div>
                     </Tooltip>
@@ -285,8 +284,8 @@ export default class System extends React.Component {
                         <Link className="more" to="">More</Link>
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
-                    <div  onClick={this.onShowUranus} className="mary">
-                        <img src="https://image.flaticon.com/icons/svg/2531/2531049.svg" width="50px" />
+                        <div onClick={this.onShowUranus} className="mary">
+                            <img src="https://image.flaticon.com/icons/svg/2531/2531049.svg" width="50px" />
                             Uranus
                     </div >
                     </Tooltip>
@@ -315,8 +314,8 @@ export default class System extends React.Component {
                         <Link className="more" to="">More</Link>
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
-                    <div className="mary" onClick={this.onShowNeptune}>
-                        <img src="https://image.flaticon.com/icons/svg/1086/1086088.svg" width="40px" />
+                        <div className="mary" onClick={this.onShowNeptune}>
+                            <img src="https://image.flaticon.com/icons/svg/1086/1086088.svg" width="40px" />
                             Neptune
                     </div>
                     </Tooltip>
@@ -345,6 +344,52 @@ export default class System extends React.Component {
                         <Link className="more" to="">More</Link>
                     </Drawer>
                 </div>
+                <Alert
+                    className="system-sign"
+                    type="warning"
+                    message="Why Is It Called The 'Solar' System?"
+                    description=" There are many planetary systems like ours in the universe, with planets orbiting a host star. Our planetary system is named the 'solar' system because our Sun is named Sol, after the Latin word for Sun, 'solis,' and anything related to the Sun we call 'solar.'"
+                />
+                <br></br>
+                <br></br>
+                <figure className="wallSystem">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Planets2013-unlabeled.jpg/1024px-Planets2013-unlabeled.jpg" className="map" />
+                    <Text  type="infor">Simple Solar System Model</Text>
+                </figure>
+                <Card title="10 things about the solar system" className="collapse">
+                    <Collapse expandIconPosition="right" defaultActiveKey={['1']}>
+                        <Panel header="1. ONE OF BILLIONS 🤓" key="1">
+                            <p>Our solar system is made up of a star, eight planets and countless smaller bodies such as dwarf planets, asteroids and comets.</p>
+                        </Panel>
+                        <Panel header="2. MEET ME IN THE ORION ARM 👍" key="2">
+                            <p>Our solar system orbits the center of the Milky Way Galaxy at about 515,000 mph (828,000 kph). We’re in one of the galaxy’s four spiral arms.</p>
+                        </Panel>
+                        <Panel header="3. A LONG WAY ROUND ⌛" key="3">
+                            <p>It takes our solar system about 230 million years to complete one orbit around the galactic center.</p>
+                        </Panel>
+                        <Panel header="4. SPIRALING THROUGH SPACE 🤓" key="4">
+                            <p>There are three general kinds of galaxies: elliptical, spiral and irregular. The Milky Way is a spiral galaxy.</p>
+                        </Panel>
+                        <Panel header="5. GOOD ATMOSPHERE(S) 😍" key="5">
+                            <p>Our solar system is a region of space. It has no atmosphere. But it contains many worlds—including Earth—with many kinds of atmospheres..</p>
+                        </Panel>
+                        <Panel header="6. MANY MOONS 🌑" key="6">
+                            <p>The planets of our solar system—and even some asteroids—hold more than 150 moons in their orbits.</p>
+                        </Panel>
+                        <Panel header="7. RING WORLDS ✨" key="7">
+                            <p>The four giant planets—and at least one asteroid—have rings. None are as spectacular as Saturn’s gorgeous rings.</p>
+                        </Panel>
+                        <Panel header="8. LEAVING THE CRADLE 🐱‍🏍" key="8">
+                            <p>More than 300 robotic spacecraft have explored destinations beyond Earth orbit, including 24 astronauts who orbited the moon.</p>
+                        </Panel>
+                        <Panel header="9. LIFE AS WE KNOW IT 👌" key="9">
+                            <p>Our solar system is the only one known to support life. So far, we only know of life on Earth, but we’re looking for more everywhere we can.</p>
+                        </Panel>
+                        <Panel header="10. FAR-RANGING ROBOTS 🤖" key="10">
+                            <p>NASA’s Voyager 1 is the only spacecraft so far to leave our solar system. Four other spacecraft will eventually hit interstellar space..</p>
+                        </Panel>
+                    </Collapse>
+                </Card>
             </div >
         );
     }

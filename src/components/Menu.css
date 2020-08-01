@@ -1,0 +1,6 @@
+.menu{
+    width: 100vw;
+    overflow-x: auto;
+    animation: bounce 1s linear;
+    overflow-y: hidden;
+}

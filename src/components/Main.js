@@ -3,7 +3,7 @@ import rocket from "./rocket.svg";
 import wallp from "./wallpaper.jpg";
 import Carrousel from "./Currousel";
 import notfound from "./404.svg";
-import { Layout, Divider, Typography } from "antd";
+import { Alert, Layout, Divider, Typography } from "antd";
 import Loader from "./loader/Loader";
 import "./Main.css";
 import "./Main.less";
@@ -56,11 +56,6 @@ export default class Main extends React.Component {
             if (this.state.status) {
                 return (
                     <div className="content" >
-                        <div className="logo">
-                            
-                            <img src={rocket} width="80px" />
-                            <h1>Space Hunter</h1>
-                        </div>
                         <Divider />
                         <div className="apod">
                             <img src={this.state.main.url} className="day" ></img>
@@ -85,8 +80,11 @@ export default class Main extends React.Component {
                             <h1 level={2} >Space Hunter</h1>
                         </div>
                         <div className="notfound">
-                            <img src={notfound} width="140px"></img>
+                            <Alert type="warning">Sorry, we did not get the image of the day due to time zone issues with the Nasa server, but we are working on a solution, in the meantime try to access it during daytime hours 🤓👍.</Alert>
                         </div>
+                        <Divider></Divider>
+                        <Carrousel className="tempy">
+                        </Carrousel>
                     </div>
                 );
             }

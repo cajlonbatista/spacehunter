@@ -24,10 +24,13 @@ export default class App extends React.Component {
         <Menu
           className="menu" selectedKeys={[current]} mode="horizontal">
           <Menu.Item key="home" icon={<HomeOutlined />}>
-            <Link to="/">Home</Link>
+            <Link to="/">Space Hunter</Link>
           </Menu.Item>
           <Menu.Item key="universe" icon={<SettingFilled />}>
             <Link to="/universe">Universe</Link>
+          </Menu.Item>
+          <Menu.Item key="articles" icon={<NodeExpandOutlined />}>
+            <Link to="/articles">Space News </Link>
           </Menu.Item>
           <Menu.Item key="about" icon={<NodeExpandOutlined />}>
             <Link to="/about">About</Link>
