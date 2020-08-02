@@ -18,6 +18,7 @@
 }
 .system-title{
     display: flex;
+    font-size: 16px;
     align-items: center;
     font-family: "Roboto", sans-serif;
 }
@@ -25,7 +26,6 @@
     color: #FAAD14;
 }
 .system-title img{
-
     filter: saturate(3);
     margin: 10px;
 }
@@ -114,9 +114,7 @@ img{
 .collapse{
     width: 100%;
     max-width: 900px;
-    background: url("https://media.giphy.com/media/RHIKETUlUINYvV7CAO/giphy.gif");
-    background-size: cover;
-    background-repeat: repeat;
+    background-size: 80%;
     margin: 10px auto;
 }
 .planets .mary:hover{
@@ -179,4 +177,17 @@ img{
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
     }
+}
+.titlePlanets{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.titlePlanets h2{
+    color: #FAAD14;
+    font-size: 20px;
+}
+.titlePlanets img{
+    width: 70px;
 }

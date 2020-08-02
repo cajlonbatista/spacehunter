@@ -2,7 +2,6 @@ import React from "react";
 import rocket from "./rocket.svg";
 import wallp from "./wallpaper.jpg";
 import Carrousel from "./Currousel";
-import notfound from "./404.svg";
 import { Alert, Layout, Divider, Typography } from "antd";
 import Loader from "./loader/Loader";
 import "./Main.css";
@@ -83,8 +82,7 @@ export default class Main extends React.Component {
                             <Alert type="warning">Sorry, we did not get the image of the day due to time zone issues with the Nasa server, but we are working on a solution, in the meantime try to access it during daytime hours 🤓👍.</Alert>
                         </div>
                         <Divider></Divider>
-                        <Carrousel className="tempy">
-                        </Carrousel>
+                        <Carrousel className="tempy"></Carrousel>
                     </div>
                 );
             }

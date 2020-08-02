@@ -32,7 +32,7 @@ export default class App extends React.Component {
           <Menu.Item key="articles" icon={<NodeExpandOutlined />}>
             <Link to="/articles">Space News </Link>
           </Menu.Item>
-          <Menu.Item key="about" icon={<NodeExpandOutlined />}>
+          <Menu.Item className="about" key="about" icon={<NodeExpandOutlined />}>
             <Link to="/about">About</Link>
           </Menu.Item>
         </Menu>
