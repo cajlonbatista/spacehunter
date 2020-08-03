@@ -74,8 +74,12 @@ export default class Main extends React.Component {
             } else {
                 return (
                     <div className="content">
+                        <div className="logo">
+                            <img src={rocket} width="60px" />
+                            <h1 level={2} >Space Hunter</h1>
+                        </div>
                         <div className="notfound">
-                            <Alert type="warning">Sorry, we did not get the image of the day due to time zone issues with the Nasa server, but we are working on a solution, in the meantime try to access it during daytime hours 🤓👍.</Alert>
+                            <Alert type="warning" message="Warning" description="Sorry, we did not get the image of the day due to time zone issues with the Nasa server, but we are working on a solution, in the meantime try to access it during daytime hours 🤓👍."/>
                         </div>
                         <Divider></Divider>
                         <Carrousel className="tempy"></Carrousel>
