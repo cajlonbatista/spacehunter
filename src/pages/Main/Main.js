@@ -63,6 +63,18 @@ export default class Main extends React.Component {
                         <Divider />
                         <div className="welcome">
                             <h2>What you can find here</h2>
+                            <div className="painels">
+                                
+                            </div>
+                            <div className="painels">
+
+                            </div>
+                            <div className="painels">
+
+                            </div>
+                            <div className="painels">
+
+                            </div>
                         </div>
                     </div>
                 );

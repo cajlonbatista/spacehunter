@@ -134,7 +134,7 @@ export default class System extends React.Component {
                             <strong>Mass: </strong>3,285 × 10 ^ 23 kg <br />
                             <strong>Planet Type:</strong> Terrestrial<br />
                         </div>
-                        <Link className="more" to="/universe/solarsystem/mercury">More</Link>
+                        <Link className="more" to="/universe/solarsystem/mercury">Travel</Link>
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
 
@@ -163,7 +163,7 @@ export default class System extends React.Component {
                             <strong>Gravity:</strong> 8,87 m/s²<br></br>
                             <strong>Mass:</strong> 4,867 × 10^24 kg<br></br>
                         </div>
-                        <Link className="more" to="/universe/solarsystem/venus">More</Link>
+                        <Link className="more" to="/universe/solarsystem/venus">Travel</Link>
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
 
@@ -193,7 +193,7 @@ export default class System extends React.Component {
                             <strong>Planet Type:</strong> Terrestrial<br />
                             <strong>Moon: </strong> 1<br></br>
                         </div>
-                        <Link className="more" to="/universe/solarsystem/earth">More</Link>
+                        <Link className="more" to="/universe/solarsystem/earth">Travel</Link>
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
 
@@ -223,7 +223,7 @@ export default class System extends React.Component {
                             <strong>Planet Type:</strong> Terrestrial<br />
                             <strong>Moons: </strong> Fobos, Deimos<br></br>
                         </div>
-                        <Link className="more" to="">More</Link>
+                        <Link className="more" to="">Travel</Link>
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
                         <div className="mary" onClick={this.onShowJupiter}>
@@ -252,7 +252,7 @@ export default class System extends React.Component {
                             <strong>Planet Type:</strong> Gas Giant<br />
                             <strong>Moons: </strong>53 confirmed | 26 provisional (79 total)<br></br>
                         </div>
-                        <Link className="more" to="">More</Link>
+                        <Link className="more" to="">Travel</Link>
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
                         <div onClick={this.onShowSaturn} className="mary">
@@ -282,7 +282,7 @@ export default class System extends React.Component {
                             <strong>Day: </strong>0d 10h 42m<br></br>
                             <strong>Moons: </strong>53 confirmed | 29 provisional<br></br>
                         </div>
-                        <Link className="more" to="">More</Link>
+                        <Link className="more" to="">Travel</Link>
                     </Drawer>
                     <Tooltip title="Come visit me! with a click">
                         <div onClick={this.onShowUranus} className="mary">
