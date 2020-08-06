@@ -16,7 +16,7 @@ export default class App extends React.Component {
         setTimeout(this.none, 3000);
     }
     none = () => {
-        this.setState({
+        this.setate({
             splash: true,
         })
     }

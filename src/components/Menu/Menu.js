@@ -1,6 +1,5 @@
 import React from "react";
 import "./Menu.css";
-import "./App.less";
 import { Menu, Switch } from 'antd';
 import { HomeOutlined, SettingFilled, NodeExpandOutlined } from '@ant-design/icons';
 import { Link, Button } from "react-router-dom";

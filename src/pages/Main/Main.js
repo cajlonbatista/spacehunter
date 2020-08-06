@@ -1,11 +1,7 @@
 import React from "react";
-import rocket from "./rocket.svg";
-import wallp from "./wallpaper.jpg";
-import Carrousel from "./Currousel";
 import { Alert, Layout, Divider, Typography } from "antd";
 import Loader from "./loading/Loader";
 import "./Main.css";
-import "./Main.less";
 const { Content } = Layout;
 const { Text, Title } = Typography;
 export default class Main extends React.Component {
@@ -67,8 +63,6 @@ export default class Main extends React.Component {
                             <Text type="secondary">{this.state.main.explanation}</Text>
                         </div>
                         <Divider />
-                        <Carrousel className="tempy">
-                        </Carrousel>
                     </div>
                 );
             } else {
@@ -78,7 +72,6 @@ export default class Main extends React.Component {
                             <Alert type="warning" message="Warning" description="Sorry, we did not get the image of the day due to time zone issues with the Nasa server, but we are working on a solution, in the meantime try to access it during daytime hours 🤓👍."/>
                         </div>
                         <Divider></Divider>
-                        <Carrousel className="tempy"></Carrousel>
                     </div>
                 );
             }

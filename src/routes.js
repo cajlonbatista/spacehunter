@@ -2,7 +2,7 @@ import React from "react";
 
 import { Switch, Route } from "react-router-dom";
 
-import Main from "./components/Main";
+import Main from "./pages/Main/Main";
 import System from "./pages/Universe/System/System";
 import Mercury from "./pages/Universe/System/planets/Mercury";
 import Universe from "./pages/Universe/Universe";
