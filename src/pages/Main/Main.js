@@ -1,6 +1,6 @@
 import React from "react";
-import { Alert, Layout, Divider, Typography } from "antd";
-import Loader from "./loading/Loader";
+import { Alert, Layout, Divider, Typography, Button } from "antd";
+import Loader from "../../components/Loader/Loader";
 import "./Main.css";
 const { Content } = Layout;
 const { Text, Title } = Typography;
@@ -51,18 +51,19 @@ export default class Main extends React.Component {
             if (this.state.status) {
                 return (
                     <div className="content" >
-                        <Divider />
+                        <h1>Welcome, Hunter</h1>
                         <div className="apod">
                             <img src={this.state.main.url} className="day" ></img>
                             <div style={{ margin: "20px" }} className="info">
                                 <Text type="secondary"> Astronomy Picture of the Day : {this.state.main.title}</Text><br></br>
                                 <Text type="warning">{this.state.main.copyright}</Text>
+                                <Button type="primary">More</Button>
                             </div>
                         </div>
-                        <div className="description">
-                            <Text type="secondary">{this.state.main.explanation}</Text>
-                        </div>
                         <Divider />
+                        <div className="welcome">
+                            <h2>What you can find here</h2>
+                        </div>
                     </div>
                 );
             } else {

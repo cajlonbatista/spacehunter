@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, Typography, Alert, Drawer, Tooltip, Collapse } from "antd";
+import { Typography, Drawer, Tooltip, Collapse } from "antd";
 import "./System.css";
+import land from "../../../assets/images/land.svg";
 const { Panel } = Collapse;
 const { Text } = Typography;
 export default class System extends React.Component {
@@ -103,8 +104,8 @@ export default class System extends React.Component {
         return (
             <div className="system">
                 <div className="titlePlanets">
-                    <img src="https://image.flaticon.com/icons/svg/1124/1124460.svg" />
-                    <h2><i>Come travel through the solar system</i></h2>
+                    <img src={land} />
+                    <h2>Come travel through the solar system</h2>
                 </div>
                 <div className="planets">
                     <Tooltip title="Come visit me! with a click">

@@ -2,23 +2,12 @@ import React from "react";
 import Menu from "./components/Menu/Menu";
 import Routes from "./routes";
 import "./App.less";
-import { Layout } from 'antd';
+import "./assets/global/styles.css";
 import { BrowserRouter } from "react-router-dom";
 
 export default class App extends React.Component {
     constructor() {
         super();
-        this.state = {
-            splash: false,
-        }
-    }
-    componentDidMount() {
-        setTimeout(this.none, 3000);
-    }
-    none = () => {
-        this.setate({
-            splash: true,
-        })
     }
     render() {
             return (

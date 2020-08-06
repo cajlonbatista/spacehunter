@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
 
 .content{
     height: 90vh;
+    margin-top: 20px;
     width: 100vw;
     overflow: auto;
     animation: bounce 1s linear;
+}
+.content h1{
+    font-family: "Exo", sans-serif ;
+    text-align: center;
 }
 @keyframes bounce{
     0%{
@@ -13,9 +17,6 @@
     100%{
         opacity: 1;
     }
-}
-figure{
-    text-align: center;
 }
 .loading{
     display: flex;
@@ -26,7 +27,7 @@ figure{
     background-size: 80%;
 }
 .apod{
-    margin: 10px auto;
+    margin: 30px auto;
     display: flex;
     width: 90%;
     justify-content: center;
@@ -38,9 +39,13 @@ figure{
     
     border-radius: 10px;
 }
-.description{
-    text-align: justify;
-    margin: 20px;
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info button{
+    margin-top: 13px;
 }
 .main{
     margin: 20px auto;
@@ -76,4 +81,10 @@ figure{
 }
 .notfound img{
     margin-top: 10px;
+}
+.welcome h2{
+    font-family: Roboto Mono, sans-serif;
+    text-align: end;
+    margin-right: 10px;
+    line-height: 10px;
 }
