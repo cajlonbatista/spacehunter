@@ -1,6 +1,6 @@
 import React from "react";
 import { Alert, Layout, Divider, Typography, Button } from "antd";
-import Loader from "../../components/Loading/Loader";
+import {MeteorRainLoading} from "react-loadingg";
 import "./Main.css";
 const { Content } = Layout;
 const { Text, Title } = Typography;
@@ -41,11 +41,7 @@ export default class Main extends React.Component {
     render() {
         if (this.state.loader) {
             return (
-                <div className="loading">
-                    <Loader>
-
-                    </Loader>
-                </div>
+                <MeteorRainLoading color="#ffb400" size="larger" />
             );
         } else {
             if (this.state.status) {
