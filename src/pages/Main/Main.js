@@ -1,6 +1,6 @@
 import React from "react";
 import { Alert, Layout, Divider, Typography, Button } from "antd";
-import Loader from "../../components/Loader/Loader";
+import Loader from "../../components/Loading/Loader";
 import "./Main.css";
 const { Content } = Layout;
 const { Text, Title } = Typography;
@@ -64,7 +64,7 @@ export default class Main extends React.Component {
                         <div className="welcome">
                             <h2>What you can find here</h2>
                             <div className="painels">
-                                
+
                             </div>
                             <div className="painels">
 
