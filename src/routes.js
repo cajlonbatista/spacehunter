@@ -4,11 +4,11 @@ import { Switch, Route } from "react-router-dom";
 
 import Main from "./pages/Main/Main";
 import System from "./pages/Universe/System/System";
-import Mercury from "./pages/Universe/System/planets/Mercury";
+import Mercury from "./pages/Universe/System/Planets/Mercury";
 import Universe from "./pages/Universe/Universe";
-import Mars from "./pages/Universe/System/planets/Mars";
-import Earth from "./pages/Universe/System/planets/Earth";
-import Venus from "./pages/Universe/System/planets/Venus";
+import Mars from "./pages/Universe/System/Planets/Mars";
+import Earth from "./pages/Universe/System/Planets/Earth";
+import Venus from "./pages/Universe/System/Planets/Venus";
 
 export default function Routes() {
     return (
