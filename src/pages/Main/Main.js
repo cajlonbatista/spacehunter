@@ -3,7 +3,7 @@ import rocket from "./rocket.svg";
 import wallp from "./wallpaper.jpg";
 import Carrousel from "./Currousel";
 import { Alert, Layout, Divider, Typography } from "antd";
-import Loader from "./loader/Loader";
+import Loader from "./loading/Loader";
 import "./Main.css";
 import "./Main.less";
 const { Content } = Layout;

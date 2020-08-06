@@ -1,12 +1,15 @@
-import { Switch, Route } from "react-router-dom";
-import Main from "./components/Main";
-import System from "./components/planets/System";
-import Mercury from "./components/planets/Mercury";
 import React from "react";
-import Universe from "./components/Universe";
-import Mars from "./components/planets/Mars";
-import Earth from "./components/planets/Earth";
-import Venus from "./components/planets/Venus";
+
+import { Switch, Route } from "react-router-dom";
+
+import Main from "./components/Main";
+import System from "./pages/Universe/System/System";
+import Mercury from "./pages/Universe/System/planets/Mercury";
+import Universe from "./pages/Universe/Universe";
+import Mars from "./pages/Universe/System/planets/Mars";
+import Earth from "./pages/Universe/System/planets/Earth";
+import Venus from "./pages/Universe/System/planets/Venus";
+
 export default function Routes() {
     return (
             <Switch>
@@ -17,7 +20,6 @@ export default function Routes() {
                 <Route path="/universe/solarsystem/mars" exact component={Mars}></Route>
                 <Route path="/universe/solarsystem/earth" exact component={Earth}></Route>
                 <Route path="/universe/solarsystem/venus" exact component={Venus}></Route>
-
             </Switch>
     );
 }

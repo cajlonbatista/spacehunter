@@ -102,56 +102,6 @@ export default class System extends React.Component {
     render() {
         return (
             <div className="system">
-
-                <div className="system-title">
-                    <img src="https://image.flaticon.com/icons/svg/885/885807.svg" width="75px"></img>
-                    <h3 className="title">Solar System</h3>
-                </div>
-                <figure className="wallSystem">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Planets2013-unlabeled.jpg/1024px-Planets2013-unlabeled.jpg" className="map" />
-                </figure>
-                <Alert
-                    className="system-sign"
-                    type="warning"
-                    message="Why Is It Called The 'Solar' System?"
-                    description=" There are many planetary systems like ours in the universe, with planets orbiting a host star. Our planetary system is named the 'solar' system because our Sun is named Sol, after the Latin word for Sun, 'solis,' and anything related to the Sun we call 'solar.'"
-                />
-                <br></br>
-                <br></br>
-                <Card title="10 things about the solar system" className="collapse">
-                    <Collapse expandIconPosition="right" defaultActiveKey={['1']}>
-                        <Panel header="1. ONE OF BILLIONS 🤓" key="1">
-                            <p>Our solar system is made up of a star, eight planets and countless smaller bodies such as dwarf planets, asteroids and comets.</p>
-                        </Panel>
-                        <Panel header="2. MEET ME IN THE ORION ARM 👍" key="2">
-                            <p>Our solar system orbits the center of the Milky Way Galaxy at about 515,000 mph (828,000 kph). We’re in one of the galaxy’s four spiral arms.</p>
-                        </Panel>
-                        <Panel header="3. A LONG WAY ROUND ⌛" key="3">
-                            <p>It takes our solar system about 230 million years to complete one orbit around the galactic center.</p>
-                        </Panel>
-                        <Panel header="4. SPIRALING THROUGH SPACE 🤓" key="4">
-                            <p>There are three general kinds of galaxies: elliptical, spiral and irregular. The Milky Way is a spiral galaxy.</p>
-                        </Panel>
-                        <Panel header="5. GOOD ATMOSPHERE(S) 😍" key="5">
-                            <p>Our solar system is a region of space. It has no atmosphere. But it contains many worlds—including Earth—with many kinds of atmospheres..</p>
-                        </Panel>
-                        <Panel header="6. MANY MOONS 🌑" key="6">
-                            <p>The planets of our solar system—and even some asteroids—hold more than 150 moons in their orbits.</p>
-                        </Panel>
-                        <Panel header="7. RING WORLDS ✨" key="7">
-                            <p>The four giant planets—and at least one asteroid—have rings. None are as spectacular as Saturn’s gorgeous rings.</p>
-                        </Panel>
-                        <Panel header="8. LEAVING THE CRADLE 🐱‍🏍" key="8">
-                            <p>More than 300 robotic spacecraft have explored destinations beyond Earth orbit, including 24 astronauts who orbited the moon.</p>
-                        </Panel>
-                        <Panel header="9. LIFE AS WE KNOW IT 👌" key="9">
-                            <p>Our solar system is the only one known to support life. So far, we only know of life on Earth, but we’re looking for more everywhere we can.</p>
-                        </Panel>
-                        <Panel header="10. FAR-RANGING ROBOTS 🤖" key="10">
-                            <p>NASA’s Voyager 1 is the only spacecraft so far to leave our solar system. Four other spacecraft will eventually hit interstellar space..</p>
-                        </Panel>
-                    </Collapse>
-                </Card>
                 <div className="titlePlanets">
                     <img src="https://image.flaticon.com/icons/svg/1124/1124460.svg" />
                     <h2><i>Come travel through the solar system</i></h2>
