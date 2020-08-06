@@ -1,8 +1,11 @@
-import React from "./node_modules/react";
-import { Button } from "./node_modules/antd";
-import {Link} from "./node_modules/react-router-dom";
-import { LeftOutlined } from "./node_modules/@ant-design/icons"
-export default class Earth extends React.Component {
+import React from "react";
+
+import{Button} from "antd";
+import "./styles.css";
+import {LeftOutlined} from "@ant-design/icons/LeftOutlined";
+import {Link} from "react-router-dom";
+
+export default class Mercury extends React.Component {
     constructor() {
         super();
     }
@@ -13,7 +16,10 @@ export default class Earth extends React.Component {
                     <Link to="/universe/solarsystem">
                         <Button shape="circle" icon={<LeftOutlined />} type="primary"></Button>
                     </Link>
-                    <h3>Earth</h3>
+                    <h2>Mercury</h2>
+                </div>
+                <div className="contentMercury">
+
                 </div>
             </div>
         );
