@@ -31,6 +31,7 @@
     display: flex;
     font-family: Exo, sans-serif;
     align-items: center;
+    padding: 10px;
     background: url("https://solarsystem.nasa.gov/system/resources/detail_files/2266_PIA19216_1280.jpg");
     height: 60vh;
     width: 100vw;
@@ -122,4 +123,18 @@
               transform-origin: top;
     }
   }
-  
+@media(max-width: 768px){
+    .tennMercury{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, 1fr);
+    }
+}
+@media(max-width: 513px){
+    .tennMercury{
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(10, 1fr);
+    }
+}
