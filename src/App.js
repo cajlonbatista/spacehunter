@@ -1,20 +1,18 @@
-import React from "react";
-import Menu from "./components/Menu/Menu";
-import Routes from "./routes";
-import "./App.less";
-import "./assets/global/styles.css";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
+import './App.less';
+import './assets/global/styles.css';
 
-export default class App extends React.Component {
-    constructor() {
-        super();
-    }
-    render() {
-            return (
-                <BrowserRouter>
-                    <Menu></Menu>
-                    <Routes></Routes>
-                </BrowserRouter >
-            )
-    }
+import Menu from './components/Menu/Menu';
+
+export default class App extends React.PureComponent {
+  render() {
+    return (
+      <BrowserRouter>
+        <Menu />
+        <Routes />
+      </BrowserRouter>
+    );
+  }
 }

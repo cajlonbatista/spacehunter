@@ -1,7 +1,5 @@
-.menu{
-    width: 100vw;
-    background: ur;
-    overflow-x: auto;
-    animation: bounce 1s linear;
-    overflow-y: hidden;
+.menu {
+  width: 100%;
+  overflow: auto hidden;
+  animation: bounce 1s linear;
 }
