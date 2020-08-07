@@ -7,19 +7,21 @@ import ArrowLeft from "../../../../assets/images/arrowleft.svg";
 
 export default function Mercury() {
     return (
-        <div className="planetAbout">
-            <div className="headerPlanet">
-                <Link className="backPlanet" to="/universe/solarsystem">
+        <div className="planetMercury">
+            <div className="headerMercury">
+                <Link className="backMercury" to="/universe/solarsystem">
                     <img src={ArrowLeft} alt="Voltar" />
                 </Link>
-                <div className="titlePlanet">
+                <div className="titleMercury">
                     <h2>Mercury</h2>
                 </div>
             </div>
-            <div className="contentPlanet">
-                <img src="https://solarsystem.nasa.gov/system/resources/detail_files/2266_PIA19216_1280.jpg" />
-                <p>From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmospher</p>
-                <div className="tennPlanet">
+            <div className="contentMercury">
+                <div className="overviewMercury">
+                    <p>The Swiftest Planet</p>
+                </div>
+                <p className="descriptionMercury">From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmospher.</p>
+                <div className="tennMercury">
                     <div>
                         <h3>SMALLEST</h3>
                         <p>Mercury is the smallest planet in our solar system—only slightly larger than Earth's Moon. </p>
