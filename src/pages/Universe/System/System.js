@@ -108,12 +108,10 @@ export default class System extends React.Component {
                     <h2>Come travel through the solar system</h2>
                 </div>
                 <div className="planets">
-                    <Tooltip title="Come visit me! with a click">
-                        <div onClick={this.onShowMercury} className="mary">
-                            <img src="https://image.flaticon.com/icons/svg/2590/2590482.svg" width="50px"></img>
+                    <div onClick={this.onShowMercury} className="mary">
+                        <img src="https://image.flaticon.com/icons/svg/2590/2590482.svg" width="50px"></img>
                             Mercury
                         </div>
-                    </Tooltip>
                     <Drawer
                         title="Mercury"
                         placement="right"
@@ -136,13 +134,11 @@ export default class System extends React.Component {
                         </div>
                         <Link className="more" to="/universe/solarsystem/mercury">Travel</Link>
                     </Drawer>
-                    <Tooltip title="Come visit me! with a click">
 
-                        <div onClick={this.onShowVenus} className="mary">
-                            <img src="https://image.flaticon.com/icons/svg/361/361756.svg" width="50px" />
+                    <div onClick={this.onShowVenus} className="mary">
+                        <img src="https://image.flaticon.com/icons/svg/361/361756.svg" width="50px" />
                             Venus
                     </div>
-                    </Tooltip>
                     <Drawer
                         title="Venus"
                         placement="left"
@@ -165,13 +161,11 @@ export default class System extends React.Component {
                         </div>
                         <Link className="more" to="/universe/solarsystem/venus">Travel</Link>
                     </Drawer>
-                    <Tooltip title="Come visit me! with a click">
-
-                        <div className="mary" onClick={this.onShowEarth}>
-                            <img src="https://image.flaticon.com/icons/svg/2909/2909523.svg" width="50px" />
+                    <div className="mary" onClick={this.onShowEarth}>
+                        <img src="https://image.flaticon.com/icons/svg/2909/2909523.svg" width="50px" />
                             Earth
                         </div>
-                    </Tooltip>
+
                     <Drawer
                         title="Earth"
                         placement="right"
@@ -195,13 +189,11 @@ export default class System extends React.Component {
                         </div>
                         <Link className="more" to="/universe/solarsystem/earth">Travel</Link>
                     </Drawer>
-                    <Tooltip title="Come visit me! with a click">
 
-                        <div className="mary" onClick={this.onShowMars}>
-                            <img src="https://image.flaticon.com/icons/svg/124/124582.svg" width="50px" />
+                    <div className="mary" onClick={this.onShowMars}>
+                        <img src="https://image.flaticon.com/icons/svg/124/124582.svg" width="50px" />
                             Mars
                         </div>
-                    </Tooltip>
                     <Drawer
                         title="Mars"
                         placement="left"
@@ -225,12 +217,10 @@ export default class System extends React.Component {
                         </div>
                         <Link className="more" to="">Travel</Link>
                     </Drawer>
-                    <Tooltip title="Come visit me! with a click">
-                        <div className="mary" onClick={this.onShowJupiter}>
-                            <img src="https://image.flaticon.com/icons/svg/1266/1266581.svg" width="50px" />
+                    <div className="mary" onClick={this.onShowJupiter}>
+                        <img src="https://image.flaticon.com/icons/svg/1266/1266581.svg" width="50px" />
                             Jupiter
                     </div>
-                    </Tooltip>
                     <Drawer
                         title="Mars"
                         placement="right"
@@ -254,12 +244,10 @@ export default class System extends React.Component {
                         </div>
                         <Link className="more" to="">Travel</Link>
                     </Drawer>
-                    <Tooltip title="Come visit me! with a click">
-                        <div onClick={this.onShowSaturn} className="mary">
-                            <img src="https://image.flaticon.com/icons/svg/2949/2949024.svg" width="50px" />
+                    <div onClick={this.onShowSaturn} className="mary">
+                        <img src="https://image.flaticon.com/icons/svg/2949/2949024.svg" width="50px" />
                         Saturn
                     </div>
-                    </Tooltip>
                     <Drawer
                         title="Saturn"
                         placement="left"
@@ -284,12 +272,10 @@ export default class System extends React.Component {
                         </div>
                         <Link className="more" to="">Travel</Link>
                     </Drawer>
-                    <Tooltip title="Come visit me! with a click">
-                        <div onClick={this.onShowUranus} className="mary">
-                            <img src="https://image.flaticon.com/icons/svg/2531/2531049.svg" width="50px" />
+                    <div onClick={this.onShowUranus} className="mary">
+                        <img src="https://image.flaticon.com/icons/svg/2531/2531049.svg" width="50px" />
                             Uranus
                     </div >
-                    </Tooltip>
                     <Drawer
                         title="Uranus"
                         placement="right"
@@ -314,12 +300,10 @@ export default class System extends React.Component {
                         </div>
                         <Link className="more" to="">More</Link>
                     </Drawer>
-                    <Tooltip title="Come visit me! with a click">
-                        <div className="mary" onClick={this.onShowNeptune}>
-                            <img src="https://image.flaticon.com/icons/svg/1086/1086088.svg" width="40px" />
+                    <div className="mary" onClick={this.onShowNeptune}>
+                        <img src="https://image.flaticon.com/icons/svg/1086/1086088.svg" width="40px" />
                             Neptune
                     </div>
-                    </Tooltip>
                     <Drawer
                         title="Neptune"
                         placement="right"

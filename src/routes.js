@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Main from "./pages/Main/Main";
 import System from "./pages/Universe/System/System";
-import Mercury from "./pages/Universe/System/Planets/Mercury/Index";
+import Mercury from "./pages/Universe/System/Planets/Mercury";
 import Universe from "./pages/Universe/Universe";
 export default function Routes() {
     return (

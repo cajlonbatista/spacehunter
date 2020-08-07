@@ -1,0 +1,10 @@
+.headerMercury{
+    display: flex;
+    padding: 10px;
+}
+.backMercury img{
+    width: 20px;
+}
+.contentMercury h2{
+    font-family: Exo, sans-serif;
+}
