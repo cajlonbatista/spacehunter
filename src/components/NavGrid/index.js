@@ -3,7 +3,7 @@ import './index.css';
 import { Link } from 'react-router-dom';
 
 export default class NavGrid extends React.Component {
-  render () {
+  render() {
     return (
       <div className="navigator">
         {
@@ -26,6 +26,6 @@ export default class NavGrid extends React.Component {
           ))
         }
       </div>
-    )
+    );
   }
 }
