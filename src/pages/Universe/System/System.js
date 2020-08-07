@@ -36,17 +36,15 @@ export default class System extends React.Component {
                 </div>
 
                 <div className="planets">
-                    <Tooltip title="Come visit me! with a click">
-                        <div onClick={() => this.onShowDrawer('mercury')} className="mary">
-                            <img
-                              src="https://image.flaticon.com/icons/svg/2590/2590482.svg"
-                              width="50px"
-                            />
+                    <div
+                      onClick={() => this.onShowDrawer('mercury')}
+                      className="mary"
+                    >
+                      <img src="https://image.flaticon.com/icons/svg/2590/2590482.svg" width="50px" />
 
-                            Mercury
-                        </div>
-                    </Tooltip>
-
+                      Mercury
+                    </div>
+                    
                     <Drawer
                         title="Mercury"
                         placement="right"
@@ -80,16 +78,14 @@ export default class System extends React.Component {
                         </Link>
                     </Drawer>
 
-                    <Tooltip title="Come visit me! with a click">
-                        <div onClick={() => this.onShowDrawer('venus')} className="mary">
-                            <img
-                              src="https://image.flaticon.com/icons/svg/361/361756.svg"
-                              width="50px"
-                            />
-
-                            Venus
-                      </div>
-                    </Tooltip>
+                    <div
+                      onClick={() => this.onShowDrawer('venus')}
+                      className="mary"
+                    >
+                      <img src="https://image.flaticon.com/icons/svg/361/361756.svg" width="50px" />
+                      
+                      Venus
+                    </div>
 
                     <Drawer
                         title="Venus"
@@ -123,20 +119,15 @@ export default class System extends React.Component {
                           Travel
                         </Link>
                     </Drawer>
+                    
+                    <div
+                      className="mary"
+                      onClick={() => this.onShowDrawer('earth')}
+                    >
+                      <img src="https://image.flaticon.com/icons/svg/2909/2909523.svg" width="50px" />
 
-                    <Tooltip title="Come visit me! with a click">
-                        <div
-                          className="mary"
-                          onClick={() => this.onShowDrawer('earth')}
-                        >
-                            <img
-                              src="https://image.flaticon.com/icons/svg/2909/2909523.svg"
-                              width="50px"
-                            />
-
-                            Earth
-                        </div>
-                    </Tooltip>
+                      Earth
+                    </div>
 
                     <Drawer
                         title="Earth"
@@ -170,20 +161,15 @@ export default class System extends React.Component {
                         </Link>
                     </Drawer>
 
-                    <Tooltip title="Come visit me! with a click">
-                        <div
-                          className="mary"
-                          onClick={() => this.onShowDrawer('mars')}
-                        >
-                            <img
-                              src="https://image.flaticon.com/icons/svg/124/124582.svg"
-                              width="50px"
-                            />
+                    <div
+                      className="mary"
+                      onClick={() => this.onShowDrawer('mars')}
+                    >
+                      <img src="https://image.flaticon.com/icons/svg/124/124582.svg" width="50px" />
 
-                            Mars
-                        </div>
-                    </Tooltip>
-
+                        Mars
+                    </div>
+                    
                     <Drawer
                         title="Mars"
                         placement="left"
@@ -217,20 +203,15 @@ export default class System extends React.Component {
                           Travel
                         </Link>
                     </Drawer>
+                    
+                    <div
+                      className="mary"
+                      onClick={() => this.onShowDrawer('jupiter')}
+                    >
+                        <img src="https://image.flaticon.com/icons/svg/1266/1266581.svg" width="50px" />
 
-                    <Tooltip title="Come visit me! with a click">
-                        <div
-                          className="mary"
-                          onClick={() => this.onShowDrawer('jupiter')}
-                        >
-                          <img
-                            src="https://image.flaticon.com/icons/svg/1266/1266581.svg"
-                            width="50px"
-                          />
-
-                          Jupiter
-                        </div>
-                    </Tooltip>
+                        Jupiter
+                    </div>
 
                     <Drawer
                         title="Mars"
@@ -253,7 +234,7 @@ export default class System extends React.Component {
 
                         <div className="status">
                             <strong>Atmospheric pressure: </strong>20-200 KPa<br></br>
-                            <strong>Orbital period: </strong>4 331,572<br />
+                            <strong>Orbital period: </strong>4 331,572 days<br />
                             <strong>Equatorial diameter:</strong> 142 984 ± 8 km<br />
                             <strong>Gravity: </strong>3,711 m/s²<br />
                             <strong>Mass: </strong>318 Earths<br />
@@ -263,19 +244,14 @@ export default class System extends React.Component {
                         <Link className="more" to="">Travel</Link>
                     </Drawer>
 
-                    <Tooltip title="Come visit me! with a click">
-                        <div
-                          onClick={() => this.onShowDrawer('saturn')}
-                          className="mary"
-                        >
-                          <img
-                            src="https://image.flaticon.com/icons/svg/2949/2949024.svg"
-                            width="50px"
-                          />
-
-                          Saturn
-                      </div>
-                    </Tooltip>
+                    <div
+                      onClick={() => this.onShowDrawer('saturn')}
+                      className="mary"
+                    >
+                        <img src="https://image.flaticon.com/icons/svg/2949/2949024.svg" width="50px" />
+                        
+                        Saturn
+                    </div>
 
                     <Drawer
                         title="Saturn"
@@ -312,20 +288,15 @@ export default class System extends React.Component {
                         </Link>
                     </Drawer>
 
-                    <Tooltip title="Come visit me! with a click">
-                        <div
-                          onClick={() => this.onShowDrawer('uranus')}
-                          className="mary"
-                        >
-                            <img
-                              src="https://image.flaticon.com/icons/svg/2531/2531049.svg"
-                              width="50px"
-                            />
+                    <div
+                      onClick={() => this.onShowDrawer('uranus')}
+                      className="mary"
+                    >
+                        <img src="https://image.flaticon.com/icons/svg/2531/2531049.svg" width="50px" />
 
-                            Uranus
-                        </div >
-                    </Tooltip>
-
+                        Uranus
+                    </div >
+                    
                     <Drawer
                         title="Uranus"
                         placement="right"
@@ -361,20 +332,15 @@ export default class System extends React.Component {
                         </Link>
                     </Drawer>
 
-                    <Tooltip title="Come visit me! with a click">
-                        <div
-                          className="mary"
-                          onClick={() => this.onShowDrawer('neptune')}
-                        >
-                          <img
-                            src="https://image.flaticon.com/icons/svg/1086/1086088.svg"
-                            width="40px"
-                          />
+                    <div
+                      className="mary"
+                      onClick={() => this.onShowDrawer('neptune')}
+                    >
+                      <img src="https://image.flaticon.com/icons/svg/1086/1086088.svg" width="40px" />
 
-                          Neptune
+                      Neptune
                     </div>
-                    </Tooltip>
-                    
+
                     <Drawer
                         title="Neptune"
                         placement="right"

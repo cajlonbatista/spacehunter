@@ -49,7 +49,7 @@ export default class Universe extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(this.none, 3000);
+        setTimeout(this.none, 1000);
     }
 
     none = () => {
