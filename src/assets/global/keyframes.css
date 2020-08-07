@@ -8,11 +8,11 @@
 }
 
 @keyframes bright {
-  0%{
+  0% {
     filter: saturate(4);
     transform: rotate(360deg);
   }
-  
+
   25% { filter: saturate(1); }
   50% { filter: saturate(2); }
   100% { filter: saturate(3); }

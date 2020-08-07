@@ -1,17 +1,21 @@
-import React from "react";
-import "./Menu.css";
+import React from 'react';
+import './Menu.css';
 import { Menu } from 'antd';
 import { HomeOutlined, SettingFilled, NodeExpandOutlined } from '@ant-design/icons';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const { Item } = Menu;
 
 export default class App extends React.Component {
-  state = {
-    current: '',
-  };
+  constructor() {
+    super();
 
-  handleClick = e => {
+    this.state = {
+      current: '',
+    };
+  }
+
+  handleClick = (e) => {
     this.setState({ current: e.key });
   };
 
