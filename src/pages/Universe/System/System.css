@@ -34,11 +34,7 @@
     flex-direction: column;
     align-items: center;
 }
-@keyframes spin{
-    0%{
-        transform: rotate(360deg);
-    }
-}
+
 .map{
     width: 100%;
     max-width: 800px;
@@ -95,21 +91,6 @@ img{
     animation: bright 5s infinite linear;
 }
 
-@keyframes bright{
-    0%{
-        filter: saturate(4);
-        transform: rotate(360deg);
-    }
-    25%{
-        filter: saturate(1);
-    }
-    50%{
-        filter: saturate(2);
-    }
-    100%{
-        filter: saturate(3);
-    }
-}
 .collapse{
     width: 100%;
     max-width: 900px;
@@ -129,14 +110,7 @@ img{
     margin: 0 auto;
     max-width: 600px;
 }
-@keyframes bounce{
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
+
 
 @media(max-width: 645px){
     .planets{
