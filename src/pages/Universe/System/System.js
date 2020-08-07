@@ -235,7 +235,7 @@ export default class System extends React.Component {
                         </figure>
                         <div className="status">
                             <strong>Atmospheric pressure: </strong>20-200 KPa<br></br>
-                            <strong>Orbital period: </strong>4 331,572<br />
+                            <strong>Orbital period: </strong>4 331,572 days<br />
                             <strong>Equatorial diameter:</strong> 142 984 ± 8 km<br />
                             <strong>Gravity: </strong>3,711 m/s²<br />
                             <strong>Mass: </strong>318 Earths<br />

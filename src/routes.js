@@ -6,6 +6,7 @@ import Main from "./pages/Main/Main";
 import System from "./pages/Universe/System/System";
 import Mercury from "./pages/Universe/System/Planets/Mercury";
 import Universe from "./pages/Universe/Universe";
+import Venus from "./pages/Universe/System/Planets/Venus";
 export default function Routes() {
     return (
             <Switch>
@@ -13,6 +14,8 @@ export default function Routes() {
                 <Route path="/universe" exact component={Universe}></Route>
                 <Route path="/universe/solarsystem" exact component={System}></Route>
                 <Route path="/universe/solarsystem/mercury" exact component={Mercury}></Route>
+                <Route path="/universe/solarsystem/venus" exact component={Venus}></Route>
+
             </Switch>
     );
 }
