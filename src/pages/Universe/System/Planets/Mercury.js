@@ -9,7 +9,7 @@ export default function Mercury() {
         <div>
             <div className="headerMercury">
                 <Link className="backMercury" to="universe/solarsystem/">
-                    <img src={ArrowLeft} alt="" />
+                    <img src={ArrowLeft} alt="Voltar" />
                 </Link>
                 <div className="contentMercury">
                     <h2>Mercury</h2>
