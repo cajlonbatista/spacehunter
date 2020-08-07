@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./styles.css";
+import "./Mercury.css";
 
 import { Link } from "react-router-dom";
 import ArrowLeft from "../../../../assets/images/arrowleft.svg";
