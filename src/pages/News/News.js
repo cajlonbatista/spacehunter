@@ -1,6 +1,7 @@
 import React from 'react';
 import { message } from 'antd';
 
+import "./News.css";
 export default class News extends React.Component{
     constructor(){
         super();
@@ -14,7 +15,7 @@ export default class News extends React.Component{
             res.json()
             .then(res => {
                 this.setState({
-                    articles: res.docs
+                    articles : res.docs
                 })
             })
         })
@@ -26,7 +27,20 @@ export default class News extends React.Component{
         return(
             <main className="news">
                 {
-
+                    this.state.articles.map(article => {
+                        return(
+                            <article key={article._id} className="new">
+                                <div className="preview">
+                                    <img src={article.imgToUrl}></img>
+                                </div>
+                                <h3>{article.title}</h3>
+                                <div className="content">
+                                    <p>{article.description}</p>
+                                    <span>{article.publishedAt}</span>
+                                </div>
+                            </article>
+                        );
+                    })
                 }
             </main>
         );
