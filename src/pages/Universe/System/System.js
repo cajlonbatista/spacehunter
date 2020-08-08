@@ -441,7 +441,7 @@ export default class System extends React.Component {
             </div>
 
             <Link className="more" to="">
-              More
+            Travel
             </Link>
           </Drawer>
 
@@ -504,7 +504,7 @@ export default class System extends React.Component {
               className="more"
               to="/"
             >
-              More
+              Travel
             </Link>
           </Drawer>
         </div>
