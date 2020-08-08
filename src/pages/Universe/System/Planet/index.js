@@ -1,16 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { PureComponent } from 'react';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import './styles.css';
 
-import ArrowLeft from '../../../../assets/images/arrowleft.svg';
+import PageBack from '../../../../components/PageBack';
 import CardInfo from '../../../../components/CardInfo';
 import CardsGrid from '../../../../components/CardsGrid';
 
-export default class Mercury extends React.PureComponent {
+class Planet extends PureComponent {
   constructor() {
     super();
     this.state = {
+      planet: '',
+      cards: [],
+      planetTitle: '',
+      planetImage: '',
+      description: '',
+    };
+  }
+
+  componentDidMount() {
+    const { match: { params } } = this.props;
+    // get dada from API
+    const planetInfo = {
+      planet: params.planet,
+      planetTitle: 'The Swiftest Planet',
+      description: 'From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmospher.',
+      planetImage: 'url(https://solarsystem.nasa.gov/system/resources/detail_files/2266_PIA19216_1280.jpg)',
       cards: [
         {
           title: 'SMALLEST',
@@ -67,31 +84,45 @@ export default class Mercury extends React.PureComponent {
         },
       ],
     };
+
+    this.setState({
+      ...planetInfo,
+    });
   }
 
   render() {
-    const { cards } = this.state;
+    const {
+      cards,
+      planet,
+      planetTitle,
+      planetImage,
+      description,
+    } = this.state;
 
     return (
-      <div className="planetMercury">
-        <div className="headerMercury">
-          <Link className="backMercury" to="/universe/solarsystem">
-            <img src={ArrowLeft} alt="Voltar" />
-          </Link>
-          <div className="titleMercury">
-            <h2>Mercury</h2>
+      <div className="planet">
+        <PageBack title={planet} />
+
+        <div className="planet-content">
+          <div
+            className="overview"
+            style={{
+              backgroundImage: planetImage,
+            }}
+          >
+            <p>{ planetTitle }</p>
           </div>
-        </div>
-        <div className="contentMercury">
-          <div className="overviewMercury">
-            <p>The Swiftest Planet</p>
-          </div>
-          <p className="descriptionMercury">From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmospher.</p>
+
+          <p className="description">
+            { description }
+          </p>
+
           <CardsGrid>
             {
-              cards.map(({ title, content }) => (
+              cards.map(({ title, content }, i) => (
                 <CardInfo
                   title={title}
+                  key={i}
                   content={content}
                 />
               ))
@@ -102,3 +133,13 @@ export default class Mercury extends React.PureComponent {
     );
   }
 }
+
+Planet.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      planet: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
+export default withRouter(Planet);
