@@ -2,42 +2,42 @@ import React from 'react';
 import { message } from 'antd';
 
 import "./News.css";
-export default class News extends React.Component{
-    constructor(){
+export default class News extends React.Component {
+    constructor() {
         super();
         this.state = {
             articles: [],
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         fetch("https://kauton.herokuapp.com/api/articles")
-        .then(res => {
-            res.json()
             .then(res => {
-                this.setState({
-                    articles : res.docs
-                })
+                res.json()
+                    .then(res => {
+                        this.setState({
+                            articles: res.docs
+                        })
+                    })
             })
-        })
-        .catch(err => {
-            message.error("Algo deu errado tente mais tarde! ")
-        })
+            .catch(err => {
+                message.error("Algo deu errado tente mais tarde! ")
+            })
     }
-    render(){
-        return(
+    render() {
+        return (
             <main className="news">
                 {
                     this.state.articles.map(article => {
-                        return(
+                        return (
                             <article key={article._id} className="new">
                                 <div className="preview">
                                     <img src={article.imgToUrl}></img>
                                 </div>
-                                <h3>{article.title}</h3>
                                 <div className="content">
-                                    <p>{article.description}</p>
-                                    <span>{article.publishedAt}</span>
+                                    <span>{article.title}</span>
+                                    <span>{article.description}</span>
                                 </div>
+                                <span>{article.publishedAt}</span>
                             </article>
                         );
                     })

@@ -7,6 +7,7 @@
 }
 .news .new{
     width: 100vw;
+    display: flex;
 }
 .news .new .preview img{
     object-fit: cover;
