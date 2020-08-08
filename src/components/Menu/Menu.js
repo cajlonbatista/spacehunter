@@ -50,7 +50,7 @@ export default class App extends React.Component {
             key="articles"
             icon={<NodeExpandOutlined />}
           >
-            <Link to="/articles">
+            <Link to="/news">
               Space News
             </Link>
           </Item>

@@ -1,0 +1,17 @@
+.news {
+    height: 90vh;
+    margin-top: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    animation: bounce 1s linear;
+}
+.news .new{
+    width: 100vw;
+    display: flex;
+}
+.news .new .preview img{
+    object-fit: cover;
+    object-position: center;
+    width: 200px;
+    height: 80px;
+}
