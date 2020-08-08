@@ -18,7 +18,11 @@ export default class Main extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a')
+    var year = new Date().getFullYear();
+    var day = new Date().getDay();
+    var moth = new Date().getMonth();
+    console.log(year + "-" + moth + "-" + day)
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a&start_date=${year}-${moth}-${day}&end_date=${year}-${moth}-${day}`)
       .then((res) => res.json())
       .then((res) => {
         if (res.code === 404) {
@@ -28,16 +32,17 @@ export default class Main extends React.Component {
           });
         } else {
           this.setState({
-            main: res,
+            main: res[0],
             loader: false,
           });
         }
       })
-      .catch(() => {
+      .catch((err) => {
         this.setState({
           loader: false,
           status: false,
         });
+        console.log(err)
       });
   }
 
