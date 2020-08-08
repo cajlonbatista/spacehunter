@@ -11,15 +11,16 @@
 }
 
 body {
-  overflow: hidden;
+  font-size: 16px;
 }
 
-@media (min-width: 522px) {
-  ::-webkit-scrollbar { width: 4px; }
+:not(body)::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
 
-  ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: rgb(71, 180, 184);
-  }
+:not(body)::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgb(71, 180, 184);
 }

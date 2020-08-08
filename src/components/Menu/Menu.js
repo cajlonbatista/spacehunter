@@ -22,7 +22,7 @@ export default class App extends React.Component {
   render() {
     const { current } = this.state;
     return (
-      <div>
+      <header className="site-header">
         <Menu
           className="menu"
           selectedKeys={[current]}
@@ -65,7 +65,7 @@ export default class App extends React.Component {
             </Link>
           </Item>
         </Menu>
-      </div>
+      </header>
     );
   }
 }

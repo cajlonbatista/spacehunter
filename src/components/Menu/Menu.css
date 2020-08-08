@@ -1,5 +1,6 @@
+.site-header { overflow: auto hidden; }
+
 .menu {
   width: 100%;
-  overflow: auto hidden;
   animation: bounce 1s linear;
 }

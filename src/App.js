@@ -10,8 +10,11 @@ export default class App extends React.PureComponent {
   render() {
     return (
       <BrowserRouter>
-        <Menu />
-        <Routes />
+        <div id="layout">
+          <Menu />
+
+          <Routes />
+        </div>
       </BrowserRouter>
     );
   }

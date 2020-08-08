@@ -1,0 +1,34 @@
+.planet {
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.planet-content {
+  padding: 0 10px 40px;
+  overflow: hidden auto;
+}
+
+.planet-content .description {
+  color: #d8a454;
+  padding: 7px;
+  text-align: justify;
+}
+
+.planet-content .overview {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  font-family: Exo, sans-serif;
+  align-items: center;
+  padding: 10px;
+  background-image: var(--img-path);
+  height: 60vh;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.planet-content .overview p {
+  padding: 20px;
+  color: #fff;
+  font-size: 25px;
+}

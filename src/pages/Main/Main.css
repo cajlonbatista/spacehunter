@@ -2,7 +2,7 @@
 .content {
   height: 90vh;
   margin-top: 20px;
-  width: 100vw;
+  width: 100%;
   overflow: auto;
   animation: bounce 1s linear;
 }
