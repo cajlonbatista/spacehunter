@@ -10,9 +10,8 @@
   box-sizing: border-box;
 }
 
-body {
-  font-size: 16px;
-}
+html { font-size: 62.5%; }
+body { font-size: 1.6rem; }
 
 :not(body)::-webkit-scrollbar {
   width: 4px;
@@ -23,4 +22,8 @@ body {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   background: rgb(71, 180, 184);
+}
+
+@media screen and (max-width: 550px) {
+  html { font-size: 50%; }
 }
