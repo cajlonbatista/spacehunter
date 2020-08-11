@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-// import api from '../../utils/axios';
+import api from '../../../utils/axios';
 import './index.css';
 
 class NewsSingle extends Component {
@@ -16,9 +16,8 @@ class NewsSingle extends Component {
   componentDidMount() {
     const { match: { params } } = this.props;
 
-    fetch(`https://kauton.herokuapp.com/api/articles/${params.id}`)
-      .then(res => res.json())
-      .then(news => this.setState({ news }))
+    api.get(`/articles/${params.id}`)
+      .then(({ data: news }) => this.setState({ news }))
       .catch(console.error);
   }
 
