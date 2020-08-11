@@ -36,7 +36,7 @@ export default class System extends React.Component {
     const { planets, loading } = this.state;
 
     return loading
-      ? <MeteorRainLoading />
+      ? <div className="loading"><MeteorRainLoading /></div>
       : (
         <div className="system">
           <div className="titlePlanets">

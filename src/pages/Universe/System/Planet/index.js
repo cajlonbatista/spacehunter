@@ -43,7 +43,7 @@ class Planet extends Component {
     } = this.state;
 
     return loading
-      ? <SolarSystemLoading />
+      ? <div className="loading"><SolarSystemLoading /></div>
       : (
         <div className="planet">
           <PageBack title={planet} />

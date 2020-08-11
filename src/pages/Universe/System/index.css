@@ -91,6 +91,7 @@ strong { color: #faad14; }
   flex-direction: column;
   padding: 20px;
   color: #faad14;
+  text-transform: capitalize;
   align-items: center;
   border: 1px solid #202020;
   transition: all 0.5s;

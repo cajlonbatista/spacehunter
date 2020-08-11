@@ -2,6 +2,9 @@
   display: grid;
   grid-template-rows: 1fr auto;
 }
+.planet:first-child{
+  text-transform: capitalize;
+}
 
 .planet-content {
   padding: 0 0 40px;

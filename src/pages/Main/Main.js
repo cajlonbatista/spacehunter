@@ -51,7 +51,7 @@ export default class Main extends React.Component {
 
     if (loader) {
       return (
-        <MeteorRainLoading color="#ffb400" size="larger" />
+        <MeteorRainLoading color="#ffb400" />
       );
     }
 
@@ -71,7 +71,7 @@ export default class Main extends React.Component {
 
             <div style={{ margin: '20px' }} className="info">
               <Text type="secondary">
-                Astronomy Picture of the Day :
+                Astronomy Picture of the Day: &nbsp; 
                 {main.title}
               </Text>
 
@@ -93,7 +93,6 @@ export default class Main extends React.Component {
             <h2>
               What you can find here
             </h2>
-
             <div className="painels" />
             <div className="painels" />
             <div className="painels" />

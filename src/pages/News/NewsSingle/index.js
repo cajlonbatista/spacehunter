@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { MeteorRainLoading } from "react-loadingg";
+import Markdown from "react-markdown";
 
 import './index.css';
 import news from '../../../utils/news';
@@ -10,6 +12,7 @@ class NewsSingle extends Component {
 
     this.state = {
       news: {},
+      loading: true,
     };
   }
 
@@ -17,13 +20,13 @@ class NewsSingle extends Component {
     const { match: { params } } = this.props;
 
     news.get(`/articles/${params.id}`)
-      .then(({ data: news }) => this.setState({ news }))
+      .then(({ data: news }) => this.setState({ news, loading: false }))
       .catch(console.error);
-    
+
   }
 
   render() {
-    const { news } = this.state;
+    const { news, loading } = this.state;
     const {
       title,
       content,
@@ -32,30 +35,38 @@ class NewsSingle extends Component {
       imgToUrl,
     } = news;
     console.log(news);
-    return (
-      <div>
-        <img
-          className="news-banner"
-          alt={title}
-          src={imgToUrl}
-        />
+    if (loading) {
+      return (
+        <div>
+          <MeteorRainLoading/>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <img
+            className="news-banner"
+            alt={title}
+            src={imgToUrl}
+          />
 
-        <section className="news-body">
-          <div className="container">
-            <h1 className="news-title">
-              { title }
-            </h1>
+          <section className="news-body">
+            <div className="container">
+              <h1 className="news-title">
+                {title}
+              </h1>
 
-            <h4 className="news-subtitle">
-              { `${author} - ${new Date(publishedAt).toLocaleDateString()}` }
-            </h4>
-            <article className="news-content">
-              { content }
-            </article>
-          </div>
-        </section>
-      </div>
-    );
+              <h4 className="news-subtitle">
+                {`${author} - ${new Date(publishedAt).toLocaleDateString()}`}
+              </h4>
+              <article className="news-content">
+                  <Markdown source={content}/>
+              </article>
+            </div>
+          </section>
+        </div>
+      );
+    }
   }
 }
 
