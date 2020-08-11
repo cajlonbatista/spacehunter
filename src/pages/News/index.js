@@ -5,6 +5,7 @@ import api from '../../utils/axios';
 import './index.css';
 
 import CardNews from '../../components/CardNews';
+import news from '../../utils/news';
 
 export default class News extends Component {
   constructor() {
@@ -15,7 +16,7 @@ export default class News extends Component {
   }
 
   componentDidMount() {
-    api.get('/articles')
+    news.get('/articles')
       .then(({ data: { docs: articles } }) => this.setState({ articles }))
       .catch(() => {
         message.error('Algo deu errado tente mais tarde!');

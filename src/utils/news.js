@@ -5,5 +5,5 @@ function error(message) {
 }
 
 export default axios.create({
-  baseURL: process.env.REACT_APP_API_URL || error('No API url provided'),
+  baseURL: process.env.REACT_APP_API_URL_NEWS || error('No API url provided'),
 });

@@ -48,7 +48,6 @@ class NewsSingle extends Component {
             <h4 className="news-subtitle">
               { `${author} - ${new Date(publishedAt).toLocaleDateString()}` }
             </h4>
-
             <article className="news-content">
               { content }
             </article>
