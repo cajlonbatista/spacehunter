@@ -4,27 +4,28 @@
 }
 
 .planet-content {
-  padding: 0 10px 40px;
+  padding: 0 0 40px;
   overflow: hidden auto;
 }
 
 .planet-content .description {
   color: #d8a454;
-  padding: 7px;
+  padding: 15px 15px 0;
   text-align: justify;
 }
 
 .planet-content .overview {
+  display: grid;
+  place-items: center;
   width: 100%;
-  margin: 0 auto;
-  display: flex;
-  font-family: Exo, sans-serif;
-  align-items: center;
-  padding: 10px;
-  background-image: var(--img-path);
   height: 60vh;
-  justify-content: space-evenly;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: Exo, sans-serif;
   text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .planet-content .overview p {
