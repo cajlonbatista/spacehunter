@@ -1,11 +1,13 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 // import api from '../../utils/axios';
+import './index.css';
 
-class NewsSingle extends PureComponent {
+class NewsSingle extends Component {
   constructor() {
     super();
+
     this.state = {
       news: {},
     };
@@ -14,31 +16,45 @@ class NewsSingle extends PureComponent {
   componentDidMount() {
     const { match: { params } } = this.props;
 
-    // api.get(`/articles/${params.id}`)
-    //   .then(({ data: news }) =>{
-    //     this.setState({ news });
-    //   })
-    //   .catch(() => {
-    //     //
-    //   });
-    // { data: news }
     fetch(`https://kauton.herokuapp.com/api/articles/${params.id}`)
-      .then((res) => res.json())
-      .then((news) => {
-        this.setState({ news });
-      })
-      .catch((e) => {
-        console.error(e);
-      });
+      .then(res => res.json())
+      .then(news => this.setState({ news }))
+      .catch(console.error);
   }
 
   render() {
     const { news } = this.state;
+    const {
+      title,
+      content,
+      publishedAt,
+      author,
+      imgToUrl,
+    } = news;
 
     return (
       <div>
-        eae
-        { news.title }
+        <img
+          className="news-banner"
+          alt={title}
+          src={imgToUrl}
+        />
+
+        <section className="news-body">
+          <div className="container">
+            <h1 className="news-title">
+              { title }
+            </h1>
+
+            <h4 className="news-subtitle">
+              { `${author} - ${new Date(publishedAt).toLocaleDateString()}` }
+            </h4>
+
+            <article className="news-content">
+              { content }
+            </article>
+          </div>
+        </section>
       </div>
     );
   }

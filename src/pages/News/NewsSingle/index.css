@@ -1,0 +1,22 @@
+.news-banner {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 0;
+  transition: filter 0.5s;
+  filter: brightness(0.7);
+}
+
+.news-banner:hover { filter: brightness(1); }
+
+.news-body {
+  margin-top: 40px;
+}
+
+.news-title,
+.news-subtitle { text-align: center; }
+
+.news-content {
+  margin: 50px 0;
+  text-align: justify;
+}

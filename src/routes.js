@@ -6,7 +6,8 @@ import Main from './pages/Main/Main';
 import System from './pages/Universe/System/System';
 import Planet from './pages/Universe/System/Planet';
 import Universe from './pages/Universe/Universe';
-import News from './pages/News/News';
+import News from './pages/News';
+import NewsSingle from './pages/News/NewsSingle';
 
 export default function Routes() {
   return (
@@ -14,6 +15,7 @@ export default function Routes() {
       <Route path="/" exact component={Main} />
       <Route path="/universe" exact component={Universe} />
       <Route path="/news" exact component={News} />
+      <Route path="/news/:id" exact component={NewsSingle} />
       <Route path="/universe/solarsystem" exact component={System} />
       <Route path="/universe/solarsystem/:planet" exact component={Planet} />
     </Switch>

@@ -17,7 +17,7 @@ class CardNews extends PureComponent {
     } = news;
 
     return (
-      <Link to={`/articles/${_id}`}>
+      <Link to={`/news/${_id}`}>
         <article className="card-news">
           <img
             className="card-preview"

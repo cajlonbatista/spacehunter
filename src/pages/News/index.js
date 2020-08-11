@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { message } from 'antd';
 
 // import api from '../../utils/axios';
@@ -6,7 +6,7 @@ import './index.css';
 
 import CardNews from '../../components/CardNews';
 
-export default class News extends React.Component {
+export default class News extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,12 +20,6 @@ export default class News extends React.Component {
     //   .catch(() => {
     //     message.error('Algo deu errado tente mais tarde!');
     //   });
-    fetch('https://kauton.herokuapp.com/api/articles')
-      .then((res) => res.json())
-      .then(({ docs: articles }) => this.setState({ articles }))
-      .catch(() => {
-        message.error('Algo deu errado tente mais tarde!');
-      });
   }
 
   render() {

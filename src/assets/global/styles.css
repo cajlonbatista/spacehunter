@@ -24,6 +24,13 @@ body { font-size: 1.6rem; }
   background: rgb(71, 180, 184);
 }
 
+.container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
 @media screen and (max-width: 550px) {
   html { font-size: 50%; }
 }
