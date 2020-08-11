@@ -3,8 +3,6 @@
   max-height: 500px;
   object-fit: cover;
   border-radius: 0;
-  transition: filter 0.5s;
-  filter: brightness(0.7);
 }
 
 .news-banner:hover { filter: brightness(1); }
