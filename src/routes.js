@@ -3,7 +3,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Main from './pages/Main/Main';
-import System from './pages/Universe/System/System';
+import System from './pages/Universe/System';
 import Planet from './pages/Universe/System/Planet';
 import Universe from './pages/Universe/Universe';
 import News from './pages/News';
