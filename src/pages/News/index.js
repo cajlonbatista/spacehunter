@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { message } from 'antd';
 
-import api from '../../utils/axios';
 import './index.css';
 
 import CardNews from '../../components/CardNews';
