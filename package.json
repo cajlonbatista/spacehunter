@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "animate.css": "^4.1.0",
     "antd": "^4.5.1",
+    "axios": "^0.19.2",
     "craco": "",
     "craco-less": "^1.17.0",
     "prop-types": "^15.7.2",

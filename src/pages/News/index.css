@@ -1,0 +1,6 @@
+.news {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 20px auto;
+}
