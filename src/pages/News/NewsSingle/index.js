@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import api from '../../../utils/axios';
 import './index.css';
+import news from '../../../utils/news';
 
 class NewsSingle extends Component {
   constructor() {
@@ -16,9 +16,10 @@ class NewsSingle extends Component {
   componentDidMount() {
     const { match: { params } } = this.props;
 
-    api.get(`/articles/${params.id}`)
+    news.get(`/articles/${params.id}`)
       .then(({ data: news }) => this.setState({ news }))
       .catch(console.error);
+    
   }
 
   render() {
@@ -30,7 +31,7 @@ class NewsSingle extends Component {
       author,
       imgToUrl,
     } = news;
-
+    console.log(news);
     return (
       <div>
         <img
