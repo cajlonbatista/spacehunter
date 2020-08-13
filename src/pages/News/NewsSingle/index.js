@@ -43,19 +43,18 @@ class NewsSingle extends Component {
       );
     } else {
       return (
-        <div>
+        <div className="news-more">
           <img
-            className="news-banner"
-            alt={title}
-            src={imgToUrl}
-          />
-
+              className="news-banner"
+              alt={title}
+              align="center"
+              src={imgToUrl}
+            />
           <section className="news-body">
             <div className="container">
               <h1 className="news-title">
                 {title}
               </h1>
-
               <h4 className="news-subtitle">
                 {`${author} - ${new Date(publishedAt).toLocaleDateString()}`}
               </h4>
