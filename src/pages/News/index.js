@@ -13,7 +13,7 @@ export default class News extends Component {
       articles: [],
     };
   }
-
+  
   componentDidMount() {
     news.get('/articles')
       .then(({ data: { docs: articles } }) => this.setState({ articles }))

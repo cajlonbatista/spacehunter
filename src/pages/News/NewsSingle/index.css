@@ -10,7 +10,7 @@
 }
 
 .news-body .container h1{
-  color: #ffb400;
+  color: #00d9ff;
   font-family: Rubik, sans-serif ;
   text-align: center;
 }
@@ -35,6 +35,15 @@
   font-family: Mulish, sans-serif;
   color: #f0f0f0;
 }
+.news-body .container .news-content img{
+  width: 100%;
+  max-width: 700px;
+}
 .news-body .container .news-content strong{
   margin-bottom: 200px;
+}
+.news-body .container .news-content hr{
+  width: 100%;
+  margin-bottom: 30px;  
+  color: #00d9ff;
 }
