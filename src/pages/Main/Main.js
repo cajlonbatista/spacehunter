@@ -1,7 +1,7 @@
 import React from 'react';
-import { Alert, Divider, Typography, Button, message } from 'antd';
+import { Divider, Typography, Button, message } from 'antd';
 import { MeteorRainLoading } from 'react-loadingg';
-
+import { Link } from "react-router-dom";
 import styles from './styles';
 const { Content, ContentTitle, Loading, Apod, ApodImage, ApodInfo, Welcome, WelcomePainel, WelcomeTitle} = styles;
 const { Text } = Typography;
@@ -80,9 +80,11 @@ export default class Main extends React.Component {
               { main.copyright }
             </Text>
 
-            <Button type="primary">
-              More
-            </Button>
+            <Link to="/apod">
+              <Button type="primary">
+                More
+              </Button>
+            </Link>
           </ApodInfo>
         </Apod>
 

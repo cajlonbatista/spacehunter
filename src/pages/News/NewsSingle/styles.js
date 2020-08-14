@@ -4,6 +4,7 @@ const styles = {
     NewsMore: styled.div`
         display: flex;
         flex-direction: column;
+        animation: bounce 2s linear;
         align-items: center;
     `,
     NewsMoreBanner: styled.img`

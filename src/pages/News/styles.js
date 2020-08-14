@@ -6,6 +6,7 @@ const styles = {
         padding: 15px;
         grid-template-columns: repeat(auto-fit, min(100%, 318px));
         grid-gap: 20px;
+        animation: bounce 2s linear;
         justify-content: space-around;
     `,
     Loading: styled.div`
