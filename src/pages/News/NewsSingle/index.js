@@ -1,3 +1,9 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-else-return */
+/* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+/* eslint-disable-next-line no-shadow */
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { MeteorRainLoading } from "react-loadingg";
@@ -22,7 +28,6 @@ class NewsSingle extends Component {
     news.get(`/articles/${params.id}`)
       .then(({ data: news }) => this.setState({ news, loading: false }))
       .catch(console.error);
-
   }
 
   render() {
@@ -38,18 +43,18 @@ class NewsSingle extends Component {
     if (loading) {
       return (
         <div>
-          <MeteorRainLoading/>
+          <MeteorRainLoading />
         </div>
       );
     } else {
       return (
         <div className="news-more">
           <img
-              className="news-banner"
-              alt={title}
-              align="center"
-              src={imgToUrl}
-            />
+            className="news-banner"
+            alt={title}
+            align="center"
+            src={imgToUrl}
+          />
           <section className="news-body">
             <div className="container">
               <h1 className="news-title">
@@ -59,7 +64,7 @@ class NewsSingle extends Component {
                 {`${author} - ${new Date(publishedAt).toLocaleDateString()}`}
               </h4>
               <article className="news-content">
-                  <Markdown source={content}/>
+                <Markdown source={content} />
               </article>
             </div>
           </section>

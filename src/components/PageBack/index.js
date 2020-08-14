@@ -2,31 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-import './index.css';
-
 import ArrowLeft from '../../assets/images/arrowleft.svg';
+import styles from './styles';
+
+const { Back , LinkBack, BackTitle} = styles;
 
 class PageBack extends React.PureComponent {
   render() {
     const { history, title } = this.props;
 
     return (
-      <div className="page-back">
-        <button
+      <Back>
+        <LinkBack
           type="button"
-          className="page-back-link"
           onClick={() => history.goBack()}
         >
           <img
             src={ArrowLeft}
             alt="Voltar"
           />
-        </button>
-
-        <h2 className="page-back-title">
+        </LinkBack>
+        <BackTitle>
           { title }
-        </h2>
-      </div>
+        </BackTitle>
+      </Back>
     );
   }
 }

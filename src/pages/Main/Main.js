@@ -1,10 +1,9 @@
 import React from 'react';
-import {
-  Alert, Divider, Typography, Button,
-} from 'antd';
+import { Alert, Divider, Typography, Button, message } from 'antd';
 import { MeteorRainLoading } from 'react-loadingg';
-import './Main.css';
 
+import styles from './styles';
+const { Content, ContentTitle, Loading, Apod, ApodImage, ApodInfo, Welcome, WelcomePainel, WelcomeTitle} = styles;
 const { Text } = Typography;
 
 export default class Main extends React.Component {
@@ -42,6 +41,7 @@ export default class Main extends React.Component {
           loader: false,
           status: false,
         });
+        message.error("Algo deu errado. Fale conosco ")
         console.log(err)
       });
   }
@@ -51,69 +51,53 @@ export default class Main extends React.Component {
 
     if (loader) {
       return (
-        <MeteorRainLoading color="#ffb400" />
+        <Loading>
+            <MeteorRainLoading color="#ffb400" />
+        </Loading>
       );
     }
-
-    if (status) {
-      return (
-        <div className="content">
-          <h1>
-            Welcome, Hunter
-          </h1>
-
-          <div className="apod">
-            <img
-              src={main.url}
-              className="day"
-              alt="of day"
-            />
-
-            <div style={{ margin: '20px' }} className="info">
-              <Text type="secondary">
-                Astronomy Picture of the Day: &nbsp; 
-                {main.title}
-              </Text>
-
-              <br />
-
-              <Text type="warning">
-                {main.copyright}
-              </Text>
-
-              <Button type="primary">
-                More
-              </Button>
-            </div>
-          </div>
-
-          <Divider />
-
-          <div className="welcome">
-            <h2>
-              What you can find here
-            </h2>
-            <div className="painels" />
-            <div className="painels" />
-            <div className="painels" />
-            <div className="painels" />
-          </div>
-        </div>
-      );
-    }
-
     return (
-      <div className="content">
-        <div className="notfound">
-          <Alert
-            type="warning"
-            message="Warning"
-            description="Sorry, we did not get the image of the day due to time zone issues with the Nasa server, but we are working on a solution, in the meantime try to access it during daytime hours 🤓👍."
+      <Content >
+        <ContentTitle>
+          Welcome, Hunter
+          </ContentTitle>
+        <Apod>
+          <ApodImage
+            src={main.url}
+            className="day"
+            alt="of day"
           />
-        </div>
+
+          <ApodInfo style={{ margin: '20px' }}>
+            <Text type="secondary">
+              Astronomy Picture of the Day: &nbsp;
+                {main.title}
+            </Text>
+
+            <br />
+
+            <Text type="warning">
+              {main.copyright}
+            </Text>
+
+            <Button type="primary">
+              More
+            </Button>
+          </ApodInfo>
+        </Apod>
 
         <Divider />
-      </div>
+
+        <Welcome className="welcome">
+          <WelcomeTitle>
+            What you can find here
+            </WelcomeTitle>
+          <WelcomePainel className="painels" />
+          <WelcomePainel className="painels" />
+          <WelcomePainel className="painels" />
+          <WelcomePainel className="painels" />
+        </Welcome>
+      </Content>
     );
   }
 }

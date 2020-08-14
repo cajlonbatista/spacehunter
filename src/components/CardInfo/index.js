@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './index.css';
-
+import styles from "./styles";
+const { Card } = styles;
 class CardInfo extends React.PureComponent {
   render() {
     const { title, content } = this.props;
 
     return (
-      <div className="card-info">
+      <Card className="card-info">
         <h3 className="card-title">
           { title }
         </h3>
@@ -16,7 +16,7 @@ class CardInfo extends React.PureComponent {
         <p className="card-content">
           { content }
         </p>
-      </div>
+      </Card>
     );
   }
 }

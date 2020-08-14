@@ -11,12 +11,13 @@ export default class News extends Component {
     super();
     this.state = {
       articles: [],
+      loading: true,
     };
   }
   
   componentDidMount() {
     news.get('/articles')
-      .then(({ data: { docs: articles } }) => this.setState({ articles }))
+      .then(({ data: { docs: articles } }) => this.setState({ articles, loading: false }))
       .catch(() => {
         message.error('Algo deu errado tente mais tarde!');
       });
