@@ -1,10 +1,12 @@
 import React from 'react';
 import './Menu.css';
 import { Menu } from 'antd';
-import { HomeFilled, SettingFilled, NodeExpandOutlined, FileImageFilled } from '@ant-design/icons';
+import { HomeFilled , RadarChartOutlined , PictureFilled , FileExclamationFilled , NodeExpandOutlined, FileImageFilled } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 const { Item } = Menu;
+
+/*Icons*/
 
 export default class App extends React.Component {
   constructor() {
@@ -39,7 +41,7 @@ export default class App extends React.Component {
 
           <Item
             key="universe"
-            icon={<SettingFilled />}
+            icon={<RadarChartOutlined />}
           >
             <Link to="/universe">
               Universe
@@ -48,7 +50,7 @@ export default class App extends React.Component {
 
           <Item
             key="articles"
-            icon={<NodeExpandOutlined />}
+            icon={<FileExclamationFilled/>}
           >
             <Link to="/news">
               Space News
@@ -58,7 +60,7 @@ export default class App extends React.Component {
           <Item
             className="apodi"
             key="apod"
-            icon={<FileImageFilled/>}
+            icon={<PictureFilled />}
           >
             <Link to="/apod">
               Astronomy Picture 

@@ -16,7 +16,7 @@ const styles = {
         };
     `,
     CardTitle: styled.h3`
-        
+        color: #010259; 
     `,
     CardDescription: styled.p`
         

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import styles from "./styles";
-const { CardNew, Span,CardDescription ,CardPreview, CardContent, CardTitle}  = styles;
+const { CardNew, Span, CardDescription,ContainerImage ,CardPreview, CardContent, CardTitle } = styles;
 
 class CardNews extends PureComponent {
   render() {
@@ -20,11 +20,12 @@ class CardNews extends PureComponent {
     return (
       <Link to={`/news/${_id}`}>
         <CardNew>
-          <CardPreview
-            src={imgToUrl}
-            alt={title}
-          />
-
+          <ContainerImage>
+            <CardPreview
+              src={imgToUrl}
+              alt={title}
+            />
+          </ContainerImage>
           <CardContent>
             <CardTitle className="card-title">
               {title}
@@ -35,7 +36,7 @@ class CardNews extends PureComponent {
             </CardDescription>
 
             <Span>
-              { `${author} - ${new Date(publishedAt).toDateString()}` }
+              {`${author} - ${new Date(publishedAt).toDateString()}`}
             </Span>
           </CardContent>
         </CardNew>

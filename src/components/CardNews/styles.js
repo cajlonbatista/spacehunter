@@ -15,6 +15,11 @@ const styles = {
             border: 1px solid #61dafb;
         }
     `,
+    ContainerImage: styled.div`
+        width: 100%;
+        height: 22rem;
+        display: flex;
+    `,
     CardPreview: styled.img`
         width: 100%;
         max-height: 500px;

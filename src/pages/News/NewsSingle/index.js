@@ -9,9 +9,11 @@ import PropTypes from 'prop-types';
 import { MeteorRainLoading } from "react-loadingg";
 import Markdown from "react-markdown";
 
-import './index.css';
+import styles from "./styles";
+import "./index.css";
 import news from '../../../utils/news';
 
+const { NewsMore, NewsMoreBanner, NewsMoreBody, NewsMoreContainer, NewsTitle, NewsSubtitle, NewsContent }  = styles;
 class NewsSingle extends Component {
   constructor() {
     super();
@@ -48,27 +50,27 @@ class NewsSingle extends Component {
       );
     } else {
       return (
-        <div className="news-more">
-          <img
+        <NewsMore>
+          <img 
             className="news-banner"
             alt={title}
             align="center"
             src={imgToUrl}
           />
-          <section className="news-body">
-            <div className="container">
-              <h1 className="news-title">
+          <NewsMoreBody >
+            <NewsMoreContainer>
+              <NewsTitle>
                 {title}
-              </h1>
-              <h4 className="news-subtitle">
+              </NewsTitle>
+              <NewsSubtitle>
                 {`${author} - ${new Date(publishedAt).toLocaleDateString()}`}
-              </h4>
-              <article className="news-content">
+              </NewsSubtitle>
+              <NewsContent className="news-content">
                 <Markdown source={content} />
-              </article>
-            </div>
-          </section>
-        </div>
+              </NewsContent>
+            </NewsMoreContainer>
+          </NewsMoreBody>
+        </NewsMore>
       );
     }
   }

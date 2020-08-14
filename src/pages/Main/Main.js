@@ -63,7 +63,7 @@ export default class Main extends React.Component {
           </ContentTitle>
         <Apod>
           <ApodImage
-            src={main.url}
+            src={ main.url }
             className="day"
             alt="of day"
           />
@@ -71,13 +71,13 @@ export default class Main extends React.Component {
           <ApodInfo style={{ margin: '20px' }}>
             <Text type="secondary">
               Astronomy Picture of the Day: &nbsp;
-                {main.title}
+                { main.title }
             </Text>
 
             <br />
 
             <Text type="warning">
-              {main.copyright}
+              { main.copyright }
             </Text>
 
             <Button type="primary">

@@ -9,7 +9,7 @@ export default class Universe extends React.Component {
       menus: [
         {
           path: '/universe/solarsystem',
-          image: 'https://image.flaticon.com/icons/svg/885/885807.svg',
+          image: 'https://image.flaticon.com/icons/svg/547/547415.svg',
           title: 'Solar System',
         },
         {
@@ -20,7 +20,7 @@ export default class Universe extends React.Component {
         {
           path: '/universe',
           image: 'https://image.flaticon.com/icons/svg/2590/2590225.svg',
-          title: 'Black Hole',
+          title: 'Black Holes',
         },
         {
           path: '/universe',
