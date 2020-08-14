@@ -1,21 +1,7 @@
 .news {
   display: grid; 
   padding: 15px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, min(100%, 318px));
   grid-gap: 20px;
-  grid-template-rows: 1fr 1fr;
-}
-
-
-@media(max-width: 700px){
-  .news{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media(max-width: 425px){
-  .news{
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+  justify-content: space-around;
 }

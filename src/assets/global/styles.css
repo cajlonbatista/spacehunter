@@ -37,3 +37,4 @@ body { font-size: 1.6rem; }
   html { font-size: 50%; }
 }
 
+.spin { animation: spin 5s infinite linear; }

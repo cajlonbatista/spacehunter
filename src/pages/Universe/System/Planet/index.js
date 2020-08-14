@@ -55,7 +55,7 @@ class Planet extends Component {
                 backgroundImage: `url(${planetImage})`,
               }}
             >
-              <p>{ planetTitle }</p>
+              <h1>{ planetTitle }</h1>
             </div>
 
             <p className="description">

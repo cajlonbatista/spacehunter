@@ -1,31 +1,41 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './index.css';
-import { Link } from 'react-router-dom';
+import CardNavigation from './CardNavigation';
 
-export default class NavGrid extends React.Component {
+class NavGrid extends React.PureComponent {
   render() {
+    const { items, children } = this.props;
+
     return (
       <div className="navigator">
         {
-          this.props.items.map(({ path, image, title }, i) => (
-            <Link
+          children || items.map(({ path, image, title }, i) => (
+            <CardNavigation
               key={i}
-              to={path}
-              className="item"
-            >
-              <img
-                src={image}
-                alt={title}
-                className="item-img"
-              />
-
-              <span>
-                { title }
-              </span>
-            </Link>
+              path={path}
+              image={image}
+              title={title}
+            />
           ))
         }
       </div>
     );
   }
 }
+
+NavGrid.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    image: PropTypes.string,
+    path: PropTypes.string,
+  })),
+  children: PropTypes.node,
+};
+
+NavGrid.defaultProps = {
+  items: [],
+  children: null,
+};
+
+export default NavGrid;

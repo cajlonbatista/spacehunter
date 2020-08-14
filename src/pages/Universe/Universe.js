@@ -1,5 +1,4 @@
 import React from 'react';
-import { SolarSystemLoading } from 'react-loadingg';
 import NavGrid from '../../components/NavGrid';
 
 export default class Universe extends React.Component {
@@ -7,7 +6,6 @@ export default class Universe extends React.Component {
     super();
 
     this.state = {
-      loading: true,
       menus: [
         {
           path: '/universe/solarsystem',
@@ -48,27 +46,9 @@ export default class Universe extends React.Component {
     };
   }
 
-  componentDidMount() {
-    setTimeout(this.none, 1000);
+  render() {
+    const { menus } = this.state;
+
+    return <NavGrid items={menus} />;
   }
-
-    none = () => {
-      this.setState({
-        loading: false,
-      });
-    }
-
-    render() {
-      const { loading, menus } = this.state;
-
-      if (loading) {
-        return (
-          <SolarSystemLoading
-            color="#ffb400"
-            size="larger"
-          />
-        );
-      }
-      return <NavGrid items={menus} />;
-    }
 }
