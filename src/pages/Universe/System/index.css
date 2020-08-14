@@ -1,30 +1,8 @@
-
-img { border-radius: 5px; }
-
-.planets {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  animation: bounce 2s linear;
-}
-
 .titlePlanets img { width: 70px; }
 
 .system-title img {
   filter: saturate(3);
   margin: 10px;
-}
-
-.planets div img {
-  animation: spin 5s infinite linear;
-}
-
-.system {
-  height: 90vh;
-  margin-top: 30px;
-  padding-bottom: 20px;
-  animation: bounce 3s linear;
-  overflow: auto;
 }
 
 .system-title {
@@ -81,39 +59,11 @@ strong { color: #faad14; }
   align-items: center;
 }
 
-.planets .mary {
-  width: 100%;
-  margin: 10px;
-  cursor: pointer;
-  background: url("https://media.giphy.com/media/RHIKETUlUINYvV7CAO/giphy.gif");
-  max-width: 150px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  color: #faad14;
-  text-transform: capitalize;
-  align-items: center;
-  border: 1px solid #202020;
-  transition: all 0.5s;
-  border-radius: 5px;
-}
-
-.planets .mary img {
-  transition: all 0.5;
-  animation: bright 5s infinite linear;
-}
-
 .collapse {
   width: 100%;
   max-width: 900px;
   background-size: 80%;
   margin: 10px auto;
-}
-
-.planets .mary:hover {
-  transform: scale(1.1);
-  background-color: #191919;
-  border: 1px solid #61dafb;
 }
 
 .tentips {
@@ -126,54 +76,15 @@ strong { color: #faad14; }
   max-width: 600px;
 }
 
-@media (max-width: 645px) {
-  .planets {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-
-  .system { overflow: auto; }
-}
-
-@media (max-width: 489px) {
-  .planets {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 472px) {
-  .planets {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 320px) {
-  .planets {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (min-width: 768px) {
-  .planets {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-}
-
 .titlePlanets {
-  margin-top: 30px;
   display: flex;
   justify-content: center;
-  font-family: Exo, sans-serif;
   align-items: flex-end;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 20px;
+  font-family: Exo, sans-serif;
+  text-align: center;
 }
 
 .titlePlanets h2 {

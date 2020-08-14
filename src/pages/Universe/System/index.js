@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Drawer } from 'antd';
 import { MeteorRainLoading } from 'react-loadingg';
+import NavGrid from '../../../components/NavGrid';
+import CardNavigation from '../../../components/NavGrid/CardNavigation';
 
 import api from '../../../utils/axios';
 import './index.css';
@@ -38,7 +40,7 @@ export default class System extends React.Component {
     return loading
       ? <div className="loading"><MeteorRainLoading /></div>
       : (
-        <div className="system">
+        <div>
           <div className="titlePlanets">
             <img
               src={land}
@@ -48,29 +50,19 @@ export default class System extends React.Component {
             <h2>Come travel through the solar system</h2>
           </div>
 
-          <div className="planets">
+          <NavGrid>
             {
-              planets.map(({ planet, drawer: drawerArr }) => {
+              planets.map(({ planet, drawer: drawerArr }, i) => {
                 const { activePlanet } = this.state;
                 const [drawer] = drawerArr;
 
                 return (
-                  <>
-                    <div
-                      className="mary"
-                      role="button"
-                      tabIndex="0"
+                  <span key={i}>
+                    <CardNavigation
+                      title={planet}
+                      image="https://image.flaticon.com/icons/svg/2590/2590482.svg"
                       onClick={() => this.onShowDrawer(planet)}
-                      onKeyDown={(e) => e.keyCode === 13 && this.onShowDrawer(planet)}
-                    >
-                      <img
-                        src="https://image.flaticon.com/icons/svg/2590/2590482.svg"
-                        alt={planet}
-                        width="50px"
-                      />
-
-                      { planet }
-                    </div>
+                    />
 
                     <Drawer
                       title={planet}
@@ -124,11 +116,11 @@ export default class System extends React.Component {
                         Travel
                       </Link>
                     </Drawer>
-                  </>
+                  </span>
                 );
               })
             }
-          </div>
+          </NavGrid>
         </div>
       );
   }
