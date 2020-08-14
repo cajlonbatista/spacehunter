@@ -7,36 +7,20 @@ import './index.css';
 class CardNews extends PureComponent {
   render() {
     const { news } = this.props;
-    const {
-      _id,
-      title,
-      description,
-      author,
-      imgToUrl,
-      publishedAt,
-    } = news;
+    const { _id, title, description, author, imgToUrl, publishedAt } = news;
 
     return (
       <Link to={`/news/${_id}`}>
         <article className="card-news">
-          <img
-            className="card-preview"
-            src={imgToUrl}
-            alt={title}
-          />
-
+          <div className="container-image">
+            <img className="card-preview" src={imgToUrl} alt={title} />
+          </div>
           <div className="card-content">
-            <h2 className="card-title">
-              {title}
-            </h2>
+            <h2 className="card-title">{title}</h2>
 
-            <p className="card-description">
-              {description}
-            </p>
+            <p className="card-description">{description}</p>
 
-            <span>
-              { `${author} - ${new Date(publishedAt).toDateString()}` }
-            </span>
+            <span>{`${author} - ${new Date(publishedAt).toDateString()}`}</span>
           </div>
         </article>
       </Link>

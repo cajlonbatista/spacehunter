@@ -1,7 +1,12 @@
 import React from 'react';
 import './Menu.css';
 import { Menu } from 'antd';
-import { HomeOutlined, SettingFilled, NodeExpandOutlined } from '@ant-design/icons';
+import {
+  HomeOutlined,
+  SettingFilled,
+  NodeExpandOutlined,
+  UnorderedListOutlined,
+} from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 const { Item } = Menu;
@@ -23,46 +28,24 @@ export default class App extends React.Component {
     const { current } = this.state;
     return (
       <header className="site-header">
-        <Menu
-          className="menu"
-          selectedKeys={[current]}
-          mode="horizontal"
-        >
-          <Item
-            key="home"
-            icon={<HomeOutlined />}
-          >
-            <Link to="/">
-              Space Hunter
-            </Link>
+        <Menu className="menu" selectedKeys={[current]} mode="horizontal">
+          <Item key="home" icon={<HomeOutlined />}>
+            <Link to="/">Space Hunter</Link>
           </Item>
 
-          <Item
-            key="universe"
-            icon={<SettingFilled />}
-          >
-            <Link to="/universe">
-              Universe
-            </Link>
+          <Item key="universe" icon={<SettingFilled />}>
+            <Link to="/universe">Universe</Link>
           </Item>
 
-          <Item
-            key="articles"
-            icon={<NodeExpandOutlined />}
-          >
-            <Link to="/news">
-              Space News
-            </Link>
+          <Item key="articles" icon={<NodeExpandOutlined />}>
+            <Link to="/news">Space News</Link>
           </Item>
 
-          <Item
-            className="about"
-            key="about"
-            icon={<NodeExpandOutlined />}
-          >
-            <Link to="/about">
-              About
-            </Link>
+          <Item className="about" key="about" icon={<NodeExpandOutlined />}>
+            <Link to="/about">About</Link>
+          </Item>
+          <Item className="news" key="news" icon={<UnorderedListOutlined />}>
+            <Link to="/news">News</Link>
           </Item>
         </Menu>
       </header>
