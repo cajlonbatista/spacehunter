@@ -2,18 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import './styles.css';
+import { CardNavigationTag, ItemImg } from './styles';
 
 const CardNavigation = ({
   title, image, path = '#!', onClick,
 }) => (
-  <Link
+  <CardNavigationTag
+    as={Link}
     to={path}
     className="card-navigation"
     tabIndex="0"
     onClick={onClick}
   >
-    <img
+    <ItemImg
       src={image}
       alt={title}
       className="item-img"
@@ -22,7 +23,7 @@ const CardNavigation = ({
     <span>
       { title }
     </span>
-  </Link>
+  </CardNavigationTag>
 );
 
 CardNavigation.propTypes = {

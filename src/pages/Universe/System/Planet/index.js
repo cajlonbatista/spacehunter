@@ -4,7 +4,10 @@ import { SolarSystemLoading } from 'react-loadingg';
 import PropTypes from 'prop-types';
 
 import api from '../../../../utils/axios';
-import './styles.css';
+import { Loading } from '../../../../styles/general';
+import {
+  Description, Overview, PlanetTag, PlanetContent, Title,
+} from './styles';
 
 import PageBack from '../../../../components/PageBack';
 import CardInfo from '../../../../components/CardInfo';
@@ -43,24 +46,19 @@ class Planet extends Component {
     } = this.state;
 
     return loading
-      ? <div className="loading"><SolarSystemLoading /></div>
+      ? <Loading><SolarSystemLoading /></Loading>
       : (
-        <div className="planet">
+        <PlanetTag>
           <PageBack title={planet} />
 
-          <div className="planet-content">
-            <div
-              className="overview"
-              style={{
-                backgroundImage: `url(${planetImage})`,
-              }}
-            >
-              <h1>{ planetTitle }</h1>
-            </div>
+          <PlanetContent>
+            <Overview src={planetImage}>
+              <Title>{ planetTitle }</Title>
+            </Overview>
 
-            <p className="description">
+            <Description>
               { description }
-            </p>
+            </Description>
 
             <CardsGrid>
               {
@@ -73,8 +71,8 @@ class Planet extends Component {
                 ))
               }
             </CardsGrid>
-          </div>
-        </div>
+          </PlanetContent>
+        </PlanetTag>
       );
   }
 }

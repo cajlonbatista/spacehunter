@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import styles from "./styles";
-const { CardNew, Span, CardDescription,ContainerImage ,CardPreview, CardContent, CardTitle } = styles;
+import {
+  CardNew, Span, CardDescription, CardPreview, CardContent, CardTitle,
+} from './styles';
 
 class CardNews extends PureComponent {
   render() {
@@ -20,18 +21,17 @@ class CardNews extends PureComponent {
     return (
       <Link to={`/news/${_id}`}>
         <CardNew>
-          <ContainerImage>
-            <CardPreview
-              src={imgToUrl}
-              alt={title}
-            />
-          </ContainerImage>
+          <CardPreview
+            src={imgToUrl}
+            alt={title}
+          />
+
           <CardContent>
-            <CardTitle className="card-title">
+            <CardTitle>
               {title}
             </CardTitle>
 
-            <CardDescription className="card-description">
+            <CardDescription>
               {description}
             </CardDescription>
 

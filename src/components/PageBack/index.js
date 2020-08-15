@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 import ArrowLeft from '../../assets/images/arrowleft.svg';
-import styles from './styles';
-
-const { Back , LinkBack, BackTitle} = styles;
+import { Back, LinkBack, BackTitle } from './styles';
 
 class PageBack extends React.PureComponent {
   render() {

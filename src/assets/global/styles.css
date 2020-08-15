@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 @import './keyframes.css';
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -18,23 +19,17 @@ body {
   font-size: 1.6rem;
 }
 
-@media(min-width: 500px) {
+@media (min-width: 500px) {
   :not(body)::-webkit-scrollbar {
     width: 4px;
     height: 4px;
   }
+
   :not(body)::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
     background: rgb(71, 180, 184);
   }
-}
-
-.container {
-  max-width: 960px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 2%;
 }
 
 @media screen and (max-width: 550px) {

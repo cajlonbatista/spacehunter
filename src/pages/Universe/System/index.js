@@ -6,7 +6,10 @@ import NavGrid from '../../../components/NavGrid';
 import CardNavigation from '../../../components/NavGrid/CardNavigation';
 
 import api from '../../../utils/axios';
-import './index.css';
+import { Loading } from '../../../styles/general';
+import {
+  PageHeader, HeaderTitle, DrawerInfo, DrawerButton,
+} from './styles';
 import land from '../../../assets/images/land.svg';
 
 export default class System extends React.Component {
@@ -38,17 +41,19 @@ export default class System extends React.Component {
     const { planets, loading } = this.state;
 
     return loading
-      ? <div className="loading"><MeteorRainLoading /></div>
+      ? <Loading><MeteorRainLoading /></Loading>
       : (
         <div>
-          <div className="titlePlanets">
+          <PageHeader>
             <img
               src={land}
               alt="title"
             />
 
-            <h2>Come travel through the solar system</h2>
-          </div>
+            <HeaderTitle>
+              Come travel through the solar system
+            </HeaderTitle>
+          </PageHeader>
 
           <NavGrid>
             {
@@ -84,7 +89,7 @@ export default class System extends React.Component {
                         </figcaption>
                       </figure>
 
-                      <div className="status">
+                      <DrawerInfo>
                         <strong>Day duration:</strong>
                         {' '}
                         { drawer.dayDuration }
@@ -107,14 +112,14 @@ export default class System extends React.Component {
                         {' '}
                         { drawer.type }
                         <br />
-                      </div>
+                      </DrawerInfo>
 
-                      <Link
-                        className="more"
+                      <DrawerButton
+                        as={Link}
                         to={`/universe/solarsystem/${planet}`}
                       >
                         Travel
-                      </Link>
+                      </DrawerButton>
                     </Drawer>
                   </span>
                 );
