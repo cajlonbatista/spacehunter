@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from "./styles";
-const { Card } = styles;
+import { Card, CardTitle } from './styles';
+
 class CardInfo extends React.PureComponent {
   render() {
     const { title, content } = this.props;
 
     return (
-      <Card className="card-info">
-        <h3 className="card-title">
+      <Card>
+        <CardTitle>
           { title }
-        </h3>
+        </CardTitle>
 
-        <p className="card-content">
+        <p>
           { content }
         </p>
       </Card>

@@ -1,19 +1,14 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-else-return */
-/* eslint-disable linebreak-style */
-/* eslint-disable quotes */
-/* eslint-disable-next-line no-shadow */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { MeteorRainLoading } from "react-loadingg";
-import Markdown from "react-markdown";
+import { MeteorRainLoading } from 'react-loadingg';
+import Markdown from 'react-markdown';
 
-import styles from "./styles";
-import "./index.css";
-import news from '../../../utils/news';
+import api from '../../../utils/news';
+import { Container } from '../../../styles/general';
+import {
+  NewsMore, NewsBanner, NewsTitle, NewsSubtitle, NewsContent,
+} from './styles';
 
-const { NewsMore, NewsMoreBanner, NewsMoreBody, NewsMoreContainer, NewsTitle, NewsSubtitle, NewsContent }  = styles;
 class NewsSingle extends Component {
   constructor() {
     super();
@@ -27,7 +22,7 @@ class NewsSingle extends Component {
   componentDidMount() {
     const { match: { params } } = this.props;
 
-    news.get(`/articles/${params.id}`)
+    api.get(`/articles/${params.id}`)
       .then(({ data: news }) => this.setState({ news, loading: false }))
       .catch(console.error);
   }
@@ -41,38 +36,36 @@ class NewsSingle extends Component {
       author,
       imgToUrl,
     } = news;
-    console.log(news);
-    if (loading) {
-      return (
+
+    return loading
+      ? (
         <div>
           <MeteorRainLoading />
         </div>
-      );
-    } else {
-      return (
+      )
+      : (
         <NewsMore>
-          <img 
-            className="news-banner"
+          <NewsBanner
             alt={title}
             align="center"
             src={imgToUrl}
           />
-          <NewsMoreBody >
-            <NewsMoreContainer>
-              <NewsTitle>
-                {title}
-              </NewsTitle>
-              <NewsSubtitle>
-                {`${author} - ${new Date(publishedAt).toLocaleDateString()}`}
-              </NewsSubtitle>
-              <NewsContent className="news-content">
-                <Markdown source={content} />
-              </NewsContent>
-            </NewsMoreContainer>
-          </NewsMoreBody>
+
+          <Container>
+            <NewsTitle>
+              {title}
+            </NewsTitle>
+
+            <NewsSubtitle>
+              {`${author} - ${new Date(publishedAt).toLocaleDateString()}`}
+            </NewsSubtitle>
+
+            <NewsContent className="news-content">
+              <Markdown source={content} />
+            </NewsContent>
+          </Container>
         </NewsMore>
       );
-    }
   }
 }
 

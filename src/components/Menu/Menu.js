@@ -1,12 +1,12 @@
 import React from 'react';
-import './Menu.css';
 import { Menu } from 'antd';
-import { HomeFilled , RadarChartOutlined , PictureFilled , FileExclamationFilled , NodeExpandOutlined, FileImageFilled } from '@ant-design/icons';
+import {
+  HomeFilled, RadarChartOutlined, PictureFilled, FileExclamationFilled, NodeExpandOutlined,
+} from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import { HeaderTag } from './styles';
 
 const { Item } = Menu;
-
-/*Icons*/
 
 export default class App extends React.Component {
   constructor() {
@@ -24,15 +24,14 @@ export default class App extends React.Component {
   render() {
     const { current } = this.state;
     return (
-      <header className="site-header">
+      <HeaderTag>
         <Menu
-          className="menu"
           selectedKeys={[current]}
           mode="horizontal"
         >
           <Item
             key="home"
-            icon={<HomeFilled/>}
+            icon={<HomeFilled />}
           >
             <Link to="/">
               Space Hunter
@@ -50,7 +49,7 @@ export default class App extends React.Component {
 
           <Item
             key="articles"
-            icon={<FileExclamationFilled/>}
+            icon={<FileExclamationFilled />}
           >
             <Link to="/news">
               Space News
@@ -58,17 +57,15 @@ export default class App extends React.Component {
           </Item>
 
           <Item
-            className="apodi"
             key="apod"
             icon={<PictureFilled />}
           >
             <Link to="/apod">
-              Astronomy Picture 
+              Astronomy Picture
             </Link>
           </Item>
 
           <Item
-            className="about"
             key="about"
             icon={<NodeExpandOutlined />}
           >
@@ -77,7 +74,7 @@ export default class App extends React.Component {
             </Link>
           </Item>
         </Menu>
-      </header>
+      </HeaderTag>
     );
   }
 }

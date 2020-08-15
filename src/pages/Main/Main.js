@@ -1,9 +1,15 @@
 import React from 'react';
-import { Divider, Typography, Button, message } from 'antd';
+import {
+  Divider, Typography, Button, message,
+} from 'antd';
 import { MeteorRainLoading } from 'react-loadingg';
-import { Link } from "react-router-dom";
-import styles from './styles';
-const { Content, ContentTitle, Loading, Apod, ApodImage, ApodInfo, Welcome, WelcomePainel, WelcomeTitle} = styles;
+import { Link } from 'react-router-dom';
+
+import { Loading } from '../../styles/general';
+import {
+  Content, ContentTitle, Apod, ApodImage, ApodInfo, WelcomeTitle,
+} from './styles';
+
 const { Text } = Typography;
 
 export default class Main extends React.Component {
@@ -12,66 +18,62 @@ export default class Main extends React.Component {
     this.state = {
       main: {},
       loader: true,
-      status: true,
     };
   }
 
   componentDidMount() {
-    var year = new Date().getFullYear();
-    var day = new Date().getDate();
-    var moth = new Date().getMonth() + 1;
-    console.log(year + "-" + moth + "-" + day)
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a&start_date=${year}-${moth}-${day}&end_date=${year}-${moth}-${day}`)
+    const date = Intl.DateTimeFormat('en-GB')
+      .format(new Date())
+      .split('/')
+      .reverse()
+      .join('-');
+
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a&start_date=${date}&end_date=${date}`)
       .then((res) => res.json())
       .then((res) => {
-        if (res.code === 404) {
-          this.setState({
-            loader: false,
-            status: false,
-          });
-        } else {
+        if (res.code !== 404) {
           this.setState({
             main: res[0],
-            loader: false,
           });
         }
       })
       .catch((err) => {
+        message.error('Algo deu errado. Fale conosco ');
+        console.err(err);
+      })
+      .finally(() => {
         this.setState({
           loader: false,
-          status: false,
         });
-        message.error("Algo deu errado. Fale conosco ")
-        console.log(err)
       });
   }
 
   render() {
-    const { loader, status, main } = this.state;
+    const { loader, main } = this.state;
 
     if (loader) {
       return (
         <Loading>
-            <MeteorRainLoading color="#ffb400" />
+          <MeteorRainLoading color="#ffb400" />
         </Loading>
       );
     }
     return (
-      <Content >
+      <Content>
         <ContentTitle>
           Welcome, Hunter
-          </ContentTitle>
+        </ContentTitle>
+
         <Apod>
           <ApodImage
-            src={ main.url }
-            className="day"
+            src={main.url}
             alt="of day"
           />
 
           <ApodInfo style={{ margin: '20px' }}>
             <Text type="secondary">
               Astronomy Picture of the Day: &nbsp;
-                { main.title }
+              { main.title }
             </Text>
 
             <br />
@@ -90,15 +92,11 @@ export default class Main extends React.Component {
 
         <Divider />
 
-        <Welcome className="welcome">
+        <div>
           <WelcomeTitle>
             What you can find here
-            </WelcomeTitle>
-          <WelcomePainel className="painels" />
-          <WelcomePainel className="painels" />
-          <WelcomePainel className="painels" />
-          <WelcomePainel className="painels" />
-        </Welcome>
+          </WelcomeTitle>
+        </div>
       </Content>
     );
   }

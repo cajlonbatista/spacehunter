@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CardNavigation from './CardNavigation';
-import styles from  './styles';
-const { Navigator } = styles;
+import { Navigator } from './styles';
 
 class NavGrid extends React.PureComponent {
   render() {
