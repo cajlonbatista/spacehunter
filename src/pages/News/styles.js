@@ -8,3 +8,13 @@ export const NewsGrid = styled.div`
   padding: 15px;
   animation: bounce 2s linear;
 `;
+
+export const More = styled.button`
+  width: 90%;
+  max-width: 50%;
+  margin: 20px auto;
+`;
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+`

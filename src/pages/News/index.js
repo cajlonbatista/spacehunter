@@ -3,7 +3,7 @@ import { message, Spin } from 'antd';
 import { SolarSystemLoading } from 'react-loadingg';
 
 import { Loading } from '../../styles/general';
-import { NewsGrid } from './styles';
+import { NewsGrid, More, Container } from './styles';
 import CardNews from '../../components/CardNews';
 import news from '../../utils/news';
 
@@ -15,30 +15,48 @@ export default class News extends Component {
       total: 0,
       page: 1,
       loading: true,
-      spinnig: false,
+      spinning: false,
     };
   }
 
   componentDidMount() {
-    news.get(`/articles/${this.state.page}`)
-      .then(({ data: { docs: articles, page: page } }) => this.setState({ articles, loading: false, page: this.state.page + 1,total: page }))
-      .catch(() => {
-        message.error('Algo deu errado tente mais tarde!');
-      });
+    news.get("articles?page=1")
+      .then(res => {
+        this.setState({
+          page: res.data.pages
+        })
+        news.get(`/articles?page=${this.state.page}`)
+          .then(({ data: { docs: articles, pages: total } }) =>{
+            this.setState({ articles,page: this.state.page - 1, loading: false,total: total });
+          })     
+          .catch(() => {
+            message.error('Algo deu errado tente mais tarde!');
+          });
+      })
+      
   }
   loaderArticles = () => {
-    if(this.state.page >= this.state.total){
-
-    }else{
-    news.get(`/articles/${this.state.page}`)
-      .then(({ data: { docs: articles } }) => {
-          console.log(articles);
-      })
-      .catch(() => {
-        message.error('Algo deu errado tente mais tarde!');
-      });
+    this.setState({
+      spinning: true
+    })
+    if (this.state.page < 1) {
+    } else {
+      console.log(this.state.page)
+      news.get(`/articles?page=${this.state.page}`)
+        .then(({ data: { docs: articles } }) => {
+          for (const i of articles) {
+            const item = this.state.articles.push(i);
+            this.setState({
+              article: item,
+              spinning: false,
+              page: this.state.page - 1
+            });
+          }
+        })
+        .catch(() => {
+          message.error('Algo deu errado tente mais tarde!');
+        });
     }
-    console.log(this.state.total)
   }
   render() {
     const { articles, loading } = this.state;
@@ -46,15 +64,15 @@ export default class News extends Component {
     return loading
       ? <Loading><SolarSystemLoading /></Loading>
       : (
-        <Spin spinning={this.state.spinnig}>
+        <Spin spinning={this.state.spinning}>
           <NewsGrid>
-            {articles.map((article) => <CardNews news={article} />)}
+            {articles.map((article) => <CardNews key={article._id} news={article} />)}
           </NewsGrid>
-          <div>
-            <a href="#" onClick={this.loaderArticles}>
-              Carregar mais
-            </a>
-          </div>
+          <Container>
+            <More onClick={this.loaderArticles}>
+               More
+            </More>
+          </Container>
         </Spin>
 
       );
