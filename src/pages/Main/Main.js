@@ -5,7 +5,7 @@ import {
 import { MeteorRainLoading } from 'react-loadingg';
 import { Link } from 'react-router-dom';
 
-import { Loading } from '../../styles/general';
+import { Loading } from '../../utils/styles/general';
 import {
   Content, ContentTitle, Apod, ApodImage, ApodInfo, WelcomeTitle,
 } from './styles';

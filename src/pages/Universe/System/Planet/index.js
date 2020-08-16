@@ -4,7 +4,7 @@ import { SolarSystemLoading } from 'react-loadingg';
 import PropTypes from 'prop-types';
 
 import api from '../../../../utils/axios';
-import { Loading } from '../../../../styles/general';
+import { Loading } from '../../../../utils/styles/general';
 import {
   Description, Overview, PlanetTag, PlanetContent, Title,
 } from './styles';

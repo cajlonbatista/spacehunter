@@ -4,7 +4,7 @@ import { MeteorRainLoading } from 'react-loadingg';
 import Markdown from 'react-markdown';
 
 import api from '../../../utils/news';
-import { Container } from '../../../styles/general';
+import { Container } from '../../../utils/styles/general';
 import {
   NewsMore, NewsBanner, NewsTitle, NewsSubtitle, NewsContent,
 } from './styles';

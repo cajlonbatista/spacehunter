@@ -9,12 +9,10 @@ export const NewsGrid = styled.div`
   animation: bounce 2s linear;
 `;
 
-export const More = styled.button`
+export const Container = styled.div`
   width: 90%;
   max-width: 50%;
   margin: 20px auto;
-`;
-export const Container = styled.div`
-  display: flex;
+   display: flex;
   align-items: center;
 `

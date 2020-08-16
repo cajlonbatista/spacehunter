@@ -6,7 +6,7 @@ import NavGrid from '../../../components/NavGrid';
 import CardNavigation from '../../../components/NavGrid/CardNavigation';
 
 import api from '../../../utils/axios';
-import { Loading } from '../../../styles/general';
+import { Loading } from '../../../utils/styles/general';
 import {
   PageHeader, HeaderTitle, DrawerInfo, DrawerButton,
 } from './styles';
