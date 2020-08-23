@@ -49,7 +49,6 @@ export default class System extends React.Component {
               src={land}
               alt="title"
             />
-
             <HeaderTitle>
               Come travel through the solar system
             </HeaderTitle>
@@ -60,9 +59,9 @@ export default class System extends React.Component {
               planets.map(({ planet, drawer: drawerArr }, i) => {
                 const { activePlanet } = this.state;
                 const [drawer] = drawerArr;
-
+                
                 return (
-                  <span key={i}>
+                  <span key={i} style={{textTransform: "capitalize"}}>
                     <CardNavigation
                       title={planet}
                       image="https://image.flaticon.com/icons/svg/2590/2590482.svg"
@@ -70,6 +69,7 @@ export default class System extends React.Component {
                     />
 
                     <Drawer
+                      style={{textTransform: "capitalize"}}
                       title={planet}
                       placement="right"
                       closable={false}
@@ -83,7 +83,6 @@ export default class System extends React.Component {
                           alt={planet}
                           width="100%"
                         />
-
                         <figcaption>
                           { drawer.descriptionDrawer }
                         </figcaption>

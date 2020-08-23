@@ -34,7 +34,14 @@ export const ApodImage = styled.img`
     margin-top: 20px;
   }
 `;
-
+export const ApodVideo = styled.iframe`
+  width: 65%;
+  height: 200px;
+  @media (max-width: 526px) {
+    width: 100%;
+    margin-top: 20px;
+  }
+`
 export const ApodInfo = styled.div`
   display: flex;
   flex-direction: column;
