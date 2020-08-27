@@ -10,7 +10,7 @@ import {
 } from './styles';
 
 import PageBack from '../../../../components/PageBack';
-import CardInfo from '../../../../components/CardNews/CardInfo';
+import CardInfo from '../../../../components/CardInfo';
 import CardsGrid from '../../../../components/CardsGrid';
 
 class Planet extends Component {
