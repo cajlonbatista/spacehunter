@@ -26,10 +26,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
-    "lint:style": "stylelint src/**/*.css --ignore-pattern .gitignore",
-    "lint:js": "eslint src/**/*.js",
-    "lint": "yarn lint:js && yarn lint:style"
+    "test": "craco test"
   },
   "browserslist": {
     "production": [
@@ -42,24 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "dotenv": "^8.2.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "husky": "^4.2.5",
-    "stylelint": "^13.6.1",
-    "stylelint-config-standard": "^20.0.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "shared-config"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
   }
 }

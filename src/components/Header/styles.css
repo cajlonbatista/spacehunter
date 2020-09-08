@@ -1,0 +1,41 @@
+.graduacao {
+    position: absolute;
+    display: flex;
+    top: 0;
+}
+
+.graduacao li {
+    list-style: none;
+}
+
+.logoDrawer {
+    width: 140px;
+    text-align: center;
+}
+
+.largy {
+    margin-top: 50px;
+}
+
+.locality {
+    padding: 10px;
+    text-align: center;
+}
+
+.logoConteiner {
+    display: flex;
+    justify-content: center;
+}
+.iconDrawer{
+    margin-right: 10px;
+}
+.drawerButton{
+    width: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+@media( min-width: 600px) {
+    .drawerButton {
+        display: none;
+    }
+}
