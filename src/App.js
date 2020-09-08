@@ -6,6 +6,7 @@ import './assets/global/styles.css';
 
 import Menu from './components/Menu/Menu';
 
+
 export default class App extends React.PureComponent {
   render() {
     return (
