@@ -5,14 +5,14 @@ import './App.less';
 import './assets/global/styles.css';
 
 import Menu from './components/Menu/Menu';
-
+import Header from './components/Header/Header';
 
 export default class App extends React.PureComponent {
   render() {
     return (
       <BrowserRouter>
         <div id="layout">
-          <Menu />
+          <Header />
 
           <Routes />
         </div>

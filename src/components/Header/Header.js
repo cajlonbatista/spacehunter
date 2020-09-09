@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from "react-router-dom";
 
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
@@ -10,7 +11,7 @@ import Menu from '@material-ui/icons/Menu';
 
 import "./styles.css";
 import styles from "./styles";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/images/rocket.svg";
 
 import { InboxSharp, ContactSupport, BookOutlined, BookSharp } from "@material-ui/icons";
 
@@ -30,6 +31,7 @@ const useStyles = makeStyles({
     drawer: {
     }
 });
+
 export default function Header() {
     const [open, setOpen] = React.useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -73,11 +75,6 @@ export default function Header() {
                             <ListItemText primary="Contato" />
                         </ListItem>
                     </div>
-                    <div className="locality">
-                        <Locality>
-                            R. Manoel Gonçalves, 671 - Piquizeiro  Caxias - MA, 65600-110
-                        </Locality>
-                    </div>
                 </List>
 
             </SwipeableDrawer>
@@ -87,25 +84,31 @@ export default function Header() {
                 </IconButton>
             </div>
             <Guide>
-                <Locality>
-                    R. Manoel Gonçalves, 671 - Piquizeiro, Caxias - MA, 65600-110
-                </Locality>
                 <GuideList>
-                    <Item href="#">
-                        <li>Sobre</li>
-                    </Item>
-                    <Item href="#" >
-                        <li>Graduação</li>
-                    </Item>
-                    <Item href="#">
-                        <li>Pós-Graduação</li>
-                    </Item>
-                    <Item href="#">
-                        <li>Contato</li>
-                    </Item>
+                    <Link to="/universe">
+                        <Item href="#">
+                            <li>Universe</li>
+                        </Item>
+                    </Link>
+                    <Link to="/news">
+
+                        <Item>
+                            <li>News</li>
+                        </Item>
+                    </Link>
+                    <Link>
+                        <Item>
+                            <li>Pós-Graduação</li>
+                        </Item>
+                    </Link>
+                    <Link>
+                        <Item >
+                            <li>Contato</li>
+                        </Item>
+                    </Link>
                 </GuideList>
             </Guide>
-        </AppBar>
+        </AppBar >
     )
 
 }

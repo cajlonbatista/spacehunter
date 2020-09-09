@@ -3,3 +3,6 @@
 
 <p align="center">Website for astronomy lovers ❤🌑</p>
 
+### About
+### Guide
+### Contributes

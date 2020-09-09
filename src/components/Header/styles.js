@@ -3,18 +3,21 @@ import styled from "styled-components";
  
 export default {
     AppBar : styled.header`
-        background: #ffdd00;
+        background: #181818;
+        padding: 8px 15px;
+        font-size: 30px;
+        display: flex;
         width: 100vw;
         position: fixed;
-        padding: 10px 15px;
-        display: flex;
+        top: 0;
+        z-index: 10;
         align-items: center;
         box-shadow: 3px 3px 5px -1px rgba(0,0,0,0.42);
         justify-content: space-between;
     `,
     
     Logo : styled.img`
-        width: 90px;
+        width: 50px;
     `,
     GuideList : styled.div`
         display: flex;
@@ -40,7 +43,7 @@ export default {
         transition: all 0.3s;
         margin-left: 5px;
         list-style: none;
-        background: #ffdd00;
+        background: #181818;
         border-radius: 5px;
         font-weight: 500;
         padding: 7px 19px;
