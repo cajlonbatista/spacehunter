@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  margin-top: 20px;
+  margin-top: 80px;
   width: 100%;
   animation: bounce 1s linear;
 `;

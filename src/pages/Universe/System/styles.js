@@ -5,7 +5,7 @@ export const PageHeader = styled.div`
   justify-content: center;
   align-items: flex-end;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 90px;
   gap: 20px;
   font-family: Exo, sans-serif;
   text-align: center;
