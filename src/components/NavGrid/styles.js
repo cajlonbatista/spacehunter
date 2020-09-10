@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Navigator = styled.div`
   display: grid;
   width: 100%;
+  margin-top: 60px;
   grid-template-columns: repeat(auto-fit, 150px);
   grid-auto-rows: min-content;
   justify-content: center;

@@ -11,6 +11,7 @@ export default class Main extends React.Component {
     this.state = { main: {}, loader: true, };
   }
   componentDidMount() {
+    
     const date = Intl.DateTimeFormat('en-GB')
       .format(new Date())
       .split('/')
@@ -48,6 +49,7 @@ export default class Main extends React.Component {
               <Text type="secondary"> Astronomy Picture of the Day: &nbsp; {title} </Text> 
               <br /> 
               <Text type="warning"> {copyright} </Text>
+              <br/>
               <Link to="/apod">
                 <Button type="primary"> More </Button>
               </Link>

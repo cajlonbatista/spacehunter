@@ -13,7 +13,7 @@ import Apod from './pages/Apod/Apod';
 export default function Routes() {
   return (
     <Switch>
-      <Route path="/" exact component={Main} />
+      <Route path="/" title="Space" exact component={Main} />
       <Route path="/universe" exact component={Universe} />
       <Route path="/news" exact component={News} />
       <Route path="/news/:id" exact component={NewsSingle} />

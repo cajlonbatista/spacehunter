@@ -5,7 +5,6 @@ export default {
     AppBar : styled.header`
         background: #181818;
         padding: 8px 15px;
-        font-size: 30px;
         display: flex;
         width: 100vw;
         position: fixed;
@@ -17,7 +16,7 @@ export default {
     `,
     
     Logo : styled.img`
-        width: 50px;
+        width: 60px;
     `,
     GuideList : styled.div`
         display: flex;
@@ -27,7 +26,7 @@ export default {
         margin-right: 20px;
         flex-direction: column;
         align-items: right;
-        @media(max-width: 600px){
+        @media(max-width: 1010px){
             display: none;
         }
     `,
@@ -36,21 +35,5 @@ export default {
         padding: 5px 0px;
         text-align: right;
         font-size: 13px;
-    `,
-    Item : styled.li`
-        font-family: Archivo, sans-serif;
-        font-size: 14px;
-        transition: all 0.3s;
-        margin-left: 5px;
-        list-style: none;
-        background: #181818;
-        border-radius: 5px;
-        font-weight: 500;
-        padding: 7px 19px;
-        cursor: pointer;
-        :hover{
-            background: #181818;
-            color: #ffdd00;
-        }
     `
 }

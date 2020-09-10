@@ -7,10 +7,41 @@
 .graduacao li {
     list-style: none;
 }
-
+.menu_icon{
+    width: 40px;
+}
 .logoDrawer {
     width: 140px;
     text-align: center;
+}
+
+.linkMenu {
+    font-size: 13px;
+    margin-left: 15px;
+    font-family: "Exo", sans-serif;
+    padding: 7px 10px;
+    display: flex;
+    transition: all 0.4s;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.linkMenu img {
+    width: 26px;
+    margin-right: 10px;
+}
+.logoW{
+    font-family: Roboto Mono, sans-serif;
+    font-size: 23px;
+    color: #ff9900;
+    align-items: center;
+    display: flex;
+}
+.linkMenu:hover {
+    color: white;
+    background: #ff9900;
+    border-radius: 5px;
 }
 
 .largy {
@@ -26,15 +57,20 @@
     display: flex;
     justify-content: center;
 }
-.iconDrawer{
+.menu_icon{
+    width: 30px;
+}
+.iconDrawer {
     margin-right: 10px;
 }
-.drawerButton{
+
+.drawerButton {
     width: 60px;
     display: flex;
     justify-content: flex-end;
 }
-@media( min-width: 600px) {
+
+@media( min-width: 1011px) {
     .drawerButton {
         display: none;
     }

@@ -25,7 +25,7 @@ export default class Universe extends React.Component {
         {
           path: '/universe',
           image: 'https://image.flaticon.com/icons/svg/947/947674.svg',
-          title: 'Galaxys',
+          title: 'Galaxies',
         },
         {
           path: '/universe',
@@ -49,6 +49,6 @@ export default class Universe extends React.Component {
   render() {
     const { menus } = this.state;
 
-    return <NavGrid items={menus} />;
+    return <NavGrid  items={menus} />;
   }
 }

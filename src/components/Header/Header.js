@@ -7,13 +7,17 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
-import Menu from '@material-ui/icons/Menu';
+import { MenuOutlined } from '@ant-design/icons';
+import menu from "../../assets/images/menu.svg";
 
 import "./styles.css";
 import styles from "./styles";
 import logo from "../../assets/images/rocket.svg";
 
 import { InboxSharp, ContactSupport, BookOutlined, BookSharp } from "@material-ui/icons";
+import { withRouter } from 'react-router-dom';
+
+const SomeComponent = withRouter(props => <Header {...props} />);
 
 const { AppBar, Logo, GuideList, Item, Guide, MenuItem, Locality, DropButton } = styles;
 const useStyles = makeStyles({
@@ -32,10 +36,9 @@ const useStyles = makeStyles({
     }
 });
 
-export default function Header() {
+export default function Header(props) {
     const [open, setOpen] = React.useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
-
     const classes = useStyles();
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -49,9 +52,14 @@ export default function Header() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+   
+
     return (
         <AppBar >
-            <a href="#"><Logo src={logo}></Logo></a>
+            <div className="logoW">
+                <Link to="/"><Logo src={logo}></Logo></Link>
+                Space Hunter
+            </div>
             <SwipeableDrawer className={classes.drawer} anchor="left" open={open} onOpen={handleDrawerOpen} onClose={handleDrawerClose}>
                 <List className={classes.list}>
                     <div className="logoConteiner" onClick={handleDrawerClose} button key="Logo">
@@ -59,8 +67,8 @@ export default function Header() {
                     </div>
                     <div>
                         <ListItem onClick={handleDrawerClose} button key="Sobre">
-                            <InboxSharp className="iconDrawer" />
-                            <ListItemText primary="Sobre" />
+                            <img src="https://image.flaticon.com/icons/svg/3049/3049498.svg" width="25" />
+                            <ListItemText primary="Universe" />
                         </ListItem>
                         <ListItem onClick={handleDrawerClose} button key="Graduação">
                             <BookOutlined className="iconDrawer" />
@@ -79,32 +87,35 @@ export default function Header() {
 
             </SwipeableDrawer>
             <div className="drawerButton" >
-                <IconButton onClick={handleDrawerOpen} edge="start" color="inherit" aria-label="menu">
-                    <Menu />
+                <IconButton onClick={handleDrawerOpen} edge="start" size="medium" color="inherit" aria-label="menu">
+                    <img src={menu} className="menu_icon" />
                 </IconButton>
             </div>
             <Guide>
                 <GuideList>
-                    <Link to="/universe">
-                        <Item href="#">
-                            <li>Universe</li>
-                        </Item>
+                    <Link className="linkMenu" to="/universe">
+                        <img src="https://image.flaticon.com/icons/svg/3049/3049498.svg" />
+                        Universe
                     </Link>
-                    <Link to="/news">
-
-                        <Item>
-                            <li>News</li>
-                        </Item>
+                    <Link className="linkMenu" to="/news">
+                        <img src="https://image.flaticon.com/icons/svg/2991/2991408.svg" />
+                        News
                     </Link>
-                    <Link>
-                        <Item>
-                            <li>Pós-Graduação</li>
-                        </Item>
+                    <Link className="linkMenu" to="/apod">
+                        <img src="https://image.flaticon.com/icons/svg/3465/3465121.svg" />
+                        Apod
                     </Link>
-                    <Link>
-                        <Item >
-                            <li>Contato</li>
-                        </Item>
+                    <Link className="linkMenu" to="/apod">
+                        <img src="https://image.flaticon.com/icons/svg/734/734718.svg" />
+                        Mars Hover
+                    </Link>
+                    <Link className="linkMenu" to="/apod">
+                        <img src="https://image.flaticon.com/icons/svg/1055/1055662.svg" />
+                        Multimedia
+                    </Link>
+                    <Link className="linkMenu">
+                        <img src="https://image.flaticon.com/icons/svg/3300/3300409.svg" />
+                        Contato
                     </Link>
                 </GuideList>
             </Guide>

@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export const PageHeader = styled.div`
-margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 90px;
   gap: 20px;
   font-family: Exo, sans-serif;
   text-align: center;

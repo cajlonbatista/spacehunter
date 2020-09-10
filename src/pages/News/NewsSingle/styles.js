@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const NewsMore = styled.div`
   display: flex;
+  margin-top: 70px;
   flex-direction: column;
   animation: bounce 2s linear;
   align-items: center;
@@ -28,7 +29,6 @@ export const NewsContent = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   p {
     color: #f5f5f5;
     line-height: 27px;
@@ -36,7 +36,7 @@ export const NewsContent = styled.article`
   }
 
   h3 { color: #00d9ff; }
-
+  h1 {};
   img {
     width: 100%;
     max-width: 700px;
