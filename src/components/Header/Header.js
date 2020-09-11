@@ -83,7 +83,7 @@ export default function Header(props) {
                         </ListItem>
                         <ListItem onClick={handleDrawerClose} button >
                             <Link className="list-item">
-                                <img src="https://image.flaticon.com/icons/svg/734/734718.svg" />
+                                <img src="https://www.flaticon.com/svg/static/icons/svg/1006/1006195.svg" />
                                 <span>Mars Hover</span>
                             </Link>
                         </ListItem>
@@ -118,7 +118,7 @@ export default function Header(props) {
                         Apod
                     </Link>
                     <Link className="linkMenu" to="/apod">
-                        <img src="https://image.flaticon.com/icons/svg/734/734718.svg" />
+                        <img src="https://www.flaticon.com/svg/static/icons/svg/1006/1006195.svg" />
                         Mars Hover
                     </Link>
                     <Link className="linkMenu" to="/apod">
