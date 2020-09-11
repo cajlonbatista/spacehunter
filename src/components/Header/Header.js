@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
-import { MenuOutlined } from '@ant-design/icons';
-import menu from "../../assets/images/menu.svg";
+import menu from '../../assets/images/menu.svg';
 
 import "./styles.css";
 import styles from "./styles";
@@ -72,7 +70,6 @@ export default function Header(props) {
                                 <span>Universo</span>
                             </div>
                         </ListItem>
-
                     </div>
                 </List>
 
