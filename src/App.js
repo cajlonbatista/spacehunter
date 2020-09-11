@@ -13,7 +13,6 @@ export default class App extends React.PureComponent {
       <BrowserRouter>
         <div id="layout">
           <Header />
-
           <Routes />
         </div>
       </BrowserRouter>

@@ -17,6 +17,9 @@ export default {
     
     Logo : styled.img`
         width: 60px;
+        @media(max-width: 425px){
+            width: 45px;
+        }
     `,
     GuideList : styled.div`
         display: flex;
