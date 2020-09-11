@@ -10,6 +10,23 @@
 .menu_icon{
     width: 40px;
 }
+.list{
+    display: flex;
+    flex-direction: column;
+}
+.list-item{
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #ff9900;
+    display: flex;
+    align-items: center;
+    font-family: Archivo, sans-serif;
+    width: 100%;
+}
+.list-item img{
+    margin-right: 20px;
+    width: 35px;
+}
 .logoDrawer {
     width: 140px;
     text-align: center;

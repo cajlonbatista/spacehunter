@@ -22,18 +22,18 @@ const SomeComponent = withRouter(props => <Header {...props} />);
 const { AppBar, Logo, GuideList, Item, Guide, MenuItem, Locality, DropButton } = styles;
 const useStyles = makeStyles({
     list: {
-        width: 250,
+        width: 270,
         height: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        background: "#ffdd00",
+        background: "#181818",
     },
     fullList: {
         width: 'auto',
     },
     drawer: {
-    }
+    },
 });
 
 export default function Header(props) {
@@ -52,7 +52,7 @@ export default function Header(props) {
     const handleClose = () => {
         setAnchorEl(null);
     };
-   
+
 
     return (
         <AppBar >
@@ -65,23 +65,14 @@ export default function Header(props) {
                     <div className="logoConteiner" onClick={handleDrawerClose} button key="Logo">
                         <img src={logo} className="logoDrawer" alt="" />
                     </div>
-                    <div>
-                        <ListItem onClick={handleDrawerClose} button key="Sobre">
-                            <img src="https://image.flaticon.com/icons/svg/3049/3049498.svg" width="25" />
-                            <ListItemText primary="Universe" />
+                    <div className="list">
+                        <ListItem onClick={handleDrawerClose} button >
+                            <div className="list-item">
+                                <img src="https://image.flaticon.com/icons/svg/3049/3049498.svg" />
+                                <span>Universo</span>
+                            </div>
                         </ListItem>
-                        <ListItem onClick={handleDrawerClose} button key="Graduação">
-                            <BookOutlined className="iconDrawer" />
-                            <ListItemText primary="Graduação" />
-                        </ListItem>
-                        <ListItem onClick={handleDrawerClose} button key="Pós-Graduação">
-                            <BookSharp className="iconDrawer" />
-                            <ListItemText primary="Pós-Graduação" />
-                        </ListItem>
-                        <ListItem onClick={handleDrawerClose} button key="Contato">
-                            <ContactSupport className="iconDrawer" />
-                            <ListItemText primary="Contato" />
-                        </ListItem>
+
                     </div>
                 </List>
 
