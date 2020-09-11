@@ -12,7 +12,6 @@ import "./styles.css";
 import styles from "./styles";
 import logo from "../../assets/images/rocket.svg";
 
-import { InboxSharp, ContactSupport, BookOutlined, BookSharp } from "@material-ui/icons";
 import { withRouter } from 'react-router-dom';
 
 const SomeComponent = withRouter(props => <Header {...props} />);
@@ -65,12 +64,37 @@ export default function Header(props) {
                     </div>
                     <div className="list">
                         <ListItem onClick={handleDrawerClose} button >
-                            <div className="list-item">
+                            <Link to="/" className="list-item">
                                 <img src="https://image.flaticon.com/icons/svg/3049/3049498.svg" />
                                 <span>Universo</span>
-                            </div>
+                            </Link>
+                        </ListItem>
+                        <ListItem onClick={handleDrawerClose} button >
+                            <Link to="/news" className="list-item">
+                                <img src="https://image.flaticon.com/icons/svg/2991/2991408.svg" />
+                                <span>News</span>
+                            </Link>
+                        </ListItem>
+                        <ListItem onClick={handleDrawerClose} button >
+                            <Link to="/apod" className="list-item">
+                                <img src="https://www.flaticon.com/svg/static/icons/svg/3004/3004721.svg" />
+                                <span>Apod</span>
+                            </Link>
+                        </ListItem>
+                        <ListItem onClick={handleDrawerClose} button >
+                            <Link className="list-item">
+                                <img src="https://image.flaticon.com/icons/svg/734/734718.svg" />
+                                <span>Mars Hover</span>
+                            </Link>
+                        </ListItem>
+                        <ListItem onClick={handleDrawerClose} button >
+                            <Link className="list-item">
+                                <img src="https://image.flaticon.com/icons/svg/1055/1055662.svg" />
+                                <span>Multimedia</span>
+                            </Link>
                         </ListItem>
                     </div>
+                    
                 </List>
 
             </SwipeableDrawer>
@@ -90,7 +114,7 @@ export default function Header(props) {
                         News
                     </Link>
                     <Link className="linkMenu" to="/apod">
-                        <img src="https://image.flaticon.com/icons/svg/3465/3465121.svg" />
+                        <img src="https://www.flaticon.com/svg/static/icons/svg/3004/3004721.svg" />
                         Apod
                     </Link>
                     <Link className="linkMenu" to="/apod">
