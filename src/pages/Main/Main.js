@@ -47,9 +47,7 @@ export default class Main extends React.Component {
           <ApodImage src={url} alt="of day" /> 
             <ApodInfo style={{ margin: '20px' }}> 
               <Text type="secondary"> Astronomy Picture of the Day: &nbsp; {title} </Text> 
-              <br /> 
               <Text type="warning"> {copyright} </Text>
-              <br/>
               <Link to="/apod">
                 <Button type="primary"> More </Button>
               </Link>
@@ -60,7 +58,6 @@ export default class Main extends React.Component {
             <iframe width="100%" height="300px" style={{ maxWidth: 700 }} src={url} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen> </iframe>
             <ApodInfo style={{ margin: '20px' }}> 
               <Text type="secondary"> Astronomy Picture of the Day: &nbsp; {title} </Text> 
-              <br />
               <Text type="warning"> {copyright} </Text> 
               <Link to="/apod">
                 <Button type="primary"> More </Button>
