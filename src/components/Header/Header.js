@@ -8,15 +8,27 @@ import ListItem from '@material-ui/core/ListItem';
 import IconButton from '@material-ui/core/IconButton';
 import menu from '../../assets/images/menu.svg';
 
-import "./styles.css";
 import styles from "./styles";
 import logo from "../../assets/images/rocket.svg";
 
 import { withRouter } from 'react-router-dom';
 
-const SomeComponent = withRouter(props => <Header {...props} />);
+const SomeComponent = withRouter(props => <Header {...props} />); //Get props path the of routes
 
-const { AppBar, Logo, GuideList, Item, Guide, MenuItem, Locality, DropButton } = styles;
+const { 
+    AppBar,
+    Logo,
+    GuideList,
+    Guide,
+    MenuIcon,
+    LogoMenu,
+    LogoConteiner,
+    MenuItem,
+    DrawerButton,
+    LinkMenu,
+    LogoDrawer,
+} = styles;
+
 const useStyles = makeStyles({
     list: {
         width: 270,
@@ -28,8 +40,6 @@ const useStyles = makeStyles({
     },
     fullList: {
         width: 'auto',
-    },
-    drawer: {
     },
 });
 
@@ -79,23 +89,23 @@ export default function Header(props) {
 
     return (
         <AppBar >
-            <div className="logo-menu">
+            <LogoMenu>
                 <Link to="/"><Logo src={logo}></Logo></Link>
                 Space Hunter
-            </div>
+            </LogoMenu>
             <SwipeableDrawer className={classes.drawer} anchor="left" open={open} onOpen={handleDrawerOpen} onClose={handleDrawerClose}>
                 <List className={classes.list}>
-                    <div className="logo-conteiner" onClick={handleDrawerClose} button key="Logo">
-                        <img src={logo} className="logo-drawer" alt="" />
-                    </div>
-                    <div >
+                    <LogoConteiner onClick={handleDrawerClose} button key="Logo">
+                        <LogoDrawer src={logo} />
+                    </LogoConteiner>
+                    <div>
                         {
                             items.map((item) => (
                                 <ListItem className="list" onClick={handleDrawerClose} button >
-                                    <Link to={item.path} className="menu-item">
+                                    <MenuItem to={item.path}>
                                         <img src={item.image} />
-                                        <span>{item.title}</span>
-                                    </Link>
+                                        {item.title}
+                                    </MenuItem>
                                 </ListItem>
 
                             ))
@@ -105,20 +115,20 @@ export default function Header(props) {
                 </List>
 
             </SwipeableDrawer>
-            <div className="drawer-button" >
+            <DrawerButton>
                 <IconButton onClick={handleDrawerOpen} edge="start" size="medium" color="inherit" aria-label="menu">
-                    <img src={menu} className="menu_icon" />
+                    <MenuIcon src={menu}  />
                 </IconButton>
-            </div>
+            </DrawerButton>
             <Guide>
                 <GuideList>
 
                     {
                         items.map(item => (
-                            <Link className="link-menu" to={item.path}>
+                            <LinkMenu to={item.path}>
                                 <img src={item.image} />
                                 {item.title}
-                            </Link>
+                            </LinkMenu>
                         ))
                     }
                 </GuideList>

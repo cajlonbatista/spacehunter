@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  margin-top: 120px;
+  margin-top: 90px;
   width: 100%;
   animation: bounce 1s linear;
 `;
@@ -16,6 +16,7 @@ export const Apod = styled.div`
   margin: 30px auto;
   display: flex;
   width: 90%;
+  align-items: center;
   justify-content: center;
   max-width: 900px;
   text-align: center;
