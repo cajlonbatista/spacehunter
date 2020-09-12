@@ -1,11 +1,25 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
+import {
+  ConteinerApod
+} from './styles';
 
-export default class Apod extends PureComponent {
+import { DatePicker } from 'antd';
+
+export default class Apod extends Component {
+  state = {
+    selectedDate: {}
+  }
+  handleDateChange = (date) => {
+    console.log(date);
+    this.setState({
+      selectedDate: date
+    })
+  }
   render() {
     return (
-      <div>
-        klafd
-      </div>
+      <ConteinerApod>
+              <DatePicker size="large" onChange={this.handleDateChange} />
+      </ConteinerApod>
     );
   }
 }
