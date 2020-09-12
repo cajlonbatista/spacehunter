@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const PlanetTag = styled.div`
+  margin-top: 80px;
   display: grid;
   grid-template-rows: 1fr auto;
 `;
