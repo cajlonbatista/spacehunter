@@ -107,13 +107,10 @@ export default function Header(props) {
                                         {item.title}
                                     </MenuItem>
                                 </ListItem>
-
                             ))
                         }
                     </div>
-
                 </List>
-
             </SwipeableDrawer>
             <DrawerButton>
                 <IconButton onClick={handleDrawerOpen} edge="start" size="medium" color="inherit" aria-label="menu">
@@ -122,7 +119,6 @@ export default function Header(props) {
             </DrawerButton>
             <Guide>
                 <GuideList>
-
                     {
                         items.map(item => (
                             <LinkMenu to={item.path}>
@@ -135,5 +131,4 @@ export default function Header(props) {
             </Guide>
         </AppBar >
     )
-
 }
