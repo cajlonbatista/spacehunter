@@ -81,7 +81,7 @@ export default class News extends Component {
       : (
         <Spin spinning={this.state.spinning} size="large">
           
-          <div>
+          <div style={{ marginTop: 100 }}>
           <BackTop>
           </BackTop>
             <NewsGrid>

@@ -8,6 +8,7 @@ import ListItem from '@material-ui/core/ListItem';
 import IconButton from '@material-ui/core/IconButton';
 import menu from '../../assets/images/menu.svg';
 
+import "./styles.css";
 import styles from "./styles";
 import logo from "../../assets/images/rocket.svg";
 
@@ -15,7 +16,7 @@ import { withRouter } from 'react-router-dom';
 
 const SomeComponent = withRouter(props => <Header {...props} />); //Get props path the of routes
 
-const { 
+const {
     AppBar,
     Logo,
     GuideList,
@@ -23,9 +24,7 @@ const {
     MenuIcon,
     LogoMenu,
     LogoConteiner,
-    MenuItem,
     DrawerButton,
-    LinkMenu,
     LogoDrawer,
 } = styles;
 
@@ -61,7 +60,7 @@ export default function Header(props) {
     };
     const items = [
         {
-            path: "/",
+            path: "/universe",
             title: "Universo",
             image: "https://image.flaticon.com/icons/svg/3049/3049498.svg"
         },
@@ -102,10 +101,10 @@ export default function Header(props) {
                         {
                             items.map((item) => (
                                 <ListItem className="list" onClick={handleDrawerClose} button >
-                                    <MenuItem to={item.path}>
+                                    <Link to={item.path} className="item-menu">
                                         <img src={item.image} />
                                         {item.title}
-                                    </MenuItem>
+                                    </Link>
                                 </ListItem>
                             ))
                         }
@@ -114,17 +113,17 @@ export default function Header(props) {
             </SwipeableDrawer>
             <DrawerButton>
                 <IconButton onClick={handleDrawerOpen} edge="start" size="medium" color="inherit" aria-label="menu">
-                    <MenuIcon src={menu}  />
+                    <MenuIcon src={menu} />
                 </IconButton>
             </DrawerButton>
             <Guide>
                 <GuideList>
                     {
                         items.map(item => (
-                            <LinkMenu to={item.path}>
-                                <img src={item.image} />
-                                {item.title}
-                            </LinkMenu>
+                                <Link to={item.path} className="link-menu">
+                                    <img src={item.image} />
+                                    {item.title}
+                                </Link>
                         ))
                     }
                 </GuideList>

@@ -62,40 +62,5 @@ export default {
         width: 130px;
         text-align: center;
     `,
-    LinkMenu: styled.a`
-        font-size: 13px;
-        margin-left: 15px;
-        font-family: "Exo", sans-serif;
-        padding: 7px 10px;
-        border-radius: 5px;
-        display: flex;
-        transition: all 0.4s;
-        justify-content: center;
-        align-items: center;
-        color: whitesmoke;
-        img {
-            width: 22px;
-            margin-right: 10px;
-        }
-        :hover{
-            color: white;
-            background: #ff9900b2;
-        }
-    `,
-    MenuItem: styled.a`
-        font-size: 1.7rem;
-        font-weight: 600;
-        color: #f5f5f5;
-        display: flex;
-        align-items: center;
-        font-family: Archivo, sans-serif;
-        width: 100%; 
-        img {
-            width: 30px;
-            margin-right: 20px;
-        }
-        :hover{
-            color: #ff9900;
-        }
-    `,
+
 }

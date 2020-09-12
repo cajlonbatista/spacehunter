@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import api from '../../../../utils/axios';
 import { Loading } from '../../../../utils/styles/general';
+import { BackTop } from "antd";
 import {
   Description, Overview, PlanetTag, PlanetContent, Title,
 } from './styles';
@@ -48,31 +49,35 @@ class Planet extends Component {
     return loading
       ? <Loading><SolarSystemLoading /></Loading>
       : (
-        <PlanetTag>
-          <PageBack title={planet} />
+        <>
+          <BackTop>
+          </BackTop>
+          <PlanetTag>
+            <PageBack title={planet} />
 
-          <PlanetContent>
-            <Overview src={planetImage}>
-              <Title>{ planetTitle }</Title>
-            </Overview>
+            <PlanetContent>
+              <Overview src={planetImage}>
+                <Title>{planetTitle}</Title>
+              </Overview>
 
-            <Description>
-              { description }
-            </Description>
+              <Description>
+                {description}
+              </Description>
 
-            <CardsGrid>
-              {
-                cards.map(({ title, content }, i) => (
-                  <CardInfo
-                    title={title}
-                    key={i}
-                    content={content}
-                  />
-                ))
-              }
-            </CardsGrid>
-          </PlanetContent>
-        </PlanetTag>
+              <CardsGrid>
+                {
+                  cards.map(({ title, content }, i) => (
+                    <CardInfo
+                      title={title}
+                      key={i}
+                      content={content}
+                    />
+                  ))
+                }
+              </CardsGrid>
+            </PlanetContent>
+          </PlanetTag>
+        </>
       );
   }
 }
