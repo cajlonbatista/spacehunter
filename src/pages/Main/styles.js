@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  margin-top: 80px;
+  margin-top: 120px;
   width: 100%;
   animation: bounce 1s linear;
 `;
@@ -9,6 +9,7 @@ export const Content = styled.div`
 export const ContentTitle = styled.h1`
   font-family: "Exo", sans-serif;
   text-align: center;
+  margin-bottom: 10px;
 `;
 
 export const Apod = styled.div`

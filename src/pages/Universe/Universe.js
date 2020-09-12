@@ -24,6 +24,16 @@ export default class Universe extends React.Component {
         },
         {
           path: '/universe',
+          image: 'https://www.flaticon.com/svg/static/icons/svg/3462/3462888.svg',
+          title: 'Properties',
+        },
+        {
+          path: '/universe',
+          image: 'https://www.flaticon.com/svg/static/icons/svg/1485/1485170.svg',
+          title: 'Source'
+        },
+        {
+          path: '/universe',
           image: 'https://image.flaticon.com/icons/svg/947/947674.svg',
           title: 'Galaxies',
         },
