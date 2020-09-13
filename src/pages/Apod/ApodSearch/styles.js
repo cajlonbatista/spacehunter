@@ -9,25 +9,21 @@ export const ConteinerApod = styled.div`
 export const HeaderApod = styled.div`
     display: flex;
     align-items: center;
+    flex-direction: column;
     img {
         width: 140px;
         margin-right: 10px;
-    }
-    @media(max-width: 500px){
-        flex-direction: column;
     }
 `
 export const SelectApod = styled.div`
     display: flex;
     align-items: center;
-    
+    flex-direction: column;
     p{
         margin: 10px;
         font-family: Rubik, sans-serif;
     }
-    @media(max-width: 500px){
-        flex-direction: column;
-    }
+
 `
 export const ApodImage = styled.div`
     border-radius: 10px;
@@ -37,15 +33,16 @@ export const ApodImage = styled.div`
     align-items: center;
     img{
         width: 100%;
-        max-width: 600px;
-        border-radius: 5px;
+        margin: 20px auto;
+        max-width: 70vw;
+        border-radius: 10px;
     }
 
     span{
         width: 90%;
         max-width: 1300px;
         text-align: justify;
-        color: white;
+        color: #888888;
         margin-top: 5px;
         font-family: Kufam, sans-serif;
     }

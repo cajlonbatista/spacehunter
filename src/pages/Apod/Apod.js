@@ -59,7 +59,13 @@ export default class Apod extends Component {
                     <HeaderApod>
                         <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" width="130px"></img>
                         <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
+
                     </HeaderApod>
+                    <Link to="/apod/search/" style={{ display: "flex", justifyContent: "center", margin: 20 }}>
+                        <Button block style={{ maxWidth: 500 }} type="ghost">
+                            Look for more
+                    </Button>
+                    </Link>
                     <ApodGrid>
                         {
                             this.state.data.map(apod1 => {
@@ -77,11 +83,6 @@ export default class Apod extends Component {
                             })
                         }
                     </ApodGrid>
-                    <Link to="/apod/search" style={{ display: "flex", justifyContent: "center", margin: 20 }}>
-                        <Button block style={{ maxWidth: 500 }} type="ghost">
-                            Look for more
-                    </Button>
-                    </Link>
                 </div>
             );
         }
