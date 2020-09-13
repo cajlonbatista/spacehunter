@@ -6,13 +6,15 @@ import {
     CardNew, Span, CardPreview, CardContent, CardPreviewVideo, CardTitle, NewMark
 } from '../CardNews/styles';
 
+import { format } from "date-fns";
+
 class CardNews extends PureComponent {
     render() {
         const { apod, news } = this.props;
         const {
             title,
-            url,
             date,
+            url,
             media_type
         } = apod;
 
@@ -33,7 +35,11 @@ class CardNews extends PureComponent {
                                 {news}
                             </CardTitle>
                             <Span>
-                                {`${new Date(date).toDateString()}`}
+                                {`${
+                                    date.split('-')
+                                    .reverse()
+                                    .join('/')
+                                }`}
                             </Span>
                         </CardContent>
                     </CardNew>
@@ -47,15 +53,19 @@ class CardNews extends PureComponent {
                             alt={title}
                         />
                         <div style={{ position: "absolute", top: "-30", padding: 20 }}>
-                            <NewMark src={news} width="50px"/>
+                            <NewMark src={news} width="50px" />
                         </div>
                         <CardContent>
-                            
+
                             <CardTitle>
                                 {title}
                             </CardTitle>
                             <Span>
-                                {`${new Date(date).toDateString()}`}
+                                {
+                                date.split('-')
+                                .reverse()
+                                .join('/')
+                                }
                             </Span>
                         </CardContent>
                     </CardNew>

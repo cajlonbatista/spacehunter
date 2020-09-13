@@ -8,7 +8,9 @@ import Planet from './pages/Universe/System/Planet';
 import Universe from './pages/Universe/Universe';
 import News from './pages/News';
 import NewsSingle from './pages/News/NewsSingle';
-import ApodSingle from './pages/Apod/ApodSearch/ApodSearch';
+import ApodSearch from './pages/Apod/ApodSearch/ApodSearch';
+import ApodSingle from './pages/Apod/ApodSingle/ApodSingle';
+
 import Apod from './pages/Apod/Apod';
 
 
@@ -22,7 +24,8 @@ export default function Routes() {
       <Route path="/universe/solarsystem" exact component={System} />
       <Route path="/universe/solarsystem/:planet" exact component={Planet} />
       <Route path="/apod" exact component={Apod} />
-      <Route path="/apod/search" exact component={ApodSingle} />
+      <Route path="/apod/search" exact component={ApodSearch} />
+      <Route path="/apod/:date" exact component={ApodSingle} />
     </Switch>
   );
 }

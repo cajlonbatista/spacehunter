@@ -6,7 +6,6 @@ import {
   SelectApod,
   ApodImage
 } from './styles';
-import PageBack from "../../../components/PageBack/index";
 import axios from "axios";
 import { Button, DatePicker, Spin, message, Divider, BackTop } from 'antd';
 
@@ -32,7 +31,8 @@ export default class ApodSearch extends Component {
           data: res.data[0]
         })
       }).catch((err) => {
-        message.error('Algo deu errado 😞 ! Tente selecione uma data correta 😁');
+        message.error('Algo deu errado 😞 !');
+        message.info('Tente selecione uma data correta 😁');
       }).finally(() => {
         this.setState({ loader: false, });
       });
@@ -48,8 +48,9 @@ export default class ApodSearch extends Component {
               <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" width="130px"></img>
               <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
             </HeaderApod>
+            <Divider/>
             <SelectApod>
-              <p style={{ color: "white" }}>Select the APOD date you want to see</p>
+              <p style={{ color: "white" }}>Select the APOD date you want to see, if you were born after 2000 try your birthday 🧐.</p>
               <div>
                 <DatePicker size="large" onChange={this.handleDateChange} />
               </div>

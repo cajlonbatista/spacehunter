@@ -19,7 +19,6 @@ export default class Apod extends Component {
     }
     componentDidMount() {
         const spls = new Date();
-        const data = format(subDays(spls, 14), "yyyy-MM-dd");
         this.setState({
             loading: true,
         })
@@ -28,6 +27,8 @@ export default class Apod extends Component {
             .split('/')
             .reverse()
             .join('-');
+        const data = format(subDays(Date.now() , 20), "yyyy-MM-dd");
+        console.log(data);
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a&start_date=${data}&end_date=${date}`)
             .then(res => {
                 console.log(res.data);
@@ -59,17 +60,23 @@ export default class Apod extends Component {
                     <HeaderApod>
                         <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" width="130px"></img>
                         <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
+
                     </HeaderApod>
+                    <Link to="/apod/search/" style={{ display: "flex", justifyContent: "center", margin: 20 }}>
+                        <Button block style={{ maxWidth: 500 }} type="ghost">
+                            Look for more
+                    </Button>
+                    </Link>
                     <ApodGrid>
                         {
                             this.state.data.map(apod1 => {
                                 if (apod1.date == date) {
                                     return (
-                                        <CardApod apod={apod1} news="https://www.flaticon.com/svg/static/icons/svg/891/891448.svg"  key={apod1.date}>
+                                        <CardApod apod={apod1}  news="https://www.flaticon.com/svg/static/icons/svg/891/891448.svg" key={apod1.date}>
                                         </CardApod>
                                     );
-                                }else{
-                                    return(
+                                } else {
+                                    return (
                                         <CardApod apod={apod1} key={apod1.date}>
                                         </CardApod>
                                     );
@@ -77,11 +84,6 @@ export default class Apod extends Component {
                             })
                         }
                     </ApodGrid>
-                    <Link to="/apod/search" style={{ display: "flex", justifyContent: "center", margin: 20 }}>
-                        <Button block style={{ maxWidth: 500 }} type="ghost">
-                            Look for more
-                    </Button>
-                    </Link>
                 </div>
             );
         }
