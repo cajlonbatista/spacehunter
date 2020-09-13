@@ -47,8 +47,8 @@ export default class Main extends React.Component {
           <ApodImage src={url} alt="of day" /> 
             <ApodInfo style={{ margin: '20px' }}> 
               <Text type="secondary"> Astronomy Picture of the Day: &nbsp; {title} </Text> 
-              <Text type="warning"> {copyright} </Text>
-              <Link to="/apod">
+              <Text type="warning" style={{marginTop: 10}}> {copyright} </Text>
+              <Link to="/apod" style={{marginTop: 10}}>
                 <Button type="primary"> More </Button>
               </Link>
             </ApodInfo> 
