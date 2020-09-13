@@ -4,6 +4,7 @@ export const PlanetTag = styled.div`
   margin-top: 80px;
   display: grid;
   grid-template-rows: 1fr auto;
+  animation: bounce 1s linear;
 `;
 
 export const PlanetContent = styled.div`

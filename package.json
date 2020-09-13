@@ -17,6 +17,7 @@
     "axios": "^0.19.2",
     "craco": "",
     "craco-less": "^1.17.0",
+    "datejs": "^1.0.0-rc3",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

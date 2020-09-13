@@ -45,3 +45,12 @@ export const CardDescription = styled.p`
   font-size: 1.3rem;
   color: #f5f5f5;
 `;
+
+export const CardPreviewVideo = styled.iframe`
+    height: min(500px, 22rem);
+    border-radius: 5px;
+    border: 0px;
+`
+export const NewMark = styled.img`
+  animation: graps 3s infinite ;
+`;

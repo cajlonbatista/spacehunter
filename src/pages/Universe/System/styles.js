@@ -9,7 +9,7 @@ export const PageHeader = styled.div`
   gap: 20px;
   font-family: Exo, sans-serif;
   text-align: center;
-
+  animation: bounce 1s linear;
   img { width: 70px; }
 `;
 
