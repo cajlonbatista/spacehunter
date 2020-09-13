@@ -50,7 +50,7 @@ export default class ApodSearch extends Component {
             </HeaderApod>
             <Divider/>
             <SelectApod>
-              <p style={{ color: "white" }}>Select the APOD date you want to see</p>
+              <p style={{ color: "white" }}>Select the APOD date you want to see, if you were born after 2000 try your birthday 🧐.</p>
               <div>
                 <DatePicker size="large" onChange={this.handleDateChange} />
               </div>
