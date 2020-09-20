@@ -11,15 +11,19 @@ export const ApodGrid = styled.div`
 export const HeaderApod = styled.div`
     display: flex;
     align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
     img {
-        width: 140px;
-        margin-right: 10px;
+        width: 90px;
+        padding: 10px;
+        margin-right: 20px;
     }
     @media(max-width: 500px){
         flex-direction: column;
     }
     div {
-
+      display: flex;
+      align-items: center;
     }
 `;
 export const ApodConteiner = styled.div`

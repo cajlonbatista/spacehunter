@@ -13,6 +13,9 @@ import CardApod from '../../components/CardApod/index';
 import { BackTop, Button } from "antd";
 import { Link } from "react-router-dom";
 import { JumpCircleLoading } from "react-loadingg";
+import apod from '../../assets/images/apod.png';
+
+
 export default class Apod extends Component {
     state = {
         data: []
@@ -27,7 +30,7 @@ export default class Apod extends Component {
             .split('/')
             .reverse()
             .join('-');
-        const data = format(subDays(Date.now() , 20), "yyyy-MM-dd");
+        const data = format(subDays(Date.now(), 20), "yyyy-MM-dd");
         console.log(data);
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a&start_date=${data}&end_date=${date}`)
             .then(res => {
@@ -58,21 +61,23 @@ export default class Apod extends Component {
                 <div style={{ marginTop: 90 }}>
                     <BackTop />
                     <HeaderApod>
-                        <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" width="130px"></img>
-                        <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
-
+                        <div>
+                            <img src={apod}></img>
+                            <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
+                        </div>
+                        <Link to="/apod/search/" style={{ display: "flex", justifyContent: "center", margin: 20 }}>
+                            <Button block style={{ maxWidth: 500 }} type="ghost">
+                                Look for more
+                            </Button>
+                        </Link>
                     </HeaderApod>
-                    <Link to="/apod/search/" style={{ display: "flex", justifyContent: "center", margin: 20 }}>
-                        <Button block style={{ maxWidth: 500 }} type="ghost">
-                            Look for more
-                    </Button>
-                    </Link>
+
                     <ApodGrid>
                         {
                             this.state.data.map(apod1 => {
                                 if (apod1.date == date) {
                                     return (
-                                        <CardApod apod={apod1}  news="https://www.flaticon.com/svg/static/icons/svg/891/891448.svg" key={apod1.date}>
+                                        <CardApod apod={apod1} news="https://www.flaticon.com/svg/static/icons/svg/891/891448.svg" key={apod1.date}>
                                         </CardApod>
                                     );
                                 } else {

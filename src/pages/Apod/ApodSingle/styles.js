@@ -4,6 +4,7 @@ export const ApodImage = styled.div`
     margin-top: 75px;
     img{
         width: 100%;
+        max-width: 700px;
         margin: 20px auto;
         border-radius: 10px;
     }
