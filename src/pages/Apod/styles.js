@@ -24,6 +24,7 @@ export const HeaderApod = styled.div`
     div {
       display: flex;
       align-items: center;
+      margin-left: 25px;
     }
 `;
 export const ApodConteiner = styled.div`

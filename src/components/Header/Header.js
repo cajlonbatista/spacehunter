@@ -56,7 +56,7 @@ export default function Header(props) {
     const items = [
         {
             path: "/universe",
-            title: "Universo",
+            title: "Universe",
             image: "https://image.flaticon.com/icons/svg/3049/3049498.svg"
         },
         {

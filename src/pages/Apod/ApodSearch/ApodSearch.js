@@ -14,11 +14,19 @@ export default class ApodSearch extends Component {
     selectedDate: "",
     data: {},
     loader: false,
+    enable: true,
   }
   handleDateChange = (date, dateString) => {
-    this.setState({
-      selectedDate: dateString,
-    })
+    if (dateString == "") {
+      this.setState({
+        enable: true
+      })
+    } else {
+      this.setState({
+        selectedDate: dateString,
+        enable: false
+      })
+    }
   }
   onView = () => {
     this.setState({
@@ -31,8 +39,8 @@ export default class ApodSearch extends Component {
           data: res.data[0]
         })
       }).catch((err) => {
-        message.error('Algo deu errado 😞 !');
-        message.info('Tente selecione uma data correta 😁');
+        message.error('Something went wrong 😞!');
+        message.info('Try to select a correct date 😁');
       }).finally(() => {
         this.setState({ loader: false, });
       });
@@ -48,13 +56,13 @@ export default class ApodSearch extends Component {
               <img src={apod} width="130px"></img>
               <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
             </HeaderApod>
-            <Divider/>
+            <Divider />
             <SelectApod>
               <p style={{ color: "white" }}>Select the APOD date you want to see, if you were born after 2000 try your birthday 🧐.</p>
               <div>
                 <DatePicker size="large" onChange={this.handleDateChange} />
               </div>
-              <Button style={{ margin: 10 }} type="primary" onClick={this.onView} size="large">View</Button>
+              <Button disabled={this.state.enable} style={{ margin: 10 }} type="primary" onClick={this.onView} size="large">View</Button>
             </SelectApod>
             <Divider />
             <div>
@@ -76,5 +84,6 @@ export default class ApodSearch extends Component {
         </Spin>
       </>
     );
+
   }
 }

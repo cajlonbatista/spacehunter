@@ -12,7 +12,7 @@ import {
 import CardApod from '../../components/CardApod/index';
 import { BackTop, Button } from "antd";
 import { Link } from "react-router-dom";
-import { JumpCircleLoading } from "react-loadingg";
+import { LoopCircleLoading } from "react-loadingg";
 import apod from '../../assets/images/apod.png';
 
 
@@ -53,7 +53,7 @@ export default class Apod extends Component {
         if (this.state.loading) {
             return (
                 <>
-                    <JumpCircleLoading />
+                    <LoopCircleLoading />
                 </>
             );
         } else {
@@ -62,7 +62,6 @@ export default class Apod extends Component {
                     <BackTop />
                     <HeaderApod>
                         <div>
-                            <img src={apod}></img>
                             <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
                         </div>
                         <Link to="/apod/search/" style={{ display: "flex", justifyContent: "center", margin: 20 }}>
