@@ -62,7 +62,7 @@ export default class ApodSearch extends Component {
               <div>
                 <DatePicker size="large" onChange={this.handleDateChange} />
               </div>
-              <Button disabled={this.state.enable} style={{ margin: 10 }} type="primary" onClick={this.onView} size="large">View</Button>
+              <Button disabled={this.state.enable} style={{ margin: 10 }} type="ghost" onClick={this.onView} size="middle">View</Button>
             </SelectApod>
             <Divider />
             <div>
