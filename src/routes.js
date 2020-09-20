@@ -12,6 +12,7 @@ import ApodSearch from './pages/Apod/ApodSearch/ApodSearch';
 import ApodSingle from './pages/Apod/ApodSingle/ApodSingle';
 
 import Apod from './pages/Apod/Apod';
+import NotFound from './pages/NotFound/NotFound';
 
 
 export default function Routes() {
@@ -26,6 +27,7 @@ export default function Routes() {
       <Route path="/apod" exact component={Apod} />
       <Route path="/apod/search" exact component={ApodSearch} />
       <Route path="/apod/:date" exact component={ApodSingle} />
+      <Route path="*" component={NotFound} exact></Route>
     </Switch>
   );
 }

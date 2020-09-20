@@ -99,7 +99,7 @@ export default function Header(props) {
                                     {
                                         (location.pathname.includes(item.path))
                                             ?
-                                            <Link to={item.path} style={{ backgroundColor: "#B36E08" }} className="item-menu">
+                                            <Link to={item.path} style={{ backgroundColor: "#EF9906" }} className="item-menu">
                                                 <ListItem className="list" onClick={handleDrawerClose} button>
                                                     <img src={item.image} />
                                                     {item.title}
@@ -107,7 +107,7 @@ export default function Header(props) {
                                             </Link>
 
                                             :
-                                            <Link to={item.path}  className="item-menu">
+                                            <Link to={item.path} className="item-menu">
                                                 <ListItem className="list" onClick={handleDrawerClose} button>
                                                     <img src={item.image} />
                                                     {item.title}
@@ -128,15 +128,28 @@ export default function Header(props) {
             <Guide>
                 <GuideList>
                     {
-                        items.map(item => (
-                            <Link to={item.path} className="link-menu">
-                                <img src={item.image} />
-                                {item.title}
-                            </Link>
+                        items.map((item) => (
+                            <div >
+                                {
+                                    (location.pathname.includes(item.path))
+                                        ?
+                                        <Link to={item.path} style={{backgroundColor: "#EF9906"}} className="link-menu">
+                                            <img src={item.image} />
+                                            {item.title}
+                                        </Link>
+
+                                        :
+                                        <Link to={item.path} className="link-menu">
+                                            <img src={item.image} />
+                                            {item.title}
+                                        </Link>
+                                }
+                            </div>
                         ))
                     }
                 </GuideList>
             </Guide>
+
         </AppBar >
     )
 }
