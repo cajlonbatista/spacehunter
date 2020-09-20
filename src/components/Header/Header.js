@@ -91,6 +91,7 @@ export default function Header(props) {
                 <List className={classes.list}>
                     <LogoConteiner onClick={handleDrawerClose} button key="Logo">
                         <LogoDrawer src={logo} />
+                        <span>Space Hunter</span>
                     </LogoConteiner>
                     <div>
                         {

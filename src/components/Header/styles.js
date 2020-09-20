@@ -45,6 +45,16 @@ export default {
     LogoConteiner: styled.div`
         display: flex;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        span{
+            font-family: Roboto Mono, sans-serif;
+            font-size: 24px;
+            color: #ff9900;
+            @media(max-width: 425px){
+                font-size: 18px;        
+            }
+        }
     `,
     GuideList: styled.div`
         display: flex;
