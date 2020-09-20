@@ -11,7 +11,7 @@ import menu from '../../assets/images/menu.svg';
 import "./styles.css";
 import styles from "./styles";
 import logo from "../../assets/images/rocket.svg";
-
+import apod from "../../assets/images/apod.png";
 import { useLocation } from 'react-router-dom';
 
 
@@ -56,7 +56,7 @@ export default function Header(props) {
     const items = [
         {
             path: "/universe",
-            title: "Universo",
+            title: "Universe",
             image: "https://image.flaticon.com/icons/svg/3049/3049498.svg"
         },
         {
@@ -66,7 +66,7 @@ export default function Header(props) {
         },
         {
             path: "/apod",
-            image: "https://www.flaticon.com/svg/static/icons/svg/3004/3004721.svg",
+            image: apod,
             title: "Apod"
         },
         {
@@ -91,6 +91,7 @@ export default function Header(props) {
                 <List className={classes.list}>
                     <LogoConteiner onClick={handleDrawerClose} button key="Logo">
                         <LogoDrawer src={logo} />
+                        <span>Space Hunter</span>
                     </LogoConteiner>
                     <div>
                         {
