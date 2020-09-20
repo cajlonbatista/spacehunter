@@ -22,7 +22,7 @@ export default {
         }
     `,
     MenuIcon: styled.img`
-        width: 30px;
+        width: 24px;
     `,
     DrawerButton: styled.div`
         width: 60px;

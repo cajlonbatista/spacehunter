@@ -8,7 +8,7 @@ import {
 } from './styles';
 import axios from "axios";
 import { Button, DatePicker, Spin, message, Divider, BackTop } from 'antd';
-
+import apod from '../../../assets/images/apod.png';
 export default class ApodSearch extends Component {
   state = {
     selectedDate: "",
@@ -45,7 +45,7 @@ export default class ApodSearch extends Component {
         <Spin spinning={this.state.loader}>
           <ConteinerApod>
             <HeaderApod>
-              <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" width="130px"></img>
+              <img src={apod} width="130px"></img>
               <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
             </HeaderApod>
             <Divider/>

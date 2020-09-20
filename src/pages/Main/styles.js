@@ -9,7 +9,7 @@ export const Content = styled.div`
 export const ContentTitle = styled.h1`
   font-family: "Exo", sans-serif;
   text-align: center;
-  color: #ff8000;
+  color: #EF9906;
   margin-bottom: 10px;
 `;
 

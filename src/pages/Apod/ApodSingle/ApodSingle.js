@@ -16,7 +16,8 @@ export default class ApodSingle extends Component {
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a&start_date=${params.date}&end_date=${params.date}`)
             .then(res => {
                 this.setState({
-                    data: res.data[0]
+                    data: res.data[0],
+                    loading: true,
                 })
                 console.log(res.data);
             })

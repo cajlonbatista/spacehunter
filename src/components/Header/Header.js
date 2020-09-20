@@ -12,9 +12,8 @@ import "./styles.css";
 import styles from "./styles";
 import logo from "../../assets/images/rocket.svg";
 
-import { withRouter } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-const SomeComponent = withRouter(props => <Header {...props} />); //Get props path the of routes
 
 const {
     AppBar,
@@ -46,18 +45,14 @@ export default function Header(props) {
     const [open, setOpen] = React.useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const classes = useStyles();
+    const location = useLocation();
+    console.log(location.pathname);
     const handleDrawerOpen = () => {
         setOpen(true);
     };
     const handleDrawerClose = () => {
         setOpen(false);
     }
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
     const items = [
         {
             path: "/universe",
@@ -100,12 +95,26 @@ export default function Header(props) {
                     <div>
                         {
                             items.map((item) => (
-                                <ListItem className="list" onClick={handleDrawerClose} button >
-                                    <Link to={item.path} className="item-menu">
-                                        <img src={item.image} />
-                                        {item.title}
-                                    </Link>
-                                </ListItem>
+                                <div >
+                                    {
+                                        (location.pathname.includes(item.path))
+                                            ?
+                                            <Link to={item.path} style={{ backgroundColor: "#EF9906" }} className="item-menu">
+                                                <ListItem className="list" onClick={handleDrawerClose} button>
+                                                    <img src={item.image} />
+                                                    {item.title}
+                                                </ListItem>
+                                            </Link>
+
+                                            :
+                                            <Link to={item.path} className="item-menu">
+                                                <ListItem className="list" onClick={handleDrawerClose} button>
+                                                    <img src={item.image} />
+                                                    {item.title}
+                                                </ListItem>
+                                            </Link>
+                                    }
+                                </div>
                             ))
                         }
                     </div>
@@ -119,15 +128,28 @@ export default function Header(props) {
             <Guide>
                 <GuideList>
                     {
-                        items.map(item => (
-                                <Link to={item.path} className="link-menu">
-                                    <img src={item.image} />
-                                    {item.title}
-                                </Link>
+                        items.map((item) => (
+                            <div >
+                                {
+                                    (location.pathname.includes(item.path))
+                                        ?
+                                        <Link to={item.path} style={{backgroundColor: "#EF9906"}} className="link-menu">
+                                            <img src={item.image} />
+                                            {item.title}
+                                        </Link>
+
+                                        :
+                                        <Link to={item.path} className="link-menu">
+                                            <img src={item.image} />
+                                            {item.title}
+                                        </Link>
+                                }
+                            </div>
                         ))
                     }
                 </GuideList>
             </Guide>
+
         </AppBar >
     )
 }

@@ -26,6 +26,7 @@
     font-weight: 600;
     color: #f5f5f5;
     display: flex;
+    transition: all 0.4s;
     align-items: center;
     font-family: Archivo, sans-serif;
     width: 100%;
@@ -33,7 +34,4 @@
 .item-menu img {
     width: 30px;
     margin-right: 20px;
-}
-.item-menu :hover{
-    color: #ff9900;
 }
