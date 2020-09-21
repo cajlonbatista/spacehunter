@@ -8,12 +8,16 @@ export const NewsGrid = styled.div`
   justify-content: space-around;
   padding: 15px;
   animation: bounce 2s linear;
+  padding-bottom: 70px;
 `;
 
 export const Container = styled.div`
-  width: 90%;
-  max-width: 50%;
-  margin: 20px auto;
-   display: flex;
-  align-items: center;
+width: 100%;
+background: #202020;
+padding: 10px 20px;
+position: fixed;
+bottom: 0;
+display: flex;
+justify-content: center;
+color: white;
 `

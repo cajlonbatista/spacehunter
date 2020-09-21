@@ -4,6 +4,8 @@ import { MeteorRainLoading } from 'react-loadingg';
 import { Link } from 'react-router-dom';
 import { Loading } from '../../utils/styles/general';
 import { Content, ContentTitle, Apod, ApodImage, ApodInfo, WelcomeTitle } from './styles';
+import { animateScroll as scroll } from 'react-scroll';
+
 const { Text } = Typography;
 export default class Main extends React.Component {
   constructor() {
@@ -11,7 +13,7 @@ export default class Main extends React.Component {
     this.state = { main: {}, loader: true, };
   }
   componentDidMount() {
-    
+    scroll.scrollToTop();
     const date = Intl.DateTimeFormat('en-GB')
       .format(new Date())
       .split('/')
