@@ -7,4 +7,4 @@
 ### About
 ### Guide
 ### Setup
-### Contributes
+### Contributors
