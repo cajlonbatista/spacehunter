@@ -12,7 +12,7 @@ export const HeaderApod = styled.div`
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     img {
         width: 90px;
         padding: 10px;

@@ -7,13 +7,7 @@ export const ConteinerApod = styled.div`
 `
 
 export const HeaderApod = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    img {
-        width: 140px;
-        margin-right: 10px;
-    }
+
 `
 export const SelectApod = styled.div`
     display: flex;
@@ -47,3 +41,23 @@ export const ApodImage = styled.div`
         font-family: Kufam, sans-serif;
     }
 `
+export const ApodVideo = styled.div`
+    iframe{
+        max-width: 100%;
+        width: 600px;
+        height: 400px;
+        @media(max-width: 400px){
+            height: 200px;
+        }
+        border: 0;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span{
+        font-family: Kufam, sans-serif;
+        color: #888888;
+        text-align: justify;
+        padding: 10px;
+    }
+`;

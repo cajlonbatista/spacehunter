@@ -4,11 +4,14 @@ import {
   ApodGrid,
   HeaderApod,
   SelectApod,
+  ApodVideo,
   ApodImage
 } from './styles';
 import axios from "axios";
 import { Button, DatePicker, Spin, message, Divider, BackTop } from 'antd';
-import apod from '../../../assets/images/apod.png';
+import { SearchOutlined } from '@ant-design/icons';
+import PageBack from "../../../components/PageBack/index";
+
 export default class ApodSearch extends Component {
   state = {
     selectedDate: "",
@@ -53,8 +56,7 @@ export default class ApodSearch extends Component {
         <Spin spinning={this.state.loader}>
           <ConteinerApod>
             <HeaderApod>
-              <img src={apod} width="130px"></img>
-              <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
+                <PageBack title="Astronomy Picture Day"/>
             </HeaderApod>
             <Divider />
             <SelectApod>
@@ -62,16 +64,18 @@ export default class ApodSearch extends Component {
               <div>
                 <DatePicker size="large" onChange={this.handleDateChange} />
               </div>
-              <Button disabled={this.state.enable} style={{ margin: 10 }} type="ghost" onClick={this.onView} size="middle">View</Button>
+              <Button type="primary" shape="circle" disabled={this.state.enable} onClick={this.onView} size="large" style={{marginTop: 15}} icon={<SearchOutlined />} />
             </SelectApod>
             <Divider />
             <div>
               {
                 (media_type == "video")
                   ?
-                  <div>
-                    <iframe src={url}></iframe>
-                  </div>
+                  <ApodVideo>
+                    <h2 style={{color: "#ff8000"}}>{title}</h2>
+                    <iframe src={url} frameborder='0' webkitAllowFullScreen mozallowfullscreen controls allowFullScreen></iframe>
+                    <span>{explanation}</span>
+                  </ApodVideo>
                   :
                   <ApodImage>
                     <h2 style={{ color: "#ff8000" }}>{title}</h2>

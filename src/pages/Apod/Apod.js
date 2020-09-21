@@ -13,7 +13,7 @@ import CardApod from '../../components/CardApod/index';
 import { BackTop, Button } from "antd";
 import { Link } from "react-router-dom";
 import { LoopCircleLoading } from "react-loadingg";
-import apod from '../../assets/images/apod.png';
+import { SearchOutlined } from '@ant-design/icons';
 
 
 export default class Apod extends Component {
@@ -61,13 +61,9 @@ export default class Apod extends Component {
                 <div style={{ marginTop: 90 }}>
                     <BackTop />
                     <HeaderApod>
-                        <div>
-                            <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
-                        </div>
+                        <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
                         <Link to="/apod/search/" style={{ display: "flex", justifyContent: "center", margin: 20 }}>
-                            <Button block style={{ maxWidth: 500 }} type="ghost">
-                                Look for more
-                            </Button>
+                            <Button type="primary" shape="circle" icon={<SearchOutlined />} />
                         </Link>
                     </HeaderApod>
 

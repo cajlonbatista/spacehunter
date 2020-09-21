@@ -23,6 +23,9 @@ export default {
     `,
     MenuIcon: styled.img`
         width: 24px;
+        @media(max-width: 425px){
+            width: 20px;
+        }
     `,
     DrawerButton: styled.div`
         width: 60px;
@@ -49,10 +52,10 @@ export default {
         flex-direction: column;
         span{
             font-family: Roboto Mono, sans-serif;
-            font-size: 24px;
+            font-size: 25px;
             color: #ff9900;
             @media(max-width: 425px){
-                font-size: 18px;        
+                font-size: 24px;        
             }
         }
     `,

@@ -6,8 +6,10 @@ import Markdown from 'react-markdown';
 import api from '../../../utils/news';
 import { Container } from '../../../utils/styles/general';
 import {
-  NewsMore, NewsBanner, NewsTitle, NewsSubtitle, NewsContent,
+  NewsMore, NewsBanner, NewsTitle ,NewsSubtitle, NewsContent, NewsImage
 } from './styles';
+
+import { BackTop } from 'antd';
 
 class NewsSingle extends Component {
   constructor() {
@@ -45,17 +47,17 @@ class NewsSingle extends Component {
       )
       : (
         <NewsMore>
+          <BackTop/>
           <NewsBanner
             alt={title}
             align="center"
             src={imgToUrl}
           />
-
           <Container>
             <NewsTitle>
               {title}
             </NewsTitle>
-
+            <NewsImage src={imgToUrl}></NewsImage>
             <NewsSubtitle>
               {`${author} - ${new Date(publishedAt).toLocaleDateString()}`}
             </NewsSubtitle>
