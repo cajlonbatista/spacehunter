@@ -2,10 +2,9 @@
 
 <h1 align="center"> Space Hunter</h1>
 
-#### Website for astronomy lovers ❤🌑
+<p align="center">Website for astronomy lovers ❤🌑</p>
 
 ### About
-
 ### Guide
 ### Setup
 ### Contributes
