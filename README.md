@@ -6,5 +6,5 @@
 ### About
 
 ### Guide
-### Setup in
+### Setup
 ### Contributes
