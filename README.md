@@ -2,13 +2,7 @@
 
 <h1 align="center" style="color: red"> Space Hunter</h1>
 
-<p align="center">Website for astronomy lovers ❤🌑</p>
-(setq markdown-xhtml-header-content
-      "<style type='text/css'>
-  h1{
-    color: red;
-  }
-</style>")
+
 ### About
 ### Guide
 ### Setup
