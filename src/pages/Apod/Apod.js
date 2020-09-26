@@ -30,7 +30,7 @@ export default class Apod extends Component {
             .split('/')
             .reverse()
             .join('-');
-        const data = format(subDays(Date.now(), 20), "yyyy-MM-dd");
+        const data = format(subDays(Date.now(), 80), "yyyy-MM-dd");
         console.log(data);
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a&start_date=${data}&end_date=${date}`)
             .then(res => {
