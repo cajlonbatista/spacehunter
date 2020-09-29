@@ -58,7 +58,8 @@ class CardNews extends PureComponent {
                         <CardContent>
 
                             <CardTitle>
-                                {title}
+                                {title} 
+                                {news}
                             </CardTitle>
                             <Span>
                                 {
