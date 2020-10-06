@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { MeteorRainLoading } from 'react-loadingg';
-import Markdown from 'react-markdown';
+import { SemipolarLoading } from 'react-loadingg';
 
+import Markdown from 'react-markdown';
 import api from '../../../utils/news';
 import { Container } from '../../../utils/styles/general';
 import {
@@ -42,7 +42,7 @@ class NewsSingle extends Component {
     return loading
       ? (
         <div>
-          <MeteorRainLoading />
+          <SemipolarLoading />
         </div>
       )
       : (
