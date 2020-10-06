@@ -6,10 +6,14 @@ import {
 } from "./styles";
 import PageBack from "../../../components/PageBack/index";
 import { BackTop } from "antd";
+import {
+    BatteryLoading
+} from 'react-loadingg';
 
 export default class ApodSingle extends Component {
     state = {
-        data: {}
+        data: {},
+        loading: true,
     }
     componentDidMount() {
         const { match: { params } } = this.props;
@@ -17,36 +21,41 @@ export default class ApodSingle extends Component {
             .then(res => {
                 this.setState({
                     data: res.data[0],
-                    loading: true,
+                    loading: false,
                 })
                 console.log(res.data);
             })
     }
     render() {
         const { url, media_type, title, explanation } = this.state.data;
-        return (
-            <>
-            <BackTop/>
-                {
-                    (media_type == "video")
-                        ?
-                        <ApodVideo>
-                            <PageBack title={title} />
-                            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                <iframe src={url} frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>                                
-                                <p>{explanation}</p>
-                            </div>
-                        </ApodVideo>
-                        :
-                        <ApodImage>
-                            <PageBack title={title} />
-                            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                <img src={url} alt={title}></img>
-                                <p>{explanation}</p>
-                            </div>
-                        </ApodImage>
-                }
-            </>
-        );
+        if (this.state.loading) {
+            return(
+                <BatteryLoading/>
+            );
+        } else {
+            return (
+                <>
+                    {
+                        (media_type == "video")
+                            ?
+                            <ApodVideo>
+                                <PageBack title={title} />
+                                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                                    <iframe src={url} frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                                    <p>{explanation}</p>
+                                </div>
+                            </ApodVideo>
+                            :
+                            <ApodImage>
+                                <PageBack title={title} />
+                                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                                    <img src={url} alt={title}></img>
+                                    <p>{explanation}</p>
+                                </div>
+                            </ApodImage>
+                    }
+                </>
+            );
+        }
     }
 }

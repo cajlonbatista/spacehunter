@@ -12,7 +12,7 @@ import {
 import CardApod from '../../components/CardApod/index';
 import { BackTop, Button } from "antd";
 import { Link } from "react-router-dom";
-import { LoopCircleLoading } from "react-loadingg";
+import { SemipolarLoading } from "react-loadingg";
 import { SearchOutlined } from '@ant-design/icons';
 
 
@@ -53,7 +53,7 @@ export default class Apod extends Component {
         if (this.state.loading) {
             return (
                 <>
-                    <LoopCircleLoading />
+                    <SemipolarLoading />
                 </>
             );
         } else {

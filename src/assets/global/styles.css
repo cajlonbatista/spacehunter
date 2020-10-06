@@ -35,7 +35,7 @@ body {
     -webkit-border-radius: 10px;
     border-radius: 10px;
     
-    background: rgb(71, 180, 184);
+    background: #bab5e9;
   }
   :not(body)::-webkit-scrollbar-track-piece{
     background: #181818;
