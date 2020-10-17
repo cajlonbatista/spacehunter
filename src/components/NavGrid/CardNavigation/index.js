@@ -1,41 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-import { CardNavigationTag, ItemImg } from './styles';
+import { IconButton } from '@material-ui/core';
+import { CardNavigationTag, ItemImg, CardButton } from './styles';
 
 const CardNavigation = ({
-  title, image, path = '#!', onClick,
+    title, image, path = '#!', onClick,
 }) => (
-  <CardNavigationTag
-    as={Link}
-    to={path}
-    className="card-navigation"
-    tabIndex="0"
-    onClick={onClick}
-  >
-    <ItemImg
-      src={image}
-      alt={title}
-      className="item-img"
-    />
+    <CardButton>
+        <CardNavigationTag
+            as={Link}
+            to={path}
+            className="card-navigation"
+            tabIndex="0"
+            onClick={onClick}
+        >
 
-    <span>
-      { title }
-    </span>
-  </CardNavigationTag>
-);
+            <ItemImg
+                src={image}
+                alt={title}
+                className="item-img"
+            />
+
+            <span>
+                {title}
+            </span>
+        </CardNavigationTag>
+    </CardButton>
+    );
 
 CardNavigation.propTypes = {
-  title: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  path: PropTypes.string,
-  onClick: PropTypes.func,
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    path: PropTypes.string,
+    onClick: PropTypes.func,
 };
 
 CardNavigation.defaultProps = {
-  path: '#!',
-  onClick: null,
+    path: '#!',
+    onClick: null,
 };
 
 export default CardNavigation;

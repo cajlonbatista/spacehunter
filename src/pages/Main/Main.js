@@ -69,10 +69,6 @@ export default class Main extends React.Component {
               </ApodInfo> 
             </Apod>
         } 
-        <Divider /> 
-        <div> 
-          <WelcomeTitle> What you can find here </WelcomeTitle>
-        </div> 
       </Content>
     );
   }

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  margin-top: 90px;
+  padding-top: 90px;
   width: 100%;
   animation: bounce 1s linear;
+  overflow: hidden;
 `;
 
 export const ContentTitle = styled.h1`

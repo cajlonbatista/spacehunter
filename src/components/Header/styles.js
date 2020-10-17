@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default {
     AppBar: styled.header`
-        background: #181818;
+        background: #0c0c0c;
         padding: 8px 15px;
         display: flex;
         width: 100vw;
@@ -19,6 +19,10 @@ export default {
         width: 60px;
         @media(max-width: 425px){
             width: 45px;
+        }
+        transition: all 0.3s;
+        :hover{
+            opacity: 0.8;
         }
     `,
     MenuIcon: styled.img`
