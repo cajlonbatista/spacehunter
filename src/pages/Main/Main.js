@@ -1,34 +1,39 @@
-import React from 'react';
-import { Divider, Typography, Button, message, } from 'antd';
-import { MeteorRainLoading } from 'react-loadingg';
+import React from "react";
+import { Divider, Typography, Button, message } from "antd";
+import { MeteorRainLoading } from "react-loadingg";
 
-import { Loading } from '../../utils/styles/general';
-import { Content, ContentTitle, Apod, ApodImage, ApodInfo} from './styles';
-import { animateScroll as scroll } from 'react-scroll';
+import { Loading } from "../../utils/styles/general";
+import { Content, ContentTitle, Apod, ApodImage, ApodInfo } from "./styles";
+import { animateScroll as scroll } from "react-scroll";
 
 const { Text } = Typography;
 export default class Main extends React.Component {
   constructor() {
     super();
-    this.state = { main: {}, loader: true, };
+    this.state = { main: {}, loader: true };
   }
   componentDidMount() {
     scroll.scrollToTop();
-    const date = Intl.DateTimeFormat('en-GB')
+    const date = Intl.DateTimeFormat("en-GB")
       .format(new Date())
-      .split('/')
+      .split("/")
       .reverse()
-      .join('-');
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a&start_date=${date}&end_date=${date}`)
-      .then((res) => res.json()).then((res) => {
+      .join("-");
+    fetch(
+      `https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a&start_date=${date}&end_date=${date}`
+    )
+      .then((res) => res.json())
+      .then((res) => {
         if (res.code !== 404) {
-          this.setState({ main: res[0], });
+          this.setState({ main: res[0] });
         }
-      }).catch((err) => {
-        message.error('Algo deu errado. Fale conosco');
+      })
+      .catch((err) => {
+        message.error("Algo deu errado. Fale conosco");
         console.err(err);
-      }).finally(() => {
-        this.setState({ loader: false, });
+      })
+      .finally(() => {
+        this.setState({ loader: false });
       });
   }
   render() {
@@ -36,13 +41,16 @@ export default class Main extends React.Component {
     const { media_type, title, copyright, url } = main;
     if (loader) {
       return (
-        <Loading> <MeteorRainLoading color="#ffb400" /> </Loading>
+        <Loading>
+          {" "}
+          <MeteorRainLoading color="#ffb400" />{" "}
+        </Loading>
       );
     }
     return (
       <Content>
-        <h1> Welcome Hunter </h1> 
-        
+        <h1> Welcome Hunter </h1>
+
         {/*
         {
           (media_type == "image")

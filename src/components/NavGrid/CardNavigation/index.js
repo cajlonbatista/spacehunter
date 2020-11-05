@@ -7,11 +7,10 @@ import { CardNavigationTag, ItemImg } from './styles';
 const CardNavigation = ({
     title, image, path = '#!', onClick,
 }) => (
-    <CardContent>
+    <>
         <CardNavigationTag
             as={Link}
             to={path}
-            className="card-navigation"
             tabIndex="0"
             onClick={onClick}
         >
@@ -19,14 +18,13 @@ const CardNavigation = ({
             <ItemImg
                 src={image}
                 alt={title}
-                className="item-img"
             />
 
             <span>
                 {title}
             </span>
         </CardNavigationTag>
-    </CardContent>
+    </>
     );
 
 CardNavigation.propTypes = {

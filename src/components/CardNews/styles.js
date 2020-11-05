@@ -5,9 +5,9 @@ export const CardNew = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: #231808;
+  background: #0f0a03;
   color: #61dafb;
-  border: 1px solid transparent;
+  border: 1px solid #000000;
   border-radius: 5px;
   transition: border 0.4s;
 

@@ -10,7 +10,6 @@
 @keyframes bright {
   0% {
     filter: saturate(4);
-    transform: rotate(360deg);
   }
 
   25% { filter: saturate(1); }

@@ -14,6 +14,7 @@ import { BackTop } from "antd";
 import { Link } from "react-router-dom";
 import { SemipolarLoading } from "react-loadingg";
 import { IconButton } from '@material-ui/core';
+import { Helmet } from 'react-helmet';
 
 import newapod from '../../assets/images/new.svg';
 import searchapod from '../../assets/images/image_search.svg';
@@ -60,6 +61,9 @@ export default class Apod extends Component {
         } else {
             return (
                 <div style={{ marginTop: 90 }}>
+                    <Helmet>
+                        <title>Apod | Space Hunter</title>
+                    </Helmet>
                     <BackTop />
                     <HeaderApod>
                         <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff9900", textAlign: "center" }}>Astronomy Picture of the Day</h2>

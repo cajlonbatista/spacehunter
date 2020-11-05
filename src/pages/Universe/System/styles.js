@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const PageHeader = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   flex-wrap: wrap;
   margin-top: 90px;
   gap: 20px;
@@ -11,6 +11,15 @@ export const PageHeader = styled.div`
   text-align: center;
   animation: bounce 1s linear;
   svg { width: 70px; }
+  @media(max-width: 500px){
+    flex-direction: column;
+    svg{
+      width: 40px;
+    }
+    h2{
+      font-size: 15px;
+    }
+  }
 `;
 
 export const HeaderTitle = styled.h2`

@@ -1,5 +1,11 @@
-import React from 'react';
-import NavGrid from '../../components/NavGrid';
+import React from "react";
+
+import NavGrid from "../../components/NavGrid";
+import { Helmet } from 'react-helmet';
+
+import {
+    UniverseContainer
+} from './styles';
 
 export default class Universe extends React.Component {
   constructor() {
@@ -8,49 +14,51 @@ export default class Universe extends React.Component {
     this.state = {
       menus: [
         {
-          path: '/universe/solarsystem',
-          image: 'https://image.flaticon.com/icons/svg/547/547415.svg',
-          title: 'Solar System',
+          path: "/universe/solarsystem",
+          image: "https://image.flaticon.com/icons/svg/547/547415.svg",
+          title: "Solar System",
         },
         {
-          path: '/universe',
-          image: 'https://image.flaticon.com/icons/svg/2949/2949023.svg',
-          title: 'Stars',
+          path: "/universe",
+          image: "https://image.flaticon.com/icons/svg/2949/2949023.svg",
+          title: "Stars",
         },
         {
-          path: '/universe',
-          image: 'https://image.flaticon.com/icons/svg/2590/2590225.svg',
-          title: 'Black Holes',
+          path: "/universe",
+          image: "https://image.flaticon.com/icons/svg/2590/2590225.svg",
+          title: "Black Holes",
         },
         {
-          path: '/universe',
-          image: 'https://www.flaticon.com/svg/static/icons/svg/3462/3462888.svg',
-          title: 'Properties',
+          path: "/universe",
+          image:
+            "https://www.flaticon.com/svg/static/icons/svg/3462/3462888.svg",
+          title: "Properties",
         },
         {
-          path: '/universe',
-          image: 'https://www.flaticon.com/svg/static/icons/svg/1485/1485170.svg',
-          title: 'Source'
+          path: "/universe",
+          image:
+            "https://www.flaticon.com/svg/static/icons/svg/1485/1485170.svg",
+          title: "Source",
         },
         {
-          path: '/universe',
-          image: 'https://image.flaticon.com/icons/svg/947/947674.svg',
-          title: 'Galaxies',
+          path: "/universe",
+          image: "https://image.flaticon.com/icons/svg/947/947674.svg",
+          title: "Galaxies",
         },
         {
-          path: '/universe',
-          image: 'https://image.flaticon.com/icons/svg/2910/2910184.svg',
-          title: 'Asteroids',
+          path: "/universe",
+          image: "https://image.flaticon.com/icons/svg/2910/2910184.svg",
+          title: "Asteroids",
         },
         {
-          path: '/universe',
-          image: 'https://image.flaticon.com/icons/svg/3061/3061828.svg',
-          title: 'Constellations',
+          path: "/universe",
+          image: "https://image.flaticon.com/icons/svg/3061/3061828.svg",
+          title: "Constellations",
         },
         {
-          path: '/universe',
-          image: 'https://image.flaticon.com/icons/svg/1396/1396329.svg',
-          title: 'Exoplanets',
+          path: "/universe",
+          image: "https://image.flaticon.com/icons/svg/1396/1396329.svg",
+          title: "Exoplanets",
         },
       ],
     };
@@ -59,6 +67,14 @@ export default class Universe extends React.Component {
   render() {
     const { menus } = this.state;
 
-    return <NavGrid  items={menus} />;
+    return (
+      <UniverseContainer>
+        <h1>Discover the Universe</h1>
+        <Helmet>
+          <title>Universe | Space Hunter</title>
+        </Helmet>
+        <NavGrid items={menus} />;
+      </UniverseContainer>
+    );
   }
 }

@@ -1,15 +1,22 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { SemipolarLoading } from 'react-loadingg';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { SemipolarLoading } from "react-loadingg";
 
-import Markdown from 'react-markdown';
-import api from '../../../utils/news';
-import { Container } from '../../../utils/styles/general';
+import Markdown from "react-markdown";
+import api from "../../../utils/news";
+import { Container } from "../../../utils/styles/general";
+import { Helmet } from 'react-helmet';
+
 import {
-  NewsMore, NewsBanner, NewsTitle ,NewsSubtitle, NewsContent, NewsImage
-} from './styles';
+  NewsMore,
+  NewsBanner,
+  NewsTitle,
+  NewsSubtitle,
+  NewsContent,
+  NewsImage,
+} from "./styles";
 
-import { BackTop } from 'antd';
+import { BackTop } from "antd";
 
 class NewsSingle extends Component {
   constructor() {
@@ -22,52 +29,44 @@ class NewsSingle extends Component {
   }
 
   componentDidMount() {
-    const { match: { params } } = this.props;
+    const {
+      match: { params },
+    } = this.props;
 
-    api.get(`/articles/${params.id}`)
+    api
+      .get(`/articles/${params.id}`)
       .then(({ data: news }) => this.setState({ news, loading: false }))
       .catch(console.error);
   }
 
   render() {
     const { news, loading } = this.state;
-    const {
-      title,
-      content,
-      publishedAt,
-      author,
-      imgToUrl,
-    } = news;
+    const { title, content, publishedAt, author, imgToUrl } = news;
 
-    return loading
-      ? (
-        <div>
-          <SemipolarLoading />
-        </div>
-      )
-      : (
-        <NewsMore>
-          <BackTop/>
-          <NewsBanner
-            alt={title}
-            align="center"
-            src={imgToUrl}
-          />
-          <Container>
-            <NewsTitle>
-              {title}
-            </NewsTitle>
-            <NewsImage src={imgToUrl}></NewsImage>
-            <NewsSubtitle>
-              {`${author} - ${new Date(publishedAt).toLocaleDateString()}`}
-            </NewsSubtitle>
+    return loading ? (
+      <div>
+        <SemipolarLoading />
+      </div>
+    ) : (
+      <NewsMore>
+        <BackTop />
+        <Helmet>
+          <title>{ title } | Space Hunter</title>
+        </Helmet>
+        <NewsBanner alt={title} align="center" src={imgToUrl} />
+        <Container>
+          <NewsTitle>{title}</NewsTitle>
+          <NewsImage src={imgToUrl}></NewsImage>
+          <NewsSubtitle>
+            {`${author} - ${new Date(publishedAt).toLocaleDateString()}`}
+          </NewsSubtitle>
 
-            <NewsContent className="news-content">
-              <Markdown source={content} />
-            </NewsContent>
-          </Container>
-        </NewsMore>
-      );
+          <NewsContent className="news-content">
+            <Markdown source={content} />
+          </NewsContent>
+        </Container>
+      </NewsMore>
+    );
   }
 }
 

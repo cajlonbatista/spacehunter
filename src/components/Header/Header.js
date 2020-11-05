@@ -11,7 +11,9 @@ import menu from '../../assets/images/menu.svg';
 import "./styles.css";
 import styles from "./styles";
 import logo from "../../assets/images/rocket.svg";
-import apod from "../../assets/images/apod.png";
+import apod from "../../assets/images/apod.svg";
+import news from "../../assets/images/news.svg";
+
 import { useLocation } from 'react-router-dom';
 
 
@@ -62,7 +64,7 @@ export default function Header(props) {
         {
             path: "/news",
             title: "News",
-            image: "https://image.flaticon.com/icons/svg/2991/2991408.svg"
+            image: news
         },
         {
             path: "/apod",
