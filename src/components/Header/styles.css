@@ -30,7 +30,6 @@
     display: flex;
     transition: all 0.4s;
     align-items: center;
-    background: #0F0900;
     width: 100%;
 }
 .item-menu img {

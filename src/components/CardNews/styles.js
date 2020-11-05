@@ -54,4 +54,8 @@ export const CardPreviewVideo = styled.iframe`
 `
 export const NewMark = styled.img`
   animation: graps 3s infinite ;
+  width: 40px;
+  @media(max-width: 500px){
+    width: 25px;
+  }
 `;

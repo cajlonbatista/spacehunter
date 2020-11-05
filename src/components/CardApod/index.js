@@ -31,7 +31,7 @@ class CardNews extends PureComponent {
                             <CardTitle>
                                 {title}
                                 <div style={{ position: "absolute", top: "-30", padding: 20 }}>
-                                    <NewMark src={news} width="50px" />
+                                    <NewMark src={news}/>
                                 </div>
                             </CardTitle>
                             <Span>
@@ -52,7 +52,7 @@ class CardNews extends PureComponent {
                             alt={title}
                         />
                         <div style={{ position: "absolute", top: "-30", padding: 20 }}>
-                            <NewMark src={news} width="50px" />
+                            <NewMark src={news}/>
                         </div>
                         <CardContent>
 
