@@ -10,7 +10,7 @@ export const PageHeader = styled.div`
   font-family: Exo, sans-serif;
   text-align: center;
   animation: bounce 1s linear;
-  img { width: 70px; }
+  svg { width: 70px; }
 `;
 
 export const HeaderTitle = styled.h2`

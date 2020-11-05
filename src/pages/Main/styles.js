@@ -1,18 +1,29 @@
 import styled from 'styled-components';
 
+import hunter from '../../assets/images/hunter.svg';
+
 export const Content = styled.div`
   padding-top: 90px;
   width: 100%;
+  height: 100vh;
   animation: bounce 1s linear;
   overflow: hidden;
+  background-image: url(${hunter});
+  background-size: 40%;
+  background-position: top left;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  h1{
+    font-family: "Exo", sans-serif;
+    text-align: center;
+    color: #EF9906;
+    margin-bottom: 10px;
+    text-align: right;
+  }
+
 `;
 
-export const ContentTitle = styled.h1`
-  font-family: "Exo", sans-serif;
-  text-align: center;
-  color: #EF9906;
-  margin-bottom: 10px;
-`;
 
 export const Apod = styled.div`
   margin: 30px auto;

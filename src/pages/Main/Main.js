@@ -1,9 +1,9 @@
 import React from 'react';
 import { Divider, Typography, Button, message, } from 'antd';
 import { MeteorRainLoading } from 'react-loadingg';
-import { Link } from 'react-router-dom';
+
 import { Loading } from '../../utils/styles/general';
-import { Content, ContentTitle, Apod, ApodImage, ApodInfo, WelcomeTitle } from './styles';
+import { Content, ContentTitle, Apod, ApodImage, ApodInfo} from './styles';
 import { animateScroll as scroll } from 'react-scroll';
 
 const { Text } = Typography;
@@ -41,7 +41,9 @@ export default class Main extends React.Component {
     }
     return (
       <Content>
-        <ContentTitle> Welcome, Hunter </ContentTitle> 
+        <h1> Welcome Hunter </h1> 
+        
+        {/*
         {
           (media_type == "image")
           ? 
@@ -69,6 +71,7 @@ export default class Main extends React.Component {
               </ApodInfo> 
             </Apod>
         } 
+        */}
       </Content>
     );
   }

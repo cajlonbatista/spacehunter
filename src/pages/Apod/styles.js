@@ -14,9 +14,7 @@ export const HeaderApod = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
     img {
-        width: 90px;
-        padding: 10px;
-        margin-right: 20px;
+        width: 35px;
     }
     @media(max-width: 500px){
         flex-direction: column;

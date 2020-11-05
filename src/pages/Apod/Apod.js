@@ -10,11 +10,13 @@ import {
 } from "./styles";
 
 import CardApod from '../../components/CardApod/index';
-import { BackTop, Button } from "antd";
+import { BackTop } from "antd";
 import { Link } from "react-router-dom";
 import { SemipolarLoading } from "react-loadingg";
-import { SearchOutlined } from '@ant-design/icons';
+import { IconButton } from '@material-ui/core';
 
+import newapod from '../../assets/images/new.svg';
+import searchapod from '../../assets/images/image_search.svg';
 
 export default class Apod extends Component {
     state = {
@@ -31,7 +33,6 @@ export default class Apod extends Component {
             .reverse()
             .join('-');
         const data = format(subDays(Date.now(), 80), "yyyy-MM-dd");
-        console.log(data);
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a&start_date=${data}&end_date=${date}`)
             .then(res => {
                 console.log(res.data);
@@ -53,7 +54,7 @@ export default class Apod extends Component {
         if (this.state.loading) {
             return (
                 <>
-                    <SemipolarLoading />
+                    <SemipolarLoading color='#ff9900'/>
                 </>
             );
         } else {
@@ -61,9 +62,11 @@ export default class Apod extends Component {
                 <div style={{ marginTop: 90 }}>
                     <BackTop />
                     <HeaderApod>
-                        <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff8000", textAlign: "center" }}>Astronomy Picture of the Day</h2>
-                        <Link to="/apod/search/" style={{ display: "flex", justifyContent: "center", margin: 20 }}>
-                            <Button type="primary" shape="circle" icon={<SearchOutlined />} />
+                        <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff9900", textAlign: "center" }}>Astronomy Picture of the Day</h2>
+                        <Link to="/apod/search/">
+                            <IconButton>
+                                <img src={searchapod}></img>
+                            </IconButton>
                         </Link>
                     </HeaderApod>
 
@@ -72,7 +75,7 @@ export default class Apod extends Component {
                             this.state.data.map(apod1 => {
                                 if (apod1.date == date) {
                                     return (
-                                        <CardApod apod={apod1} news="https://www.flaticon.com/svg/static/icons/svg/891/891448.svg" key={apod1.date}>
+                                        <CardApod apod={apod1} news={newapod} key={apod1.date}>
                                         </CardApod>
                                     );
                                 } else {

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { IconButton } from '@material-ui/core';
-import { CardNavigationTag, ItemImg, CardButton } from './styles';
+import { IconButton, CardContent } from '@material-ui/core';
+import { CardNavigationTag, ItemImg } from './styles';
 
 const CardNavigation = ({
     title, image, path = '#!', onClick,
 }) => (
-    <CardButton>
+    <CardContent>
         <CardNavigationTag
             as={Link}
             to={path}
@@ -26,7 +26,7 @@ const CardNavigation = ({
                 {title}
             </span>
         </CardNavigationTag>
-    </CardButton>
+    </CardContent>
     );
 
 CardNavigation.propTypes = {

@@ -57,7 +57,7 @@ export default function Header(props) {
         {
             path: "/universe",
             title: "Universe",
-            image: "https://image.flaticon.com/icons/svg/3049/3049498.svg"
+            image: "https://hypernova.vercel.app/static/media/home.47abd3ff.svg"
         },
         {
             path: "/news",
@@ -69,23 +69,12 @@ export default function Header(props) {
             image: apod,
             title: "Apod"
         },
-        {
-            path: "/hovers",
-            image: "https://www.flaticon.com/svg/static/icons/svg/1006/1006195.svg",
-            title: "Mars Hover",
-        },
-        {
-            path: "/multimedia",
-            image: "https://image.flaticon.com/icons/svg/1055/1055662.svg",
-            title: "Multimedia"
-        }
     ]
 
     return (
         <AppBar >
             <LogoMenu>
                 <Link to="/"><Logo src={logo}></Logo></Link>
-                Space Hunter
             </LogoMenu>
             <SwipeableDrawer className={classes.drawer} anchor="left" open={open} onOpen={handleDrawerOpen} onClose={handleDrawerClose}>
                 <List className={classes.list}>
@@ -100,7 +89,7 @@ export default function Header(props) {
                                     {
                                         (location.pathname.includes(item.path))
                                             ?
-                                            <Link to={item.path} style={{ backgroundColor: "#EF9906" }} className="item-menu">
+                                            <Link to={item.path} style={{ backgroundColor: "#FF9900" }} className="item-menu">
                                                 <ListItem className="list" onClick={handleDrawerClose} button>
                                                     <img src={item.image} />
                                                     {item.title}
@@ -122,7 +111,7 @@ export default function Header(props) {
                 </List>
             </SwipeableDrawer>
             <DrawerButton>
-                <IconButton onClick={handleDrawerOpen} edge="start" size="medium" color="inherit" aria-label="menu">
+                <IconButton onClick={handleDrawerOpen} edge="start" size="medium" color="#0f0900" aria-label="menu">
                     <MenuIcon src={menu} />
                 </IconButton>
             </DrawerButton>

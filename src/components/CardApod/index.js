@@ -6,8 +6,6 @@ import {
     CardNew, Span, CardPreview, CardContent, CardPreviewVideo, CardTitle, NewMark
 } from '../CardNews/styles';
 
-import { format } from "date-fns";
-
 class CardNews extends PureComponent {
     render() {
         const { apod, news } = this.props;
@@ -32,14 +30,15 @@ class CardNews extends PureComponent {
                         <CardContent>
                             <CardTitle>
                                 {title}
-                                {news}
+                                <div style={{ position: "absolute", top: "-30", padding: 20 }}>
+                                    <NewMark src={news} width="50px" />
+                                </div>
                             </CardTitle>
                             <Span>
-                                {`${
-                                    date.split('-')
-                                    .reverse()
-                                    .join('/')
-                                }`}
+                                {`${date.split('-')
+                                        .reverse()
+                                        .join('/')
+                                    }`}
                             </Span>
                         </CardContent>
                     </CardNew>
@@ -58,14 +57,13 @@ class CardNews extends PureComponent {
                         <CardContent>
 
                             <CardTitle>
-                                {title} 
-                                {news}
+                                {title}
                             </CardTitle>
                             <Span>
                                 {
-                                date.split('-')
-                                .reverse()
-                                .join('/')
+                                    date.split('-')
+                                        .reverse()
+                                        .join('/')
                                 }
                             </Span>
                         </CardContent>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default {
     AppBar: styled.header`
-        background: #0c0c0c;
+        background: #0f0900;
         padding: 8px 15px;
         display: flex;
         width: 100vw;
@@ -11,7 +11,6 @@ export default {
         top: 0;
         z-index: 10;
         align-items: center;
-        box-shadow: 3px 3px 5px -1px rgba(0,0,0,0.42);
         justify-content: space-between;
     `,
 

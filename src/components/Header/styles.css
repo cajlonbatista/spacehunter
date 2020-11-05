@@ -1,13 +1,15 @@
 .link-menu {
     font-size: 13px;
     margin-left: 15px;
-    font-family: "Exo", sans-serif;
+    font-family: Open Sans, sans-serif;
     padding: 7px 10px;
     border-radius: 5px;
     display: flex;
     transition: all 0.4s;
     justify-content: center;
     align-items: center;
+    border: 1px solid transparent;
+
     color: whitesmoke;
 }
 
@@ -16,9 +18,9 @@
     margin-right: 10px;
 }
 
-.link-menu:hover {
+.link-menu:hover, .link-menu:focus {
     color: white;
-    background: #ff9900b2;
+    border: 1px solid #ff9900;
 }
 
 .item-menu {
@@ -28,7 +30,7 @@
     display: flex;
     transition: all 0.4s;
     align-items: center;
-    font-family: Archivo, sans-serif;
+    background: #FF9900;
     width: 100%;
 }
 .item-menu img {

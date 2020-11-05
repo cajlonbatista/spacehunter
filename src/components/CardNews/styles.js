@@ -5,13 +5,13 @@ export const CardNew = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: #070707;
+  background: #231808;
   color: #61dafb;
-  border: 1px solid #070707;
+  border: 1px solid transparent;
   border-radius: 5px;
   transition: border 0.4s;
 
-  &:hover { border: 1px solid #61dafb; }
+  :hover,:focus { border: 1px solid #ff9900; }
 `;
 
 export const CardPreview = styled.img`
@@ -23,6 +23,7 @@ export const CardPreview = styled.img`
 
 export const Span = styled.span`
   font-size: 1.3rem;
+  color: white;
 `;
 
 export const CardContent = styled.div`
@@ -36,7 +37,7 @@ export const CardContent = styled.div`
 export const CardTitle = styled.h2`
   font-size: 1.6rem;
   font-weight: 700;
-  color: #ff8000;
+  color: #ff9900;
   font-family: Exo, sans-serif;
   margin-bottom: 10px;
 `;

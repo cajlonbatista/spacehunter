@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 @import './keyframes.css';
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
@@ -12,7 +12,9 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  background: #
+}
+body{
+  background: #0f0a07!important;
 }
 a{
   text-decoration: none;

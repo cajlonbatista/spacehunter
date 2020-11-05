@@ -13,7 +13,7 @@ export const NewsGrid = styled.div`
 
 export const Container = styled.div`
 width: 100%;
-background: #202020;
+background: transparent;
 padding: 10px 20px;
 position: fixed;
 bottom: 0;
