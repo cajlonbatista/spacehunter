@@ -61,7 +61,7 @@ export default class News extends Component {
 
     return loading ? (
       <Loading>
-        <SolarSystemLoading />
+        <SolarSystemLoading color='#FF9900'/>
       </Loading>
     ) : (
       <Spin spinning={this.state.spinning} size="large">

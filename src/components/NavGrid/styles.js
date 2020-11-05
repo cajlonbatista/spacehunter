@@ -17,5 +17,6 @@ export const Navigator = styled.div`
   animation: bounce 2s linear;
   @media(max-width: 500px){
     margin-top: 20px!important;
+    background-image: none;
   }
 `;

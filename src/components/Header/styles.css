@@ -20,7 +20,7 @@
 
 .link-menu:hover, .link-menu:focus {
     color: white;
-    border: 1px solid #ff9900;
+    border: 1px solid #FF9900;
 }
 
 .item-menu {
@@ -30,7 +30,7 @@
     display: flex;
     transition: all 0.4s;
     align-items: center;
-    background: #FF9900;
+    background: #0F0900;
     width: 100%;
 }
 .item-menu img {

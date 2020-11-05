@@ -45,7 +45,7 @@ class NewsSingle extends Component {
 
     return loading ? (
       <div>
-        <SemipolarLoading />
+        <SemipolarLoading color='#FF990'/>
       </div>
     ) : (
       <NewsMore>

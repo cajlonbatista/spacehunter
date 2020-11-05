@@ -36,7 +36,7 @@ const useStyles = makeStyles({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        background: "#181818",
+        background: "#0F0A07",
     },
     fullList: {
         width: 'auto',
@@ -82,7 +82,6 @@ export default function Header(props) {
                 <List className={classes.list}>
                     <LogoConteiner onClick={handleDrawerClose} button key="Logo">
                         <LogoDrawer src={logo} />
-                        <span>Space Hunter</span>
                     </LogoConteiner>
                     <div>
                         {

@@ -75,7 +75,7 @@ export default {
         }
     `,
     LogoDrawer: styled.img`
-        width: 130px;
+        width: 50%;
         text-align: center;
     `,
 

@@ -53,11 +53,10 @@ class Planet extends Component {
           <BackTop>
           </BackTop>
           <PlanetTag>
-            <PageBack title={planet} />
+            <PageBack title={planet + " - " + planetTitle} />
 
             <PlanetContent>
               <Overview src={planetImage}>
-                <Title>{planetTitle}</Title>
               </Overview>
 
               <Description>

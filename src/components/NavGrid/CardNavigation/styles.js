@@ -6,8 +6,7 @@ export const CardNavigationTag = styled.a`
   background: #0F0A03;
   margin: 10px auto;
   align-items: center;
-  width: 100%;
-  max-width: 500px;
+  width: 50%;
   padding: 20px 30px;
   border-radius: 5px;
   border: 1px solid transparent;
@@ -18,6 +17,12 @@ export const CardNavigationTag = styled.a`
   }
   :hover, :focus{
     border: 1px solid #ff9900;
+  }
+  @media(max-width: 500px){
+    padding: 20px 10px;
+    margin: 4px auto;
+    width: 90%;
+    max-width: 400px;
   }
 `;
 
