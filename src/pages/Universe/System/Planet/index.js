@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
+
 import { withRouter } from 'react-router-dom';
 import { SolarSystemLoading } from 'react-loadingg';
 import PropTypes from 'prop-types';
 
 import api from '../../../../utils/axios';
-import { Loading } from '../../../../utils/styles/general';
+
 import { BackTop } from "antd";
-import {
-  Description, Overview, PlanetTag, PlanetContent, Title,
-} from './styles';
+import { Loading } from '../../../../utils/styles/general';
+import { Description, Overview, PlanetTag, PlanetContent } from './styles';
 
 import PageBack from '../../../../components/PageBack';
 import CardInfo from '../../../../components/CardInfo';

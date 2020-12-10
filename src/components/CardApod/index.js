@@ -16,7 +16,7 @@ class CardNews extends PureComponent {
             media_type
         } = apod;
 
-        if (media_type == "video") {
+        if (media_type === "video") {
             return (
                 <Link to={`/apod/${date}`}>
                     <CardNew>

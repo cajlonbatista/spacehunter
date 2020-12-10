@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom";
 
@@ -45,7 +45,6 @@ const useStyles = makeStyles({
 
 export default function Header(props) {
     const [open, setOpen] = React.useState(false);
-    const [anchorEl, setAnchorEl] = React.useState(null);
     const classes = useStyles();
     const location = useLocation();
     console.log(location.pathname);
@@ -86,21 +85,21 @@ export default function Header(props) {
                     <div>
                         {
                             items.map((item) => (
-                                <div >
+                                <div key={item.path}>
                                     {
                                         (location.pathname.includes(item.path))
                                             ?
                                             <Link to={item.path} style={{ backgroundColor: "#FF9900" }} className="item-menu">
                                                 <ListItem className="list" onClick={handleDrawerClose} button>
-                                                    <img src={item.image} />
+                                                    <img src={item.image} alt={item.title}/>
                                                     {item.title}
                                                 </ListItem>
                                             </Link>
 
                                             :
-                                            <Link to={item.path} className="item-menu">
+                                            <Link  to={item.path} className="item-menu">
                                                 <ListItem className="list" onClick={handleDrawerClose} button>
-                                                    <img src={item.image} />
+                                                    <img src={item.image} alt={item.title}/>
                                                     {item.title}
                                                 </ListItem>
                                             </Link>
@@ -112,7 +111,7 @@ export default function Header(props) {
                 </List>
             </SwipeableDrawer>
             <DrawerButton>
-                <IconButton onClick={handleDrawerOpen} edge="start" size="medium" color="#0f0900" aria-label="menu">
+                <IconButton onClick={handleDrawerOpen} edge="start" size="medium" aria-label="menu">
                     <MenuIcon src={menu} />
                 </IconButton>
             </DrawerButton>
@@ -120,18 +119,18 @@ export default function Header(props) {
                 <GuideList>
                     {
                         items.map((item) => (
-                            <div >
+                            <div key={item.path}>
                                 {
                                     (location.pathname.includes(item.path))
                                         ?
                                         <Link to={item.path} style={{backgroundColor: "#EF9906"}} className="link-menu">
-                                            <img src={item.image} />
+                                            <img src={item.image} alt={item.title}/>
                                             {item.title}
                                         </Link>
 
                                         :
                                         <Link to={item.path} className="link-menu">
-                                            <img src={item.image} />
+                                            <img src={item.image} alt={item.title}/>
                                             {item.title}
                                         </Link>
                                 }
