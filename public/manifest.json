@@ -1,5 +1,7 @@
 {
   "short_name": "Space Hunter",
+  "description": "Come explore to infinity  !",
+
   "icons": [
     {
       "src": "rocket.png",
@@ -7,7 +9,43 @@
       "type": "image/png"
     }
   ],
-  "start_url": ".",
+    "shortcuts": [
+    {
+      "name": "Space Hunter",
+      "short_name": "Space Hunter",
+      "description": "Come explore to infinity  !",
+      "url": "/",
+      "icons": [{ "src": "rocket.png", "sizes": "256x256", "type": "image/png" }]
+    },
+    {
+      "name": "Space Hunter",
+      "short_name": "Space Hunter",
+      "description": "Come and explore the universe !",
+      "url": "/universe",
+      "icons": [{ "src": "rocket.png", "sizes": "256x256", "type": "image/png" }]
+    },
+    {
+      "name": "Space Hunter",
+      "short_name": "Space Hunter",
+      "description": "Come and marvel at the astronomical images!",
+      "url": "/apod",
+      "icons": [{ "src": "rocket.png", "sizes": "256x256", "type": "image/png" }]
+    },
+    {
+      "name": "Space Hunter",
+      "short_name": "Space Hunter",
+      "description": "Be on top of what's happening !",
+      "url": "/news",
+      "icons": [{ "src": "rocket.png", "sizes": "256x256", "type": "image/png" }]
+    },
+    {
+      "name": "Space Hunter",
+      "short_name": "Space Hunter",
+      "description": "Be on top of what's happening !",
+      "url": "/news",
+      "icons": [{ "src": "rocket.png", "sizes": "256x256", "type": "image/png" }]
+    }
+  ],
   "display": "standalone",
   "theme_color": "#0F0900",
   "background_color": "#0F0900"
