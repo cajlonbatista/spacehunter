@@ -13,7 +13,6 @@ export default {
         align-items: center;
         justify-content: space-between;
     `,
-
     Logo: styled.img`
         width: 60px;
         @media(max-width: 425px){
@@ -78,5 +77,4 @@ export default {
         width: 50%;
         text-align: center;
     `,
-
 }

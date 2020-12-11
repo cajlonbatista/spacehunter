@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 
 import "date-fns";
-import { subDays, format } from 'date-fns';
 import axios from "axios";
+import { subDays, format } from 'date-fns';
+
+import CardApod from '../../components/CardApod/index';
+import { BackTop } from "antd";
+import { Link } from "react-router-dom";
+import { CircleLoading } from "react-loadingg";
+import { IconButton } from '@material-ui/core';
+import { Helmet } from 'react-helmet';
 
 import {
     ApodGrid,
     HeaderApod,
 } from "./styles";
 
-import CardApod from '../../components/CardApod/index';
-import { BackTop } from "antd";
-import { Link } from "react-router-dom";
-import { SemipolarLoading } from "react-loadingg";
-import { IconButton } from '@material-ui/core';
-import { Helmet } from 'react-helmet';
 
 import newapod from '../../assets/images/new.svg';
 import searchapod from '../../assets/images/image_search.svg';
@@ -24,7 +25,6 @@ export default class Apod extends Component {
         data: []
     }
     componentDidMount() {
-        const spls = new Date();
         this.setState({
             loading: true,
         })
@@ -33,10 +33,9 @@ export default class Apod extends Component {
             .split('/')
             .reverse()
             .join('-');
-        const data = format(subDays(Date.now(), 30), "yyyy-MM-dd");
+        const data = format(subDays(Date.now(), 20), "yyyy-MM-dd");
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=g5EOHFgzk1FTPU1LqDOOeAfC5d1agD4hFM6FTC4a&start_date=${data}&end_date=${date}`)
             .then(res => {
-                console.log(res.data);
                 this.setState({
                     data: res.data,
                     loading: false,
@@ -44,6 +43,8 @@ export default class Apod extends Component {
                 this.setState({
                     data: this.state.data.reverse(),
                 })
+            }).catch(err => {
+                console.log(err);
             })
     }
     render() {
@@ -53,11 +54,7 @@ export default class Apod extends Component {
             .reverse()
             .join('-');
         if (this.state.loading) {
-            return (
-                <>
-                    <SemipolarLoading color='#ff9900'/>
-                </>
-            );
+            return <CircleLoading color='#ff9900' />
         } else {
             return (
                 <div style={{ marginTop: 90 }}>
@@ -66,10 +63,10 @@ export default class Apod extends Component {
                     </Helmet>
                     <BackTop />
                     <HeaderApod>
-                        <h2 style={{ fontFamily: "Exo, sans-serif", color: "#ff9900", textAlign: "center" }}>Astronomy Picture of the Day</h2>
+                        <h1 style={{ fontFamily: "Exo, sans-serif", color: "#ff9900", textAlign: "center" }}>Astronomy Picture of the Day</h1>
                         <Link to="/apod/search/">
                             <IconButton>
-                                <img src={searchapod}></img>
+                                <img src={searchapod} alt='Search' />
                             </IconButton>
                         </Link>
                     </HeaderApod>

@@ -1,6 +1,7 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
+
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
@@ -8,14 +9,14 @@ import ListItem from '@material-ui/core/ListItem';
 import IconButton from '@material-ui/core/IconButton';
 import menu from '../../assets/images/menu.svg';
 
-import "./styles.css";
+
+import { makeStyles } from '@material-ui/core/styles';
 import styles from "./styles";
+import "./styles.css";
+
 import logo from "../../assets/images/rocket.svg";
 import apod from "../../assets/images/apod.svg";
 import news from "../../assets/images/news.svg";
-
-import { useLocation } from 'react-router-dom';
-
 
 const {
     AppBar,
