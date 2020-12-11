@@ -18,7 +18,6 @@ export default class Main extends React.Component {
       <MainContainer>
         <Presentation>
           <h1> Welcome Hunter </h1>
-          <img src="https://www.flaticon.com/svg/static/icons/svg/2026/2026498.svg" alt='Space Hunter'></img>
         </Presentation>
       </MainContainer>
     );
