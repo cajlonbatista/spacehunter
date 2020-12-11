@@ -4,7 +4,7 @@
     {
       "src": "rocket.png",
       "sizes": "256x256",
-      "type": "image/x-icon"
+      "type": "image/png"
     }
   ],
   "start_url": ".",
