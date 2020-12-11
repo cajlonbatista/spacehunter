@@ -17,6 +17,7 @@ import {
 } from "./styles";
 
 import { BackTop } from "antd";
+import NotFound from "../../NotFound/NotFound";
 
 class NewsSingle extends Component {
   constructor() {
@@ -25,6 +26,7 @@ class NewsSingle extends Component {
     this.state = {
       news: {},
       loading: true,
+      err: false,
     };
   }
 
@@ -35,38 +37,51 @@ class NewsSingle extends Component {
 
     api
       .get(`/articles/${params.id}`)
-      .then(({ data: news }) => this.setState({ news, loading: false }))
-      .catch(console.error);
+      .then(({ data: news }) => {
+        if (news.title !== undefined) {
+          this.setState({ news, loading: false })
+        } else {
+          this.setState({ loading: false, err: true });
+        }
+      })
+      .catch(err => {
+        this.setState({ loading: false, err: true });
+        console.log(err);
+      });
   }
 
   render() {
-    const { news, loading } = this.state;
+    const { news, loading, err } = this.state;
     const { title, content, publishedAt, author, imgToUrl } = news;
+    if (err === false) {
+      return loading ? (
+        <div>
+          <SemipolarLoading color='#FF990' />
+        </div>
+      ) : (
+          <NewsMore>
+            <Helmet>
+              <title>{title} | Space Hunter</title>
+            </Helmet>
+            <NewsBanner alt={title} align="center" src={imgToUrl} />
+            <Container>
+              <NewsTitle>{title}</NewsTitle>
+              <NewsImage src={imgToUrl}></NewsImage>
+              <NewsSubtitle>
+                {`${author} - ${new Date(publishedAt).toLocaleDateString()}`}
+              </NewsSubtitle>
 
-    return loading ? (
-      <div>
-        <SemipolarLoading color='#FF990'/>
-      </div>
-    ) : (
-      <NewsMore>
-        <BackTop />
-        <Helmet>
-          <title>{ title } | Space Hunter</title>
-        </Helmet>
-        <NewsBanner alt={title} align="center" src={imgToUrl} />
-        <Container>
-          <NewsTitle>{title}</NewsTitle>
-          <NewsImage src={imgToUrl}></NewsImage>
-          <NewsSubtitle>
-            {`${author} - ${new Date(publishedAt).toLocaleDateString()}`}
-          </NewsSubtitle>
-
-          <NewsContent className="news-content">
-            <Markdown source={content} />
-          </NewsContent>
-        </Container>
-      </NewsMore>
-    );
+              <NewsContent className="news-content">
+                <Markdown source={content} />
+              </NewsContent>
+            </Container>
+          </NewsMore>
+        );
+    } else {
+      return (
+        <NotFound />
+      )
+    }
   }
 }
 

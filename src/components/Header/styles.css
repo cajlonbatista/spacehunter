@@ -1,7 +1,7 @@
 .link-menu {
     font-size: 13px;
     margin-left: 15px;
-    font-family: Open Sans, sans-serif;
+    font-family: Poppins, sans-serif;
     padding: 7px 10px;
     border-radius: 5px;
     display: flex;
@@ -9,7 +9,6 @@
     justify-content: center;
     align-items: center;
     border: 1px solid transparent;
-
     color: whitesmoke;
 }
 

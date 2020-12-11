@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -31,13 +32,13 @@ class CardNews extends PureComponent {
                             <CardTitle>
                                 {title}
                                 <div style={{ position: "absolute", top: "-30", padding: 20 }}>
-                                    <NewMark src={news}/>
+                                <NewMark src={news} />
                                 </div>
                             </CardTitle>
                             <Span>
                                 {`${date.split('-')
-                                        .reverse()
-                                        .join('/')
+                                    .reverse()
+                                    .join('/')
                                     }`}
                             </Span>
                         </CardContent>
@@ -52,7 +53,7 @@ class CardNews extends PureComponent {
                             alt={title}
                         />
                         <div style={{ position: "absolute", top: "-30", padding: 20 }}>
-                            <NewMark src={news}/>
+                            <NewMark src={news} />
                         </div>
                         <CardContent>
 

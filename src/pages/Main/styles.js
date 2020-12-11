@@ -24,8 +24,7 @@ export const Presentation = styled.main`
   @media(max-width: 500px){
     background-image: url(${cars});
     background-position: center center;
-    background-size: 70%;
-    
+    background-size: 70%; 
   }
   h1{
     font-family: "Exo", sans-serif;

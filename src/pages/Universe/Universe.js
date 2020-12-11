@@ -73,7 +73,7 @@ export default class Universe extends React.Component {
         <Helmet>
           <title>Universe | Space Hunter</title>
         </Helmet>
-        <NavGrid items={menus} />;
+        <NavGrid items={menus} />
       </UniverseContainer>
     );
   }

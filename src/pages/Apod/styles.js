@@ -13,8 +13,24 @@ export const HeaderApod = styled.div`
     align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
+    h1 {
+      font-family: Exo, sans-serif!important;
+      text-align: center;
+      color: #ef9906;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+    @media (max-width: 500px) {
+      padding-top: 90px;
+      h1 {
+        position: initial;
+        top: auto;
+        left: auto;
+        font-size: 19px;
+      }
+    }
     img {
-        width: 35px;
+        width: 30px;
     }
     @media(max-width: 500px){
         flex-direction: column;
