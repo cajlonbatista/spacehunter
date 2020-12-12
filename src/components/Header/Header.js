@@ -1,22 +1,19 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import IconButton from '@material-ui/core/IconButton';
-import menu from '../../assets/images/menu.svg';
-
-
-import { makeStyles } from '@material-ui/core/styles';
-import styles from "./styles";
-import "./styles.css";
+import { Dialog, List, ListItem, IconButton, Slide } from "@material-ui/core";
 
 import logo from "../../assets/images/rocket.svg";
 import apod from "../../assets/images/apod.svg";
 import news from "../../assets/images/news.svg";
+import menu from '../../assets/images/menu.svg';
+import close from '../../assets/images/close.svg';
+
+import styles from "./styles";
+
+import './styles.css';
 
 const {
     AppBar,
@@ -25,35 +22,20 @@ const {
     Guide,
     MenuIcon,
     LogoMenu,
-    LogoConteiner,
+    DialogHeader,
     DrawerButton,
-    LogoDrawer,
+    DialogFull
 } = styles;
 
-const useStyles = makeStyles({
-    list: {
-        width: 270,
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        background: "#0F0A07",
-    },
-    fullList: {
-        width: 'auto',
-    },
-});
-
-export default function Header(props) {
-    const [open, setOpen] = React.useState(false);
-    const classes = useStyles();
+export default function Header() {
+    const [dialog, setDialog] = React.useState(false);
     const location = useLocation();
-    console.log(location.pathname);
-    const handleDrawerOpen = () => {
-        setOpen(true);
+
+    const onDialog = () => {
+        setDialog(true);
     };
-    const handleDrawerClose = () => {
-        setOpen(false);
+    const offDialog = () => {
+        setDialog(false);
     }
     const items = [
         {
@@ -63,7 +45,7 @@ export default function Header(props) {
         },
         {
             path: "/news",
-            title: "News",
+            title: "Curiosities",
             image: news
         },
         {
@@ -73,34 +55,37 @@ export default function Header(props) {
         },
     ]
 
+
     return (
         <AppBar >
             <LogoMenu>
                 <Link to="/"><Logo src={logo}></Logo></Link>
             </LogoMenu>
-            <SwipeableDrawer className={classes.drawer} anchor="left" open={open} onOpen={handleDrawerOpen} onClose={handleDrawerClose}>
-                <List className={classes.list}>
-                    <LogoConteiner onClick={handleDrawerClose} button key="Logo">
-                        <LogoDrawer src={logo} />
-                    </LogoConteiner>
-                    <div>
+            <Dialog open={dialog} onClose={offDialog} fullScreen>
+                <DialogFull>
+                    <DialogHeader>
+                        <IconButton onClick={offDialog}>
+                            <img src={close}/>
+                        </IconButton>
+                    </DialogHeader>
+                    <List>
                         {
                             items.map((item) => (
                                 <div key={item.path}>
                                     {
                                         (location.pathname.includes(item.path))
                                             ?
-                                            <Link to={item.path} style={{ backgroundColor: "#FF9900" }} className="item-menu">
-                                                <ListItem className="list" onClick={handleDrawerClose} button>
-                                                    <img src={item.image} alt={item.title}/>
+                                            <Link to={item.path}>
+                                                <ListItem onClick={offDialog} button style={{ backgroundColor: "#d68000", color: 'white', borderRadius: 7, marginBottom: 5 }} className='item-menu'>
+                                                    <img src={item.image} alt={item.title} />
                                                     {item.title}
                                                 </ListItem>
                                             </Link>
 
                                             :
-                                            <Link  to={item.path} className="item-menu">
-                                                <ListItem className="list" onClick={handleDrawerClose} button>
-                                                    <img src={item.image} alt={item.title}/>
+                                            <Link to={item.path}>
+                                                <ListItem onClick={offDialog} button style={{ color: 'white', borderRadius: 7, marginBottom: 5}} className='item-menu'>
+                                                    <img src={item.image} alt={item.title} />
                                                     {item.title}
                                                 </ListItem>
                                             </Link>
@@ -108,11 +93,11 @@ export default function Header(props) {
                                 </div>
                             ))
                         }
-                    </div>
-                </List>
-            </SwipeableDrawer>
+                    </List>
+                </DialogFull>
+            </Dialog>
             <DrawerButton>
-                <IconButton onClick={handleDrawerOpen} edge="start" size="medium" aria-label="menu">
+                <IconButton onClick={onDialog} edge="start" size="medium" aria-label="menu">
                     <MenuIcon src={menu} />
                 </IconButton>
             </DrawerButton>
@@ -124,14 +109,14 @@ export default function Header(props) {
                                 {
                                     (location.pathname.includes(item.path))
                                         ?
-                                        <Link to={item.path} style={{backgroundColor: "#EF9906"}} className="link-menu">
-                                            <img src={item.image} alt={item.title}/>
+                                        <Link to={item.path} style={{ backgroundColor: "#EF9906" }} className='link-menu'>
+                                            <img src={item.image} alt={item.title} />
                                             {item.title}
                                         </Link>
 
                                         :
-                                        <Link to={item.path} className="link-menu">
-                                            <img src={item.image} alt={item.title}/>
+                                        <Link to={item.path} className='link-menu'>
+                                            <img src={item.image} alt={item.title} />
                                             {item.title}
                                         </Link>
                                 }

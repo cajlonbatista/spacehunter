@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import cars from '../../assets/images/cars.svg';
 
 export default {
     AppBar: styled.header`
@@ -73,8 +74,50 @@ export default {
             display: none;
         }
     `,
-    LogoDrawer: styled.img`
-        width: 50%;
-        text-align: center;
+    DialogFull: styled.div`
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: #161311;
+        background-image: url(${cars});
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 10px;
+        ul{
+            width: 100%;
+            li{
+                border-radius: 10px;
+            }
+        }
     `,
+    DialogHeader: styled.header`
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 20;
+        padding: 8px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        >img{
+            width: 60px;
+            @media(max-width: 425px){
+                width: 45px;
+            }
+            transition: all 0.3s;
+            :hover{
+                opacity: 0.8;
+            }
+        }
+        button{
+
+            img{
+                width: 25px;
+            }
+        }
+    `
 }

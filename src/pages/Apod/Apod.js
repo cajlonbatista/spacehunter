@@ -5,20 +5,15 @@ import axios from "axios";
 import { subDays, format } from 'date-fns';
 
 import CardApod from '../../components/CardApod/index';
-import { BackTop } from "antd";
-import { Link } from "react-router-dom";
 import { CircleLoading } from "react-loadingg";
-import { IconButton } from '@material-ui/core';
 import { Helmet } from 'react-helmet';
-
-import {
-    ApodGrid,
-    HeaderApod,
-} from "./styles";
-
+import { BackTop } from "antd";
 
 import newapod from '../../assets/images/new.svg';
-import searchapod from '../../assets/images/image_search.svg';
+
+import {
+    ApodContainer
+} from "./styles";
 
 export default class Apod extends Component {
     state = {
@@ -57,38 +52,29 @@ export default class Apod extends Component {
             return <CircleLoading color='#ff9900' />
         } else {
             return (
-                <div style={{ marginTop: 90 }}>
+                <ApodContainer>
                     <Helmet>
                         <title>Apod | Space Hunter</title>
                     </Helmet>
                     <BackTop />
-                    <HeaderApod>
-                        <h1 style={{ fontFamily: "Exo, sans-serif", color: "#ff9900", textAlign: "center" }}>Astronomy Picture of the Day</h1>
-                        <Link to="/apod/search/">
-                            <IconButton>
-                                <img src={searchapod} alt='Search' />
-                            </IconButton>
-                        </Link>
-                    </HeaderApod>
-
-                    <ApodGrid>
+                    <h1>Daily Astronomical Images</h1>
+                    <article>
                         {
                             this.state.data.map(apod1 => {
                                 if (apod1.date == date) {
                                     return (
-                                        <CardApod apod={apod1} news={newapod} key={apod1.date}>
-                                        </CardApod>
+                                        <CardApod apod={apod1} news={newapod} key={apod1.date} />
+
                                     );
                                 } else {
                                     return (
-                                        <CardApod apod={apod1} key={apod1.date}>
-                                        </CardApod>
+                                        <CardApod apod={apod1} key={apod1.date} />
                                     );
                                 }
                             })
                         }
-                    </ApodGrid>
-                </div>
+                    </article>
+                </ApodContainer>
             );
         }
     }
