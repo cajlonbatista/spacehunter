@@ -83,7 +83,7 @@ export default {
         align-items: center;
         background-color: #161311;
         background-image: url(${cars});
-        background-size: 100%;
+        background-size: 50%;
         background-repeat: no-repeat;
         background-position: center;
         padding: 10px;
