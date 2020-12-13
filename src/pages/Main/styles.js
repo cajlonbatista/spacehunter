@@ -16,8 +16,9 @@ export const MainContainer = styled.section`
     background-position: center right;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: flex-start;
-    align-items: center ;
+yl    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start ;
     @media(max-width: 500px){
       background-position: center center;
       background-size: 70%; 
@@ -32,6 +33,11 @@ export const MainContainer = styled.section`
       font-size: 30px;
       margin: 10px;
       text-align: right;
+    }
+    p{
+      font-family: Nunito, sans-serif;
+      margin: 10px;
+      text-align: center;
     }
     img{
       width: 50px;

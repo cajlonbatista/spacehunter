@@ -115,7 +115,6 @@ export default {
             }
         }
         button{
-
             img{
                 width: 25px;
             }

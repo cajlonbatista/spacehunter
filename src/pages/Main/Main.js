@@ -3,6 +3,7 @@ import React from "react";
 
 import { MainContainer } from "./styles";
 import { animateScroll as scroll } from "react-scroll";
+import { Link } from "react-router-dom";
 
 export default class Main extends React.Component {
   constructor() {
@@ -17,11 +18,8 @@ export default class Main extends React.Component {
     return (
       <MainContainer>
         <main>
-          <div>
-            <h1> Welcome Hunter </h1>
-            <img src="https://www.flaticon.com/svg/static/icons/svg/2026/2026498.svg" alt='Space Hunter'></img>
-          </div>
-          <p></p>
+          <h1> Welcome Hunter </h1>
+          <p>Come and explore the universe, find everything you need here!</p>
         </main>
         <section>
         </section>
