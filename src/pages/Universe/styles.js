@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
-import launcher from '../../assets/images/launcher.svg';
-
 export const UniverseContainer = styled.div`
-  padding-top: 100px;
+  padding-top: 120px;
   width: 100%;
-  background-image: url(${launcher});
   background-position: bottom right;
   background-size: 35%;
   background-repeat: no-repeat;

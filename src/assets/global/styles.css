@@ -8,7 +8,7 @@
 }
 
 body {
-  background: #161311;
+  background: #22201E;
 }
 
 a {
@@ -29,6 +29,16 @@ body {
   }
 }
 
-.spin {
-  animation: spin 5s infinite linear;
+@media screen and (min-width: 550px) {
+  ::-webkit-scrollbar {
+    z-index: 1;
+    background: transparent;
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #EF9906;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px 5px 0px 0px;
+  }
 }

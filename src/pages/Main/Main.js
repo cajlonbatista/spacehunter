@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import { Presentation, MainContainer  } from "./styles";
+import { MainContainer } from "./styles";
 import { animateScroll as scroll } from "react-scroll";
 
 export default class Main extends React.Component {
@@ -11,15 +11,20 @@ export default class Main extends React.Component {
   }
   componentDidMount() {
     scroll.scrollToTop();
-    
+
   }
   render() {
     return (
       <MainContainer>
-        <Presentation>
-          <h1> Welcome Hunter </h1>
-          <img src="https://www.flaticon.com/svg/static/icons/svg/2026/2026498.svg" alt='Space Hunter'></img>
-        </Presentation>
+        <main>
+          <div>
+            <h1> Welcome Hunter </h1>
+            <img src="https://www.flaticon.com/svg/static/icons/svg/2026/2026498.svg" alt='Space Hunter'></img>
+          </div>
+          <p></p>
+        </main>
+        <section>
+        </section>
       </MainContainer>
     );
   }

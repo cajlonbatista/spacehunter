@@ -107,7 +107,7 @@ export default function Header() {
                                 {
                                     (location.pathname.includes(item.path))
                                         ?
-                                        <Link to={item.path} style={{ backgroundColor: "#EF9906" }} className='link-menu'>
+                                        <Link to={item.path} style={{ backgroundColor: "#d68000" }} className='link-menu'>
                                             <img src={item.image} alt={item.title} />
                                             {item.title}
                                         </Link>
