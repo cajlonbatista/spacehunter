@@ -73,7 +73,7 @@ export default function Header() {
                                     {
                                         (location.pathname.includes(item.path))
                                             ?
-                                            <Link to={item.path}>
+                                            <Link to={item.path} style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 400 }}>
                                                 <ListItem onClick={offDialog} button style={{ backgroundColor: "#d68000", color: 'white', borderRadius: 7, marginBottom: 5 }} className='item-menu'>
                                                     <img src={item.image} alt={item.title} />
                                                     {item.title}
@@ -81,7 +81,7 @@ export default function Header() {
                                             </Link>
 
                                             :
-                                            <Link to={item.path}>
+                                            <Link to={item.path} style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 400 }}>
                                                 <ListItem onClick={offDialog} button style={{ color: 'white', borderRadius: 7, marginBottom: 5}} className='item-menu'>
                                                     <img src={item.image} alt={item.title} />
                                                     {item.title}
