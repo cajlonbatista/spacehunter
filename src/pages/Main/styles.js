@@ -16,7 +16,7 @@ export const MainContainer = styled.section`
     background-position: center right;
     background-repeat: no-repeat;
     display: flex;
-yl    flex-direction: column;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start ;
     @media(max-width: 500px){
