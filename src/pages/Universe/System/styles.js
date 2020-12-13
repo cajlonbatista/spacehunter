@@ -2,15 +2,21 @@ import styled from 'styled-components';
 
 export const PageHeader = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 40px;
+  padding-top: 120px;
   gap: 20px;
   font-family: Exo, sans-serif;
   text-align: center;
   animation: bounce 1s linear;
-  svg { width: 70px; }
+  svg { 
+    width: 70px; 
+  }
+  h2{
+    font-size: 25px;
+  }
   @media(max-width: 500px){
     flex-direction: column;
     svg{
@@ -20,6 +26,13 @@ export const PageHeader = styled.div`
       font-size: 15px;
     }
   }
+`;
+
+export const PlanetGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min(100%, 600px));
+  justify-content: center;
+  grid-template-rows: auto;
 `;
 
 export const HeaderTitle = styled.h2`

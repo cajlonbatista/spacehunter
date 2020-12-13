@@ -1,14 +1,15 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 import { Drawer } from "antd";
 import { MeteorRainLoading } from "react-loadingg";
-import NavGrid from "../../../components/NavGrid";
+
 import CardNavigation from "../../../components/NavGrid/CardNavigation";
 import { Helmet } from 'react-helmet';
 
 import api from "../../../utils/axios";
 import { Loading } from "../../../utils/styles/general";
-import { PageHeader, HeaderTitle, DrawerInfo, DrawerButton } from "./styles";
+import { PageHeader, HeaderTitle, DrawerInfo, DrawerButton, PlanetGrid } from "./styles";
 
 export default class System extends React.Component {
   constructor() {
@@ -72,8 +73,8 @@ export default class System extends React.Component {
           <HeaderTitle>Come travel through the solar system</HeaderTitle>
         </PageHeader>
 
-        <NavGrid>
-          {planets.map(({ planet, drawer: drawerArr }, i) => {
+        <PlanetGrid>
+          {planets.map(({ planet,icon, drawer: drawerArr }, i) => {
             const { activePlanet } = this.state;
             const [drawer] = drawerArr;
 
@@ -81,7 +82,7 @@ export default class System extends React.Component {
               <span key={i} style={{ textTransform: "capitalize" }}>
                 <CardNavigation
                   title={planet}
-                  image="https://image.flaticon.com/icons/svg/2590/2590482.svg"
+                  image={icon}
                   onClick={() => this.onShowDrawer(planet)}
                 />
 
@@ -126,7 +127,7 @@ export default class System extends React.Component {
               </span>
             );
           })}
-        </NavGrid>
+          </PlanetGrid>
       </div>
     );
   }
