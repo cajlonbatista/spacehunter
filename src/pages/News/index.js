@@ -1,29 +1,27 @@
 import React, { Component } from "react";
-import { message, Spin, Button, BackTop } from "antd";
-import { SolarSystemLoading } from "react-loadingg";
-
-import { Loading } from "../../utils/styles/general";
-import { NewsGrid, Container } from "./styles";
-import CardNews from "../../components/CardNews";
-import news from "../../utils/news";
-import { Pagination } from "antd";
-import { Helmet } from 'react-helmet';
 
 import { animateScroll as scroll } from "react-scroll";
+import news from "../../utils/news";
+
+import { Helmet } from 'react-helmet';
+import CardNews from "../../components/CardNews";
+import { SolarSystemLoading } from "react-loadingg";
+import { message, Spin, BackTop, Pagination } from "antd";
+
+import { NewsGrid, Container } from "./styles";
+import { Loading } from "../../utils/styles/general";
+
 
 export default class News extends Component {
-  constructor(props) {
-    super(props);
-    this.myRef = React.createRef();
-    this.state = {
-      articles: [],
-      total: 0,
-      page: 2,
-      loading: true,
-      enable: false,
-      spinning: false,
-    };
-  }
+  myRef = React.createRef();
+  state = {
+    articles: [],
+    total: 0,
+    page: 2,
+    loading: true,
+    enable: false,
+    spinning: false,
+  };
 
   componentDidMount(props) {
     news.get(`articles?page=1`).then(async (res) => {

@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+
+import axios from "axios";
+
+import { Button, DatePicker, Spin, message, Divider, BackTop } from 'antd';
+import PageBack from "../../../components/PageBack/index";
+import { SearchOutlined } from '@ant-design/icons';
+
 import {
   ConteinerApod,
-  ApodGrid,
   HeaderApod,
   SelectApod,
   ApodVideo,
   ApodImage
 } from './styles';
-import axios from "axios";
-import { Button, DatePicker, Spin, message, Divider, BackTop } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
-import PageBack from "../../../components/PageBack/index";
 
 export default class ApodSearch extends Component {
   state = {
@@ -20,7 +22,7 @@ export default class ApodSearch extends Component {
     enable: true,
   }
   handleDateChange = (date, dateString) => {
-    if (dateString == "") {
+    if (dateString === "") {
       this.setState({
         enable: true
       })
@@ -42,8 +44,8 @@ export default class ApodSearch extends Component {
           data: res.data[0]
         })
       }).catch((err) => {
-        message.error('Something went wrong 😞!');
-        message.info('Try to select a correct date 😁');
+        message.error('Something went wrong, try to select a correct date !');
+        message.info('');
       }).finally(() => {
         this.setState({ loader: false, });
       });
@@ -60,7 +62,7 @@ export default class ApodSearch extends Component {
             </HeaderApod>
             <Divider />
             <SelectApod>
-              <p style={{ color: "white" }}>Select the APOD date you want to see, if you were born after 2000 try your birthday 🧐.</p>
+              <p style={{ color: "white" }}>Select the APOD date you want to see, if you were born after 2000 try your birthday.</p>
               <div>
                 <DatePicker size="large" onChange={this.handleDateChange} />
               </div>
@@ -69,17 +71,17 @@ export default class ApodSearch extends Component {
             <Divider />
             <div>
               {
-                (media_type == "video")
+                (media_type === "video")
                   ?
                   <ApodVideo>
                     <h2 style={{color: "#ff8000"}}>{title}</h2>
-                    <iframe src={url} frameborder='0' webkitAllowFullScreen mozallowfullscreen controls allowFullScreen></iframe>
+                    <iframe src={url} title={title} frameborder='0' webkitAllowFullScreen mozallowfullscreen controls allowFullScreen></iframe>
                     <span>{explanation}</span>
                   </ApodVideo>
                   :
                   <ApodImage>
                     <h2 style={{ color: "#ff8000" }}>{title}</h2>
-                    <img src={url}></img>
+                    <img src={url} alt={title}/>
                     <span>{explanation}</span>
                   </ApodImage>
               }

@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { IconButton, CardContent } from '@material-ui/core';
+
 import { CardNavigationTag, ItemImg } from './styles';
 
 const CardNavigation = ({

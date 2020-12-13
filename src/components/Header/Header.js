@@ -1,9 +1,8 @@
-import React, { forwardRef } from "react";
+import React from "react";
 
-import { Link } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
-import { Dialog, List, ListItem, IconButton, Slide } from "@material-ui/core";
+import { Dialog, List, ListItem, IconButton } from "@material-ui/core";
 
 import logo from "../../assets/images/rocket.svg";
 import apod from "../../assets/images/apod.svg";
@@ -12,7 +11,6 @@ import menu from '../../assets/images/menu.svg';
 import close from '../../assets/images/close.svg';
 
 import styles from "./styles";
-
 import './styles.css';
 
 const {
@@ -65,7 +63,7 @@ export default function Header() {
                 <DialogFull>
                     <DialogHeader>
                         <IconButton onClick={offDialog}>
-                            <img src={close}/>
+                            <img src={close} alt='Menu'/>
                         </IconButton>
                     </DialogHeader>
                     <List>

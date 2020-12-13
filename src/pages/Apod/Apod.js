@@ -61,7 +61,7 @@ export default class Apod extends Component {
                     <article>
                         {
                             this.state.data.map(apod1 => {
-                                if (apod1.date == date) {
+                                if (apod1.date === date) {
                                     return (
                                         <CardApod apod={apod1} news={newapod} key={apod1.date} />
 
