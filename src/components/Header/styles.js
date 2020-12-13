@@ -4,9 +4,10 @@ import cars from '../../assets/images/cars.svg';
 
 export default {
     AppBar: styled.header`
-        background: #0f0900;
+        background: #161311;
         padding: 8px 15px;
         display: flex;
+        box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
         width: 100vw;
         position: fixed;
         top: 0;

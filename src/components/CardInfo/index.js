@@ -12,7 +12,6 @@ class CardInfo extends React.PureComponent {
         <CardTitle>
           { title }
         </CardTitle>
-
         <p>
           { content }
         </p>

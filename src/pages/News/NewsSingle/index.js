@@ -16,7 +16,6 @@ import {
   NewsImage,
 } from "./styles";
 
-import { BackTop } from "antd";
 import NotFound from "../../NotFound/NotFound";
 
 class NewsSingle extends Component {

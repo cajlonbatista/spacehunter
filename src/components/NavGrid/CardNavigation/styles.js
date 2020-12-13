@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CardNavigationTag = styled.a`
   display: flex;
   justify-content: space-between;
-  background: #0F0A03;
+  background: #161311;
   margin: 10px auto;
   align-items: center;
   width: 50%;
@@ -12,7 +12,7 @@ export const CardNavigationTag = styled.a`
   border: 1px solid transparent;
   transition: all 0.4s;
   span{
-    font-family: Open Sans, sans-serif;
+    font-family: Nunito, sans-serif;
     color: white;
   }
   :hover, :focus{

@@ -10,7 +10,7 @@ export const ApodImage = styled.div`
     }
     animation: bounce 1s linear;
     p{
-        font-family: Kufam, sans-serif;
+        font-family: Nunito, sans-serif;
         color: #888888;
         text-align: justify;
         padding: 10px;
@@ -29,7 +29,7 @@ export const ApodVideo = styled.div`
         }
     }
     p{
-        font-family: Kufam, sans-serif;
+        font-family: Nunito, sans-serif;
         color: #888888;
         text-align: justify;
         padding: 10px;

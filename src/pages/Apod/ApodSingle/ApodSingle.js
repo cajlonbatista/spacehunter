@@ -37,7 +37,7 @@ export default class ApodSingle extends Component {
           <Helmet>
             <title>{title}</title>
           </Helmet>
-          {media_type == "video" ? (
+          {media_type === "video" ? (
             <ApodVideo>
               <PageBack title={title} />
               <div
@@ -53,25 +53,26 @@ export default class ApodSingle extends Component {
                   webkitAllowFullScreen
                   mozallowfullscreen
                   allowFullScreen
+                  title={title}
                 ></iframe>
                 <p>{explanation}</p>
               </div>
             </ApodVideo>
           ) : (
-            <ApodImage>
-              <PageBack title={title} />
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <img src={url} alt={title}></img>
-                <p>{explanation}</p>
-              </div>
-            </ApodImage>
-          )}
+              <ApodImage>
+                <PageBack title={title} />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <img src={url} alt={title}/>
+                  <p>{explanation}</p>
+                </div>
+              </ApodImage>
+            )}
         </>
       );
     }
