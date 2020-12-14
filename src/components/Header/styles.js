@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import cars from '../../assets/images/cars.svg';
-
 export default {
     AppBar: styled.header`
         background: #161311;
@@ -82,11 +80,7 @@ export default {
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
-        background-color: #161311;
-        background-image: url(${cars});
-        background-size: 50%;
-        background-repeat: no-repeat;
-        background-position: center;
+        background-color: #22201E;
         padding: 10px;
         ul{
             width: 100%;

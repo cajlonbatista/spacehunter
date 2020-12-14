@@ -1,32 +1,51 @@
 @keyframes bounce {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes spin {
-  100% { transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes bright {
   0% {
     filter: saturate(4);
   }
-
-  25% { filter: saturate(1); }
-  50% { filter: saturate(2); }
-  100% { filter: saturate(3); }
+  25% {
+    filter: saturate(1);
+  }
+  50% {
+    filter: saturate(2);
+  }
+  100% {
+    filter: saturate(3);
+  }
 }
 
 @keyframes graps {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0) rotate(0);
     transform-origin: 50% 50%;
   }
-
-  15% { transform: translateY(-30px) rotate(-6deg); }
-  30% { transform: translateY(15px) rotate(6deg); }
-  45% { transform: translateY(-15px) rotate(-3.6deg); }
-  60% { transform: translateY(9px) rotate(2.4deg); }
-  75% { transform: translateY(-6px) rotate(-1.2deg); }
+  15% {
+    transform: translateY(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateY(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateY(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateY(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateY(-6px) rotate(-1.2deg);
+  }
 }
