@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-import cars from '../../assets/images/cars.svg';
-
-
 export const MainContainer = styled.section`
   height: 100vh;
   main{
@@ -11,21 +8,36 @@ export const MainContainer = styled.section`
     height: 100%;
     animation: bounce 1s linear;
     overflow: hidden;
-    background-image: url(${cars});
-    background-size: 40%;
-    background-position: center right;
-    background-repeat: no-repeat;
+    svg:last-child{
+      position: absolute;
+      top: center;
+      right: 0;
+    }
+    svg:first-child{
+      width: 100%;
+      max-width: 400px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start ;
-    @media(max-width: 500px){
-      background-position: center center;
-      background-size: 70%; 
+    @media(max-width: 1024px){
+      svg:last-child{
+        width: 90%;
+        top: -50px;
+        right: center;
+      }      
+      svg:first-child{
+        display: none;
+      }
       justify-content: flex-end;
       flex-direction: column;
       align-items: center;
     }
+    
     h1{
       font-family: "Exo", sans-serif;
       text-align: center;

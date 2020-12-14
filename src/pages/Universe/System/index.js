@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet';
 import api from "../../../utils/axios";
 import { Loading } from "../../../utils/styles/general";
 import { PageHeader, HeaderTitle, DialogContent, PlanetGrid } from "./styles";
-import { Dialog, IconButton } from "@material-ui/core";
+import { Dialog } from "@material-ui/core";
 
 export default class System extends React.Component {
   constructor() {
@@ -42,7 +42,7 @@ export default class System extends React.Component {
 
     return loading ? (
       <Loading>
-        <MeteorRainLoading />
+        <MeteorRainLoading color='#FFB400'/>
       </Loading>
     ) : (
         <div>

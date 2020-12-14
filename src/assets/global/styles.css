@@ -42,3 +42,14 @@ body {
     border-radius: 5px 5px 0px 0px;
   }
 }
+
+/*Cars animations*/
+
+.asteroid {
+  position: absolute;
+  animation: spin 7s linear infinite;
+}
+
+.star {
+  animation: bounce 1s linear infinite;
+}

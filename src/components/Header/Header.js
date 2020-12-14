@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { useLocation, Link } from 'react-router-dom';
 
@@ -8,7 +8,10 @@ import logo from "../../assets/images/rocket.svg";
 import apod from "../../assets/images/apod.svg";
 import news from "../../assets/images/news.svg";
 import menu from '../../assets/images/menu.svg';
+import dashboard from '../../assets/images/dashboard.svg';
 import close from '../../assets/images/close.svg';
+
+
 
 import styles from "./styles";
 import './styles.css';
@@ -26,7 +29,9 @@ const {
 } = styles;
 
 export default function Header() {
-    const [dialog, setDialog] = React.useState(false);
+    const [dialog, setDialog] = useState(false);
+    const [hidden, setHidden] = useState(false);
+
     const location = useLocation();
 
     const onDialog = () => {
@@ -35,27 +40,37 @@ export default function Header() {
     const offDialog = () => {
         setDialog(false);
     }
+    const handleScroll = () => {
+        if (document.documentElement.scrollTop > 330) {
+            setHidden(true);
+        } else {
+            setHidden(false)
+        }
+    }
+    useEffect(() => {
+        window.onscroll = () => handleScroll()
+
+    }, []);
     const items = [
         {
             path: "/universe",
             title: "Universe",
-            image: "https://hypernova.vercel.app/static/media/home.47abd3ff.svg"
+            image: dashboard
         },
         {
             path: "/news",
-            title: "Curiosities",
+            title: "News",
             image: news
         },
         {
             path: "/apod",
             image: apod,
-            title: "Apod"
+            title: "Photos"
         },
     ]
 
-
     return (
-        <AppBar >
+        <AppBar style={{ opacity: (hidden == false ? 1 : 0) }}>
             <LogoMenu>
                 <Link to="/"><Logo src={logo}></Logo></Link>
             </LogoMenu>
