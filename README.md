@@ -3,14 +3,14 @@
 <h1 align="center">Space Hunter</h1>
 
 <p align="center">
-  <a href="#page_with_curl-sobre">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#hammer-iniciando-mobile">Technologies</a>
+  <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#hammer">Technologies</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#books-requisitos">Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-começando">Começando</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
-## :page_with_curl: About
+## :about: About
 
 Space Hunter is a PWA (Progressive Web App) in which the user can have access to information regarding the universe (solar system, stars, black holes, planets, exoplanets etc ...), daily images, news.
 Being a PWA it can be [accessed](https://spacehunter.vercel.app) and [installed](https://spacehunter.vercel.app) on most devices that have a browser, preferably Google Chorme (more adapted to the application and resources in general).
