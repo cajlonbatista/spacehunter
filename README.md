@@ -3,7 +3,7 @@
 <h1 align="center">Space Hunter</h1>
 
 <p align="center">
-  <a href="#:page_with_curl-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#page_with_curl-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#hammer-technologies">Technologies</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#books-requisitos">Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -30,3 +30,22 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - [react-scroll](https://www.npmjs.com/package/react-scroll)
 - [react-helmet](https://www.npmjs.com/package/react-helmet)
 - [date-fns](https://www.npmjs.com/package/date-fns)
+
+## :books: Requirements
+ - Have [**Git**](https://git-scm.com/) to clone the project.
+ - Have [**Node.js**](https://nodejs.org/en/) installed.
+## :rocket: Get Started
+``` bash
+  # Clone the project:
+  $ git clone https://github.com/cajlonbatista/spacehunter
+
+  # Enter the directory:
+  $ cd spacehunter
+```
+## :gear: Starting
+``` bash
+  # Install the dependencies:
+  $ yarn install
+  
+  # Launch an application:
+  $ yarn start
