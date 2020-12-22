@@ -6,8 +6,9 @@
   <a href="#page_with_curl-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#hammer-technologies">Technologies</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#books-requisitos">Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-começando">Começando</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#books-requirements">Requirements</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-get-started">Get Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#handshake-contributors">Contributors</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 ## :page_with_curl: About
@@ -49,3 +50,8 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
   
   # Launch an application:
   $ yarn start
+ ```
+## :handshake: Contributors
+  - Francisco Cajlon - [cajlonbatista](https://github.com/cajlonbatista)
+  - Eduardo Wesley - [edumudu](https://github.com/edumudu)
+  - Nicole Taufenbach - [nicole-taufenbach](https://github.com/nicole-taufenbach)
