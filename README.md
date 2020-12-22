@@ -19,8 +19,6 @@ Being a PWA it can be [accessed](https://spacehunter.vercel.app) and [installed]
 <span align="center"><img width="200px" src="https://github.com/cajlonbatista/spacehunter/blob/master/assets/device.jpg?raw=true"/></span>
 <span align="center"><img width="200px" src="https://github.com/cajlonbatista/spacehunter/blob/master/assets/photos.jpg?raw=true"/></span>
 <span align="center"><img width="200px" src="https://github.com/cajlonbatista/spacehunter/blob/master/assets/news.jpg?raw=true"/></span>
-<span align="center"><img width="200px" src="https://github.com/cajlonbatista/spacehunter/blob/master/assets/view.jpg?raw=true"/></span>
-<span align="center"><img width="200px" src="https://github.com/cajlonbatista/spacehunter/blob/master/assets/index.jpg?raw=true"/></span>
 
 ## :hammer: Technologies
 
