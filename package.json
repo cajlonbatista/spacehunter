@@ -13,12 +13,10 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "animate.css": "^4.1.0",
     "antd": "^4.5.1",
     "axios": "^0.19.2",
     "craco": "",
     "craco-less": "^1.17.0",
-    "datejs": "^1.0.0-rc3",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -32,7 +30,7 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "start": "set PORT=9232 && craco start",
+    "start": "craco start",
     "build": "craco build",
     "test": "craco test"
   },
