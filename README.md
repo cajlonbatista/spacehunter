@@ -16,6 +16,9 @@
 Space Hunter is a PWA (Progressive Web App) in which the user can have access to information regarding the universe (solar system, stars, black holes, planets, exoplanets etc ...), daily images, news.
 Being a PWA it can be [accessed](https://spacehunter.vercel.app) and [installed](https://spacehunter.vercel.app) on most devices that have a browser, preferably Google Chorme (more adapted to the application and resources in general).
 
+<span align="center"><img width="200px" src="https://github.com/cajlonbatista/spacehunter/blob/master/assets/device.jpg?raw=true"/></span>
+<span align="center"><img width="200px" src="https://github.com/cajlonbatista/spacehunter/blob/master/assets/photos.jpg?raw=true"/></span>
+
 ## :hammer: Technologies
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
